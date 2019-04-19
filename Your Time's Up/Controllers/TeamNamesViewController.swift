@@ -9,6 +9,15 @@
 import UIKit
 
 class TeamNamesViewController: UIViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare for segue")
+        if (segue.identifier == "playSegue") {
+            print("prepareForSegue playsegue")
+            let addWordController = segue.destination as! AddWordViewController
+            addWordController.timesUp = timesUp
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +26,7 @@ class TeamNamesViewController: UIViewController {
     }
 
     var teams:[Int:String] = [:];
+    var timesUp:TimesUp = TimesUp.init([])
     
     @IBOutlet weak var startTheGameButton: UIButton!
     
@@ -70,9 +80,19 @@ class TeamNamesViewController: UIViewController {
         }
         startTheGameButton.isEnabled = !teams.isEmpty
     }
+    
     @IBAction func StartTheGame(_ sender: UIButton) {
         print("Le jeux commence, les équipes sont les suivantes : \(String(describing:teams))")
+        var teamsAboutToPlay:[Team] = []
+        for team in teams {
+            teamsAboutToPlay.append(Team.init(name: team.value))
+        }
+        //TODO verifie that there is not 2 teams sharing a same name
+        timesUp = TimesUp.init(teamsAboutToPlay)
+        performSegue(withIdentifier: "playSegue", sender: sender)
     }
+    
+   
     
     func configure() {
         startTheGameButton.layer.cornerRadius = 0.125 * startTheGameButton.bounds.size.width

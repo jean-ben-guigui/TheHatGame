@@ -10,19 +10,31 @@ import Foundation
 
 class TimesUp {
     var teams:[Team]
-    var words:[String:Int] //when associated with the value 0, it means that no teams guessed that word during that phase yet.
-    var phase:Int
+    
+    enum wordState {
+        case notGuessed
+        case guessed
+    }
+    
+    enum phaseState {
+        case first
+        case second
+        case third
+    }
+    
+    var words:[String:wordState]
+    var phase:phaseState
     
     init(_ teams:[Team]) {
         self.teams = teams
-        self.words = [String:Int]()
-        self.phase = 1
+        self.words = [String:wordState]()
+        self.phase = phaseState.first
     }
     
     convenience init(initWithData:Bool) {
         self.init([])
         if initWithData {
-            self.words = ["bien":0, "avron":0, "bibs":0, "fafLaMenace":0, "Choupie":0]
+            self.words = ["bien":wordState.notGuessed, "avron":wordState.notGuessed, "bibs":wordState.notGuessed, "fafLaMenace":wordState.notGuessed, "Choupie":wordState.notGuessed]
         }
     }
 }
