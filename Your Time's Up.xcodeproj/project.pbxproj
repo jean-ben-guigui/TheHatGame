@@ -15,6 +15,7 @@
 		3FE9E9322237CEF100891C99 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9E9312237CEF100891C99 /* Team.swift */; };
 		3FE9E9382237DD3800891C99 /* TimesUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9E9372237DD3800891C99 /* TimesUp.swift */; };
 		D697883322663FEB006E7B6D /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697883222663FEB006E7B6D /* AddWordViewController.swift */; };
+		D6978837226CA68F006E7B6D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6978836226CA68F006E7B6D /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3FE9E9312237CEF100891C99 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		3FE9E9372237DD3800891C99 /* TimesUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesUp.swift; sourceTree = "<group>"; };
 		D697883222663FEB006E7B6D /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
+		D6978836226CA68F006E7B6D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				3FE9E91B22359B9D00891C99 /* TeamNamesViewController.swift */,
 				D697883222663FEB006E7B6D /* AddWordViewController.swift */,
+				D6978836226CA68F006E7B6D /* PlayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				3FE9E9322237CEF100891C99 /* Team.swift in Sources */,
 				D697883322663FEB006E7B6D /* AddWordViewController.swift in Sources */,
 				3FE9E91C22359B9D00891C99 /* TeamNamesViewController.swift in Sources */,
+				D6978837226CA68F006E7B6D /* PlayViewController.swift in Sources */,
 				3FE9E91A22359B9D00891C99 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,19 +8,19 @@
 
 import Foundation
 
+enum wordState {
+    case notGuessed
+    case guessed
+}
+
+enum phaseState {
+    case first
+    case second
+    case third
+}
+
 class TimesUp {
     var teams:[Team]
-    
-    enum wordState {
-        case notGuessed
-        case guessed
-    }
-    
-    enum phaseState {
-        case first
-        case second
-        case third
-    }
     
     var words:[String:wordState]
     var phase:phaseState

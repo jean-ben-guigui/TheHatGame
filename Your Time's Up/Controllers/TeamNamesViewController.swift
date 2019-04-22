@@ -12,8 +12,8 @@ class TeamNamesViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("prepare for segue")
-        if (segue.identifier == "playSegue") {
-            print("prepareForSegue playsegue")
+        if (segue.identifier == "addWordsSegue") {
+            print("prepareForSegue addWordsSegue")
             let addWordController = segue.destination as! AddWordViewController
             addWordController.timesUp = timesUp
         }
@@ -89,7 +89,7 @@ class TeamNamesViewController: UIViewController {
         }
         //TODO verifie that there is not 2 teams sharing a same name
         timesUp = TimesUp.init(teamsAboutToPlay)
-        performSegue(withIdentifier: "playSegue", sender: sender)
+        performSegue(withIdentifier: "addWordsSegue", sender: sender)
     }
     
    
