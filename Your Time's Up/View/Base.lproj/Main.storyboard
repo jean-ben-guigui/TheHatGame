@@ -299,7 +299,7 @@
                         <outlet property="teamName" destination="2v7-QF-p7q" id="Sdo-tM-GV1"/>
                         <outlet property="wordInput" destination="abY-fb-fvq" id="OED-Fx-sjR"/>
                         <outlet property="wordNumberLabel" destination="6Fa-vq-Whu" id="97W-NQ-FAw"/>
-                        <segue destination="bp2-Mo-ZFE" kind="show" id="HYh-3p-Iwp"/>
+                        <segue destination="bp2-Mo-ZFE" kind="show" identifier="playSegue" id="HYh-3p-Iwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6c-jQ-ggO" userLabel="First Responder" sceneMemberID="firstResponder"/>

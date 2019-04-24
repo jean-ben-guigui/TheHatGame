@@ -10,23 +10,27 @@ import UIKit
 
 class TeamNamesViewController: UIViewController {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare for segue")
-        if (segue.identifier == "addWordsSegue") {
-            print("prepareForSegue addWordsSegue")
-            let addWordController = segue.destination as! AddWordViewController
-            addWordController.timesUp = timesUp
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configure();
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("The game begins, Teams are as follow : \(String(describing:teams))")
+        var teamsAboutToPlay:[Team] = []
+        for team in teams {
+            teamsAboutToPlay.append(Team.init(name: team.value, id: team.key))
+        }
+        //TODO check that there is not 2 teams sharing a same name
+        if (segue.identifier == "addWordsSegue") {
+            if let addWordController = segue.destination as? AddWordViewController {
+                addWordController.timesUp = TimesUp.init(teamsAboutToPlay)
+            }
+        }
+    }
 
     var teams:[Int:String] = [:];
-    var timesUp:TimesUp = TimesUp.init([])
     
     @IBOutlet weak var startTheGameButton: UIButton!
     
@@ -82,13 +86,6 @@ class TeamNamesViewController: UIViewController {
     }
     
     @IBAction func StartTheGame(_ sender: UIButton) {
-        print("Le jeux commence, les équipes sont les suivantes : \(String(describing:teams))")
-        var teamsAboutToPlay:[Team] = []
-        for team in teams {
-            teamsAboutToPlay.append(Team.init(name: team.value))
-        }
-        //TODO verifie that there is not 2 teams sharing a same name
-        timesUp = TimesUp.init(teamsAboutToPlay)
         performSegue(withIdentifier: "addWordsSegue", sender: sender)
     }
     

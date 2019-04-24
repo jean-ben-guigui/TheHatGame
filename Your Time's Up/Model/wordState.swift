@@ -10,5 +10,5 @@ import Foundation
 
 enum wordState {
     case notGuessed
-    case guessed
+    case guessed(Int)
 }

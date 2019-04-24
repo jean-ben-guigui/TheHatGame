@@ -8,16 +8,12 @@
 
 import Foundation
 
-enum wordState {
-    case notGuessed
-    case guessed
-}
-
 enum phaseState {
     case first
     case second
     case third
 }
+
 
 class TimesUp {
     var teams:[Team]
@@ -36,5 +32,14 @@ class TimesUp {
         if initWithData {
             self.words = ["bien":wordState.notGuessed, "avron":wordState.notGuessed, "bibs":wordState.notGuessed, "fafLaMenace":wordState.notGuessed, "Choupie":wordState.notGuessed]
         }
+    }
+    
+    func getTeam(id:Int) -> Team? {
+        for team in self.teams {
+            if team.id == id {
+                return team
+            }
+        }
+        return nil
     }
 }

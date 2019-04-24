@@ -17,10 +17,20 @@ class AddWordViewController: UIViewController {
         configure()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let selfTimesUp = timesUp {
+            if (segue.identifier == "playSegue") {
+                if let destination = segue.destination as? PlayViewController {
+                    destination.timesUp = selfTimesUp
+                }
+            }
+        }
+        
+    }
     
-    var timesUp:TimesUp = TimesUp.init([])
-    var wordToValidate:String = ""
-    var teamIndex:Int = 0
+    
+    var timesUp:TimesUp?
+    var wordToValidate:String =  ""
     
     @IBOutlet var addWordView: UIView!
     @IBOutlet weak var doneButton: UIButton!
@@ -28,34 +38,34 @@ class AddWordViewController: UIViewController {
     @IBOutlet weak var teamName: UILabel!
     @IBOutlet weak var wordInput: UITextField!
     
-    
+    /// Handles the validation of a word entered by the user:
+    /// - display an alert if the word already exists
+    /// - adjust the number /24 and the name of the team that should be entering the next word
     @IBAction func validateWord(_ sender: UIButton) {
-        if timesUp.words.index(forKey: wordToValidate) != nil {
-            let alert = UIAlertController(title: "Oops 😬", message: "Someone already entered that word, please choose something different", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-            print((String(describing: self)))
-            self.present(alert, animated: false, completion: nil)
-        } else {
-            timesUp.words[wordToValidate] = wordState.notGuessed
-            if(timesUp.words.count > 23) {
-                print(String(describing: timesUp.words))
-                //TODO go to next screen
-                
-            }
-            else if let wordNumberString = wordNumberLabel.text {
-                if var wordNumberInt = Int(wordNumberString) {
-                    wordNumberInt += 1
-                    wordNumberLabel.text = String(wordNumberInt)
-                    if timesUp.teams.count <= teamIndex + 1 {
-                        teamIndex = 0
-                    } else {
-                        teamIndex += 1
+        if let nnTimesUp = timesUp {
+            if nnTimesUp.words.index(forKey: wordToValidate) != nil {
+                displayAlert(title: "Oops 😬", message: "Someone already entered that word, please choose something different")
+            } else {
+                nnTimesUp.words[wordToValidate] = wordState.notGuessed
+                if(timesUp!.words.count > 23) {
+                    print(String(describing: timesUp!.words))
+                    //TODO go to next screen
+                    
+                }
+                else if let wordNumberString = wordNumberLabel.text {
+                    if var wordNumberInt = Int(wordNumberString) {
+                        wordNumberInt += 1
+                        wordNumberLabel.text = String(wordNumberInt)
+                        if let nnTimesUp = timesUp {
+                            if let teamPlaying = nnTimesUp.getTeam(id: wordNumberInt % (nnTimesUp.teams.count)) {
+                                teamName.text = teamPlaying.name
+                            }
+                        }
                     }
-                    teamName.text = timesUp.teams[teamIndex].name
                 }
             }
+            wordInput.text = ""
         }
-        wordInput.text = ""
     }
     
     @IBAction func wordEdited(_ sender: UITextField) {
@@ -80,11 +90,24 @@ class AddWordViewController: UIViewController {
     }
     */
     
+    /// display a simple alert with the title and message and a cancel button with title "Okay"
+    func displayAlert(title:String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        print((String(describing: self)))
+        self.present(alert, animated: false, completion: nil)
+    }
+    
     func configure(){
         doneButton.layer.cornerRadius = 0.5 * doneButton.bounds.size.width
         doneButton.layer.masksToBounds = true
         doneButton.isEnabled = false
-        teamName.text = timesUp.teams[0].name
+        if let nnTimesUp = timesUp {
+            if let firstTeam = nnTimesUp.getTeam(id:1) {
+                teamName.text = firstTeam.name
+            }
+        } else {
+            print("ERROR : no first team injected")
+        }
     }
-
 }

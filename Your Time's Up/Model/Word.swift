@@ -8,10 +8,12 @@
 
 import Foundation
 
-class Word {
+struct Word {
     var description:String
+    var State:wordState
     
-    init(_ description:String) {
+    init(_ description:String, teamId:Int) {
         self.description = description
+        self.State = wordState.notGuessed
     }
 }
