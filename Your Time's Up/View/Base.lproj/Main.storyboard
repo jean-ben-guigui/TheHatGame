@@ -24,16 +24,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBN-3w-aYR" userLabel="Title View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="248.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter up to 8 team names:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
-                                                <rect key="frame" x="74.5" y="112.5" width="226.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter up to 8 team names:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
+                                                <rect key="frame" x="37.5" y="99" width="300" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                                 <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="centerY" secondItem="CBN-3w-aYR" secondAttribute="centerY" id="GVk-nU-o3L"/>
-                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="centerX" secondItem="CBN-3w-aYR" secondAttribute="centerX" id="bRF-pN-Qcv"/>
+                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="centerX" secondItem="CBN-3w-aYR" secondAttribute="centerX" id="HJc-iI-wck"/>
+                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="centerY" secondItem="CBN-3w-aYR" secondAttribute="centerY" id="SS7-AP-mVG"/>
+                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="width" secondItem="CBN-3w-aYR" secondAttribute="width" multiplier="0.8" id="tqR-Pz-r9q"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czM-eh-2fl" userLabel="Enter Team Names View">
@@ -51,7 +52,7 @@
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="firstName:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ee4-Wn-ZiD"/>
+                                                                    <action selector="firstTeamNameEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ffg-7i-WP0"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
@@ -65,7 +66,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="secondName:" destination="BYZ-38-t0r" eventType="editingChanged" id="dVA-v1-gWK"/>
+                                                                    <action selector="secondTeamNameEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="91N-8S-BqB"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
@@ -79,7 +80,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="thirdName:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZcK-AK-A8k"/>
+                                                                    <action selector="thirdTeamNameEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="mw3-6T-z5h"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
@@ -93,7 +94,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
-                                                                    <action selector="forthName:" destination="BYZ-38-t0r" eventType="editingChanged" id="NwM-Dn-UlN"/>
+                                                                    <action selector="fourthTeamNameEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="J41-VT-y63"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
@@ -168,13 +169,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="firstTeamName" destination="wvr-ae-JXL" id="EVF-Cc-7M5"/>
+                        <outlet property="fourthTeamName" destination="fO8-TQ-eUR" id="CXl-NL-ZeY"/>
+                        <outlet property="secondTeamName" destination="YQD-SK-uqT" id="BjZ-OK-oCW"/>
                         <outlet property="startTheGameButton" destination="sX3-I5-IkG" id="YdM-4P-1p5"/>
+                        <outlet property="thirdTeamName" destination="YbB-d6-jkk" id="MEh-Fh-7Nx"/>
                         <segue destination="Igp-Zt-qqp" kind="show" identifier="addWordsSegue" id="qdf-8t-O28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="47" y="134"/>
         </scene>
         <!--Add Word View Controller-->
         <scene sceneID="qXe-S0-4V2">
@@ -190,33 +195,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-sZ-0TO" userLabel="Team View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpq-Ge-jFb">
-                                                <rect key="frame" x="77" y="61" width="221.5" height="24"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OC-ii-E6E">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="avron" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2v7-QF-p7q">
-                                                        <rect key="frame" x="51.5" y="0.0" width="48.5" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" enters a word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5L-8j-b1L">
-                                                        <rect key="frame" x="100" y="0.0" width="121.5" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Avron enters a word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="5OC-ii-E6E">
+                                                <rect key="frame" x="37.5" y="42.5" width="300" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                                <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Bpq-Ge-jFb" firstAttribute="centerY" secondItem="zwc-sZ-0TO" secondAttribute="centerY" id="jU3-Cw-x01"/>
-                                            <constraint firstItem="Bpq-Ge-jFb" firstAttribute="centerX" secondItem="zwc-sZ-0TO" secondAttribute="centerX" id="rkr-pL-EyU"/>
+                                            <constraint firstItem="5OC-ii-E6E" firstAttribute="width" secondItem="zwc-sZ-0TO" secondAttribute="width" multiplier="0.8" id="N9i-ZP-BPf"/>
+                                            <constraint firstItem="5OC-ii-E6E" firstAttribute="centerY" secondItem="zwc-sZ-0TO" secondAttribute="centerY" id="gGx-Uz-l9i"/>
+                                            <constraint firstItem="5OC-ii-E6E" firstAttribute="centerX" secondItem="zwc-sZ-0TO" secondAttribute="centerX" id="r0t-Vi-yBs"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Noq-1w-2MG" userLabel="Enter Word Stack View">
@@ -254,16 +243,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rr6-Xs-Oa2" userLabel="Number Of Words Stack View">
-                                        <rect key="frame" x="321.5" y="226" width="33.5" height="20.5"/>
+                                        <rect key="frame" x="319" y="226" width="36" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fa-vq-Whu" userLabel="Word Number">
-                                                <rect key="frame" x="0.0" y="0.0" width="8" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fa-vq-Whu" userLabel="Word Number">
+                                                <rect key="frame" x="0.0" y="0.0" width="10.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1B-G4-bi7" userLabel="Max Number">
-                                                <rect key="frame" x="8" y="0.0" width="25.5" height="20.5"/>
+                                                <rect key="frame" x="10.5" y="0.0" width="25.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -296,15 +285,80 @@
                     <connections>
                         <outlet property="addWordView" destination="Ku0-la-bKb" id="jSb-Gy-TPC"/>
                         <outlet property="doneButton" destination="uGN-Ri-5Pi" id="lIZ-EI-1XJ"/>
-                        <outlet property="teamName" destination="2v7-QF-p7q" id="Sdo-tM-GV1"/>
+                        <outlet property="teamNameLabel" destination="5OC-ii-E6E" id="Z1A-Jj-bEi"/>
                         <outlet property="wordInput" destination="abY-fb-fvq" id="OED-Fx-sjR"/>
                         <outlet property="wordNumberLabel" destination="6Fa-vq-Whu" id="97W-NQ-FAw"/>
-                        <segue destination="bp2-Mo-ZFE" kind="show" identifier="playSegue" id="HYh-3p-Iwp"/>
+                        <segue destination="MmA-qD-abd" kind="show" id="0wq-8O-Kqc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6c-jQ-ggO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="844" y="133.5832083958021"/>
+        </scene>
+        <!--Whos Turn View Controller-->
+        <scene sceneID="oWR-my-DeT">
+            <objects>
+                <viewController id="MmA-qD-abd" customClass="WhosTurnViewController" customModule="Your_Time_s_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ni2-Tb-IjB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-kI-klM">
+                                <rect key="frame" x="0.0" y="141" width="375" height="385"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Turn to team AwesomeTeam to play !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0p6-v9-1xh">
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="168.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                        <color key="textColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make your teammates guess the word by saying anything but that word." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-QY-Kuh">
+                                        <rect key="frame" x="37.5" y="168.5" width="300" height="168.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                        <color key="textColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0o-ln-BUX">
+                                        <rect key="frame" x="134.5" y="337" width="106" height="48"/>
+                                        <color key="backgroundColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="tintColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <size key="titleShadowOffset" width="2" height="0.0"/>
+                                        <state key="normal" title="begin">
+                                            <color key="titleColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sT4-ub-rYc"/>
+                                            <action selector="startGuessing:" destination="MmA-qD-abd" eventType="touchUpInside" id="KwL-I4-CWH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="j5g-QY-Kuh" firstAttribute="width" secondItem="Z5q-kI-klM" secondAttribute="width" multiplier="0.8" id="K2E-pe-FzV"/>
+                                    <constraint firstItem="0p6-v9-1xh" firstAttribute="width" secondItem="Z5q-kI-klM" secondAttribute="width" multiplier="0.8" id="wj2-N5-1wU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z5q-kI-klM" firstAttribute="centerX" secondItem="ni2-Tb-IjB" secondAttribute="centerX" id="6BA-3R-a7A"/>
+                            <constraint firstItem="Z5q-kI-klM" firstAttribute="centerY" secondItem="ni2-Tb-IjB" secondAttribute="centerY" id="NYe-ln-lZN"/>
+                            <constraint firstItem="Z5q-kI-klM" firstAttribute="leading" secondItem="ni2-Tb-IjB" secondAttribute="leading" id="VFp-tg-ujx"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5q-kI-klM" secondAttribute="trailing" id="ea5-0O-XVC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3G0-np-03J"/>
+                    </view>
+                    <connections>
+                        <outlet property="explanationLabel" destination="j5g-QY-Kuh" id="IcB-h5-yS7"/>
+                        <outlet property="startGuessingButton" destination="Z0o-ln-BUX" id="z4L-GM-LoB"/>
+                        <outlet property="whosTurnLabel" destination="0p6-v9-1xh" id="QwW-aF-bc1"/>
+                        <segue destination="bp2-Mo-ZFE" kind="show" identifier="startGuessingSegue" id="28m-Dk-c8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UfP-Vb-fwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eTs-iC-Cmb">
@@ -323,7 +377,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Word!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-AG-nuw">
                                                 <rect key="frame" x="118.5" y="0.0" width="138" height="263.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -332,15 +386,17 @@
                                         <rect key="frame" x="0.0" y="383.5" width="375" height="263.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghw-ro-lGh">
-                                                <rect key="frame" x="0.0" y="117" width="177.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="113" width="177.5" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="Success">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLK-Rh-ha9">
-                                                <rect key="frame" x="197.5" y="117" width="177.5" height="30"/>
+                                                <rect key="frame" x="197.5" y="113" width="177.5" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="failed">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -357,10 +413,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xfs-kt-eYd"/>
                     </view>
+                    <connections>
+                        <segue destination="MmA-qD-abd" kind="show" id="dUH-2J-5TI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqD-h2-mtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1535" y="136"/>
+            <point key="canvasLocation" x="2466" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mAw-2I-hTL">
@@ -422,10 +481,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foh-aZ-xAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="134"/>
+            <point key="canvasLocation" x="3249" y="134"/>
         </scene>
     </scenes>
     <resources>
         <image name="validate" width="234" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dUH-2J-5TI"/>
+    </inferredMetricsTieBreakers>
 </document>

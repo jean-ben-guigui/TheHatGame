@@ -17,84 +17,78 @@ class TeamNamesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("The game begins, Teams are as follow : \(String(describing:teams))")
-        var teamsAboutToPlay:[Team] = []
-        for team in teams {
-            teamsAboutToPlay.append(Team.init(name: team.value, id: team.key))
-        }
-        //TODO check that there is not 2 teams sharing a same name
+        let timesUp = TimesUp([])
+        addTeam(timesUp: timesUp, button: firstTeamName)
+        addTeam(timesUp: timesUp, button: secondTeamName)
+        addTeam(timesUp: timesUp, button: thirdTeamName)
+        addTeam(timesUp: timesUp, button: fourthTeamName)
+        //TODO check that there is not 2 teams sharing a same name (nouvelle méthode pour Teams)
         if (segue.identifier == "addWordsSegue") {
             if let addWordController = segue.destination as? AddWordViewController {
-                addWordController.timesUp = TimesUp.init(teamsAboutToPlay)
+                addWordController.timesUp = timesUp
             }
         }
     }
-
-    var teams:[Int:String] = [:];
+    @IBOutlet weak var firstTeamName: UITextField!
+    @IBOutlet weak var secondTeamName: UITextField!
+    @IBOutlet weak var thirdTeamName: UITextField!
+    @IBOutlet weak var fourthTeamName: UITextField!
     
     @IBOutlet weak var startTheGameButton: UIButton!
-    
-    @IBAction func firstName(_ sender: UITextField) {
-        if let teamName = sender.text {
-            if teamName == ""{
-                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
-                teams.removeValue(forKey: 1)
-            } else {
-                //Si le nom d'équipe est rentré, on le met à jour
-                teams[1] = teamName
-            }
-        }
-        startTheGameButton.isEnabled = !teams.isEmpty
+    @IBAction func firstTeamNameEdited(_ sender: UITextField) {
+        setGameButtonState()
     }
-    
-    @IBAction func secondName(_ sender: UITextField) {
-        if let teamName = sender.text {
-            if teamName == ""{
-                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
-                teams.removeValue(forKey: 2)
-            } else {
-                //Si le nom d'équipe est rentré, on le met à jour
-                teams[2] = teamName
-            }
-        }
-        startTheGameButton.isEnabled = !teams.isEmpty
+    @IBAction func secondTeamNameEdited(_ sender: UITextField) {
+        setGameButtonState()
     }
-    @IBAction func thirdName(_ sender: UITextField) {
-        if let teamName = sender.text {
-            if teamName == ""{
-                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
-                teams.removeValue(forKey: 3)
-            } else {
-                //Si le nom d'équipe est rentré, on le met à jour
-                teams[3] = teamName
-            }
-        }
-        startTheGameButton.isEnabled = !teams.isEmpty
+    @IBAction func thirdTeamNameEdited(_ sender: UITextField) {
+         setGameButtonState()
     }
-   
-    @IBAction func forthName(_ sender: UITextField) {
-        if let teamName = sender.text {
-            if teamName == ""{
-                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
-                teams.removeValue(forKey: 4)
-            } else {
-                //Si le nom d'équipe est rentré, on le met à jour
-                teams[4] = teamName
-            }
-        }
-        startTheGameButton.isEnabled = !teams.isEmpty
+    @IBAction func fourthTeamNameEdited(_ sender: UITextField) {
+         setGameButtonState()
     }
     
     @IBAction func StartTheGame(_ sender: UIButton) {
         performSegue(withIdentifier: "addWordsSegue", sender: sender)
     }
     
-   
+//    func addTeam(sender:UITextField) {
+//        if let teamName = sender.text {
+//            if teamName == ""{
+//                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
+//                teams.removeValue(forKey: 0)
+//            } else {
+//                //Si le nom d'équipe est rentré, on le met à jour
+//                teams[0] = teamName
+//            }
+//        }
+//        startTheGameButton.isEnabled = !teams.isEmpty
+//    }
+    
+    func areTeamNamesEmpty() -> Bool {
+        if firstTeamName.text != "" || secondTeamName.text != "" || thirdTeamName.text != "" || fourthTeamName.text != "" {
+            return false
+        }
+        return true
+    }
+    
+    func addTeam(timesUp:TimesUp, button:UITextField) {
+        if let teamName = button.text {
+            if teamName != "" {
+                timesUp.teams.addTeam(name: teamName)
+            }
+        }
+    }
+    
+    func setGameButtonState() {
+        startTheGameButton.isEnabled = !areTeamNamesEmpty()
+    }
     
     func configure() {
         startTheGameButton.layer.cornerRadius = 0.125 * startTheGameButton.bounds.size.width
         startTheGameButton.layer.masksToBounds = true
         startTheGameButton.isEnabled = false
+        //TODO bind isEnabled to teamNames being all = ""
         startTheGameButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
     }
 }

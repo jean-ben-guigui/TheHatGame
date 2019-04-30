@@ -21,13 +21,14 @@ class AddWordViewController: UIViewController {
         if let selfTimesUp = timesUp {
             if (segue.identifier == "playSegue") {
                 if let destination = segue.destination as? PlayViewController {
+                    selfTimesUp.phase.state = phaseState.first
+                    
+//                    selfTimesUp.teams.setPlayingTeam(id: )
                     destination.timesUp = selfTimesUp
                 }
             }
         }
-        
     }
-    
     
     var timesUp:TimesUp?
     var wordToValidate:String =  ""
@@ -35,7 +36,7 @@ class AddWordViewController: UIViewController {
     @IBOutlet var addWordView: UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var wordNumberLabel: UILabel!
-    @IBOutlet weak var teamName: UILabel!
+    @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var wordInput: UITextField!
     
     /// Handles the validation of a word entered by the user:
@@ -56,10 +57,8 @@ class AddWordViewController: UIViewController {
                     if var wordNumberInt = Int(wordNumberString) {
                         wordNumberInt += 1
                         wordNumberLabel.text = String(wordNumberInt)
-                        if let nnTimesUp = timesUp {
-                            if let teamPlaying = nnTimesUp.getTeam(id: wordNumberInt % (nnTimesUp.teams.count)) {
-                                teamName.text = teamPlaying.name
-                            }
+                        if let teamPlaying = nnTimesUp.teams.getTeam(id: wordNumberInt % (nnTimesUp.teams.list.count)) {
+                            setTeamNameLabel(teamName: teamPlaying.name)
                         }
                     }
                 }
@@ -98,13 +97,17 @@ class AddWordViewController: UIViewController {
         self.present(alert, animated: false, completion: nil)
     }
     
+    func setTeamNameLabel(teamName:String) {
+        teamNameLabel.text = "Team " + teamName + " enters a word"
+    }
+    
     func configure(){
         doneButton.layer.cornerRadius = 0.5 * doneButton.bounds.size.width
         doneButton.layer.masksToBounds = true
         doneButton.isEnabled = false
         if let nnTimesUp = timesUp {
-            if let firstTeam = nnTimesUp.getTeam(id:1) {
-                teamName.text = firstTeam.name
+            if let firstTeam = nnTimesUp.teams.getTeam(id:0) {
+                setTeamNameLabel(teamName: firstTeam.name)
             }
         } else {
             print("ERROR : no first team injected")

@@ -14,10 +14,16 @@
 		3FE9E92422359BA100891C99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9E92222359BA100891C99 /* LaunchScreen.storyboard */; };
 		3FE9E9322237CEF100891C99 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9E9312237CEF100891C99 /* Team.swift */; };
 		3FE9E9382237DD3800891C99 /* TimesUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9E9372237DD3800891C99 /* TimesUp.swift */; };
+		D605BC172275A7B8000B1030 /* teamState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC162275A7B8000B1030 /* teamState.swift */; };
+		D605BC192275B7BE000B1030 /* phaseExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC182275B7BE000B1030 /* phaseExplanation.swift */; };
+		D605BC1B22760EFD000B1030 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC1A22760EFD000B1030 /* Phase.swift */; };
+		D605BC1D227610BD000B1030 /* phaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC1C227610BD000B1030 /* phaseState.swift */; };
+		D605BC1F22761958000B1030 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC1E22761958000B1030 /* Teams.swift */; };
 		D697883322663FEB006E7B6D /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697883222663FEB006E7B6D /* AddWordViewController.swift */; };
 		D6978837226CA68F006E7B6D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6978836226CA68F006E7B6D /* PlayViewController.swift */; };
 		D6978839226F261D006E7B6D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6978838226F261D006E7B6D /* Word.swift */; };
 		D697883B226F2A2F006E7B6D /* wordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697883A226F2A2F006E7B6D /* wordState.swift */; };
+		D697883F22724C3D006E7B6D /* WhosTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697883E22724C3D006E7B6D /* WhosTurnViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +36,16 @@
 		3FE9E92522359BA100891C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FE9E9312237CEF100891C99 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		3FE9E9372237DD3800891C99 /* TimesUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesUp.swift; sourceTree = "<group>"; };
+		D605BC162275A7B8000B1030 /* teamState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamState.swift; sourceTree = "<group>"; };
+		D605BC182275B7BE000B1030 /* phaseExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phaseExplanation.swift; sourceTree = "<group>"; };
+		D605BC1A22760EFD000B1030 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		D605BC1C227610BD000B1030 /* phaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phaseState.swift; sourceTree = "<group>"; };
+		D605BC1E22761958000B1030 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		D697883222663FEB006E7B6D /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		D6978836226CA68F006E7B6D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D6978838226F261D006E7B6D /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		D697883A226F2A2F006E7B6D /* wordState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordState.swift; sourceTree = "<group>"; };
+		D697883E22724C3D006E7B6D /* WhosTurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhosTurnViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,7 @@
 			children = (
 				3FE9E91B22359B9D00891C99 /* TeamNamesViewController.swift */,
 				D697883222663FEB006E7B6D /* AddWordViewController.swift */,
+				D697883E22724C3D006E7B6D /* WhosTurnViewController.swift */,
 				D6978836226CA68F006E7B6D /* PlayViewController.swift */,
 			);
 			path = Controllers;
@@ -110,6 +123,11 @@
 				D6978838226F261D006E7B6D /* Word.swift */,
 				3FE9E9312237CEF100891C99 /* Team.swift */,
 				3FE9E9372237DD3800891C99 /* TimesUp.swift */,
+				D605BC162275A7B8000B1030 /* teamState.swift */,
+				D605BC1E22761958000B1030 /* Teams.swift */,
+				D605BC182275B7BE000B1030 /* phaseExplanation.swift */,
+				D605BC1A22760EFD000B1030 /* Phase.swift */,
+				D605BC1C227610BD000B1030 /* phaseState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,14 +204,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D605BC1F22761958000B1030 /* Teams.swift in Sources */,
 				3FE9E9382237DD3800891C99 /* TimesUp.swift in Sources */,
+				D605BC192275B7BE000B1030 /* phaseExplanation.swift in Sources */,
 				D6978839226F261D006E7B6D /* Word.swift in Sources */,
+				D605BC172275A7B8000B1030 /* teamState.swift in Sources */,
 				3FE9E9322237CEF100891C99 /* Team.swift in Sources */,
 				D697883322663FEB006E7B6D /* AddWordViewController.swift in Sources */,
 				3FE9E91C22359B9D00891C99 /* TeamNamesViewController.swift in Sources */,
 				D6978837226CA68F006E7B6D /* PlayViewController.swift in Sources */,
 				3FE9E91A22359B9D00891C99 /* AppDelegate.swift in Sources */,
 				D697883B226F2A2F006E7B6D /* wordState.swift in Sources */,
+				D697883F22724C3D006E7B6D /* WhosTurnViewController.swift in Sources */,
+				D605BC1D227610BD000B1030 /* phaseState.swift in Sources */,
+				D605BC1B22760EFD000B1030 /* Phase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "TeamNamesViewController.areTeamNamesEmpty():TeamNamesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "firstTeamName.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddWordViewController.validateWord(_:):AddWordViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordNumberInt % (nnTimesUp.teams.count)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

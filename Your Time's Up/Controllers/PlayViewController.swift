@@ -18,7 +18,6 @@ class PlayViewController: UIViewController {
     
     var timesUp:TimesUp?
     var wordToGuess:String = ""
-    var TeamPlaying:Team? = nil
 
     /*
     // MARK: - Navigation

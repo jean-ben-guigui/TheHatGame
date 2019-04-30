@@ -12,10 +12,12 @@ class Team {
     var name:String
     var id:Int
     var scorePreviousToCurrentPhase:Int
+    var playing:Bool
     
     init(name:String, id:Int) {
         self.name = name
         self.id = id
         self.scorePreviousToCurrentPhase = 0
+        self.playing = false
     }
 }

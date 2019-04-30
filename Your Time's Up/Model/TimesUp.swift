@@ -8,23 +8,15 @@
 
 import Foundation
 
-enum phaseState {
-    case first
-    case second
-    case third
-}
-
-
 class TimesUp {
-    var teams:[Team]
-    
+    var teams:Teams
     var words:[String:wordState]
-    var phase:phaseState
+    var phase:Phase
     
     init(_ teams:[Team]) {
-        self.teams = teams
+        self.teams = Teams(teams)
         self.words = [String:wordState]()
-        self.phase = phaseState.first
+        self.phase = Phase()
     }
     
     convenience init(initWithData:Bool) {
@@ -34,12 +26,10 @@ class TimesUp {
         }
     }
     
-    func getTeam(id:Int) -> Team? {
-        for team in self.teams {
-            if team.id == id {
-                return team
-            }
+    func setPlayingTeam(id:Int) {
+        if self.phase.state == phaseState.none {
+            print("WARNING, func setPlayingTeam - there shouldn't be a team playing in phase state phaseState.none")
         }
-        return nil
+        teams.playingTeamId = id
     }
 }
