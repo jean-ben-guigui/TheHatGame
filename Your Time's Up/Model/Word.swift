@@ -12,7 +12,7 @@ struct Word {
     var description:String
     var State:wordState
     
-    init(_ description:String, teamId:Int) {
+    init(_ description:String) {
         self.description = description
         self.State = wordState.notGuessed
     }

@@ -12,18 +12,16 @@ class AddWordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("AddWordView did load")
-        // Do any additional setup after loading the view.
+        
         configure()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selfTimesUp = timesUp {
-            if (segue.identifier == "playSegue") {
+            if (segue.identifier == "whosTurnSegue") {
                 if let destination = segue.destination as? PlayViewController {
                     selfTimesUp.phase.state = phaseState.first
-                    
-//                    selfTimesUp.teams.setPlayingTeam(id: )
+                    selfTimesUp.teams.nextTeamPlaying()
                     destination.timesUp = selfTimesUp
                 }
             }
@@ -44,14 +42,12 @@ class AddWordViewController: UIViewController {
     /// - adjust the number /24 and the name of the team that should be entering the next word
     @IBAction func validateWord(_ sender: UIButton) {
         if let nnTimesUp = timesUp {
-            if nnTimesUp.words.index(forKey: wordToValidate) != nil {
+            if nnTimesUp.words.isWordIsAlreadyInTheList(wordToValidate) {
                 displayAlert(title: "Oops 😬", message: "Someone already entered that word, please choose something different")
             } else {
-                nnTimesUp.words[wordToValidate] = wordState.notGuessed
-                if(timesUp!.words.count > 23) {
-                    print(String(describing: timesUp!.words))
-                    //TODO go to next screen
-                    
+                nnTimesUp.words.addWord(wordToValidate)
+                if(timesUp!.words.list.count > 23) {
+                    performSegue(withIdentifier: "whosTurnSegue", sender: self)
                 }
                 else if let wordNumberString = wordNumberLabel.text {
                     if var wordNumberInt = Int(wordNumberString) {
@@ -77,17 +73,6 @@ class AddWordViewController: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     /// display a simple alert with the title and message and a cancel button with title "Okay"
     func displayAlert(title:String, message:String) {

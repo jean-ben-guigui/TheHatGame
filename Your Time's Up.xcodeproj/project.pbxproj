@@ -19,6 +19,7 @@
 		D605BC1B22760EFD000B1030 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC1A22760EFD000B1030 /* Phase.swift */; };
 		D605BC1D227610BD000B1030 /* phaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC1C227610BD000B1030 /* phaseState.swift */; };
 		D605BC1F22761958000B1030 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC1E22761958000B1030 /* Teams.swift */; };
+		D605BC232279A611000B1030 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605BC222279A611000B1030 /* Words.swift */; };
 		D697883322663FEB006E7B6D /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697883222663FEB006E7B6D /* AddWordViewController.swift */; };
 		D6978837226CA68F006E7B6D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6978836226CA68F006E7B6D /* PlayViewController.swift */; };
 		D6978839226F261D006E7B6D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6978838226F261D006E7B6D /* Word.swift */; };
@@ -41,6 +42,7 @@
 		D605BC1A22760EFD000B1030 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
 		D605BC1C227610BD000B1030 /* phaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phaseState.swift; sourceTree = "<group>"; };
 		D605BC1E22761958000B1030 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		D605BC222279A611000B1030 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		D697883222663FEB006E7B6D /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		D6978836226CA68F006E7B6D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D6978838226F261D006E7B6D /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				D605BC182275B7BE000B1030 /* phaseExplanation.swift */,
 				D605BC1A22760EFD000B1030 /* Phase.swift */,
 				D605BC1C227610BD000B1030 /* phaseState.swift */,
+				D605BC222279A611000B1030 /* Words.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				D697883322663FEB006E7B6D /* AddWordViewController.swift in Sources */,
 				3FE9E91C22359B9D00891C99 /* TeamNamesViewController.swift in Sources */,
 				D6978837226CA68F006E7B6D /* PlayViewController.swift in Sources */,
+				D605BC232279A611000B1030 /* Words.swift in Sources */,
 				3FE9E91A22359B9D00891C99 /* AppDelegate.swift in Sources */,
 				D697883B226F2A2F006E7B6D /* wordState.swift in Sources */,
 				D697883F22724C3D006E7B6D /* WhosTurnViewController.swift in Sources */,

@@ -288,7 +288,7 @@
                         <outlet property="teamNameLabel" destination="5OC-ii-E6E" id="Z1A-Jj-bEi"/>
                         <outlet property="wordInput" destination="abY-fb-fvq" id="OED-Fx-sjR"/>
                         <outlet property="wordNumberLabel" destination="6Fa-vq-Whu" id="97W-NQ-FAw"/>
-                        <segue destination="MmA-qD-abd" kind="show" id="0wq-8O-Kqc"/>
+                        <segue destination="MmA-qD-abd" kind="show" identifier="whosTurnSegue" id="0wq-8O-Kqc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6c-jQ-ggO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="1634" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Play View Controller-->
         <scene sceneID="eTs-iC-Cmb">
             <objects>
-                <viewController id="bp2-Mo-ZFE" sceneMemberID="viewController">
+                <viewController id="bp2-Mo-ZFE" customClass="PlayViewController" customModule="Your_Time_s_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RZi-PR-Kez">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -372,10 +372,10 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-Hi-rlP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="263.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Word!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-AG-nuw">
-                                                <rect key="frame" x="118.5" y="0.0" width="138" height="263.5"/>
+                                                <rect key="frame" x="118.5" y="0.0" width="138" height="135.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                                 <color key="textColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -383,23 +383,41 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ykq-ez-yYu">
-                                        <rect key="frame" x="0.0" y="383.5" width="375" height="263.5"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="136"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghw-ro-lGh">
-                                                <rect key="frame" x="0.0" y="113" width="177.5" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <rect key="frame" x="0.0" y="42.5" width="177.5" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <state key="normal" title="Success">
                                                     <color key="titleColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="successAction:" destination="bp2-Mo-ZFE" eventType="touchUpInside" id="a7E-u9-ZUn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLK-Rh-ha9">
-                                                <rect key="frame" x="197.5" y="113" width="177.5" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <state key="normal" title="failed">
+                                                <rect key="frame" x="197.5" y="42.5" width="177.5" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <state key="normal" title="Pass">
                                                     <color key="titleColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="passAction:" destination="bp2-Mo-ZFE" eventType="touchUpInside" id="E92-ed-GK6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="right" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-5y-jvL">
+                                        <rect key="frame" x="0.0" y="511.5" width="375" height="135.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-FF-ZlU">
+                                                <rect key="frame" x="20" y="57.5" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="20" bottom="8" trailing="20"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -414,12 +432,16 @@
                         <viewLayoutGuide key="safeArea" id="xfs-kt-eYd"/>
                     </view>
                     <connections>
-                        <segue destination="MmA-qD-abd" kind="show" id="dUH-2J-5TI"/>
+                        <outlet property="passButton" destination="mLK-Rh-ha9" id="hxT-cr-BdI"/>
+                        <outlet property="theWord" destination="dlp-AG-nuw" id="hre-ZF-iTo"/>
+                        <outlet property="timerLabel" destination="1Lf-FF-ZlU" id="Rr2-wb-RcU"/>
+                        <segue destination="MmA-qD-abd" kind="show" identifier="nextTeamSegue" id="dUH-2J-5TI"/>
+                        <segue destination="1ms-Ve-xbK" kind="show" identifier="presentResultSegue" id="JJ3-0H-3xz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqD-h2-mtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2466" y="134"/>
+            <point key="canvasLocation" x="2447" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mAw-2I-hTL">

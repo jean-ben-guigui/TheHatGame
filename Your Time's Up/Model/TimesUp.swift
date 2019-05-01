@@ -10,26 +10,33 @@ import Foundation
 
 class TimesUp {
     var teams:Teams
-    var words:[String:wordState]
+    var words:Words
     var phase:Phase
     
     init(_ teams:[Team]) {
         self.teams = Teams(teams)
-        self.words = [String:wordState]()
+        self.words = Words()
         self.phase = Phase()
     }
     
     convenience init(initWithData:Bool) {
         self.init([])
         if initWithData {
-            self.words = ["bien":wordState.notGuessed, "avron":wordState.notGuessed, "bibs":wordState.notGuessed, "fafLaMenace":wordState.notGuessed, "Choupie":wordState.notGuessed]
+//            self.words = ["bien":wordState.notGuessed, "avron":wordState.notGuessed, "bibs":wordState.notGuessed, "fafLaMenace":wordState.notGuessed, "Choupie":wordState.notGuessed]
         }
     }
     
-    func setPlayingTeam(id:Int) {
-        if self.phase.state == phaseState.none {
-            print("WARNING, func setPlayingTeam - there shouldn't be a team playing in phase state phaseState.none")
+    ///return false if game is over
+    func nextPhase() -> Bool {
+        switch phase.state {
+        case phaseState.first:
+            phase.state = phaseState.second
+            return true
+        case phaseState.second:
+            phase.state = phaseState.third
+            return true
+        default:
+            return false
         }
-        teams.playingTeamId = id
     }
 }

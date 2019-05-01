@@ -12,8 +12,6 @@ class WhosTurnViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         configure()
     }
@@ -27,15 +25,17 @@ class WhosTurnViewController: UIViewController {
     @IBAction func startGuessing(_ sender: UIButton) {
         performSegue(withIdentifier: "startGuessingSegue", sender: sender)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let selfTimesUp = timesUp {
+            if (segue.identifier == "startGuessingSegue") {
+                if let destination = segue.destination as? PlayViewController {
+                    destination.timesUp = selfTimesUp
+                    destination.randomWord()
+                }
+            }
+        }
     }
-    */
     
     func configure() {
         startGuessingButton.layer.cornerRadius = 0.125 * startGuessingButton.bounds.size.width
@@ -45,6 +45,7 @@ class WhosTurnViewController: UIViewController {
             explanationLabel.text = nnTimesUp.phase.explanation
         } else {
             //TODO throw error
+            print("ERROR - configure WhosTurnViewController")
         }
     }
 

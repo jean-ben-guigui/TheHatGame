@@ -8,7 +8,18 @@
 
 import Foundation
 
-enum wordState {
+public enum wordState {
     case notGuessed
-    case guessed(Int)
+    case guessed(Int) //teamId
+}
+
+public func ==(_ firstWord:wordState, _ secondWord:wordState) -> Bool {
+    switch (firstWord, secondWord) {
+    case (.notGuessed, .notGuessed):
+        return true
+    case let (.guessed(a), .guessed(b)):
+        return a == b
+    default:
+        return false
+    }
 }
