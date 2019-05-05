@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBN-3w-aYR" userLabel="Title View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="248.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter up to 8 team names:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter up to 4 team names:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
                                                 <rect key="frame" x="37.5" y="99" width="300" height="50.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                                 <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -259,8 +259,36 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC3-4W-RJu">
+                                        <rect key="frame" x="0.0" y="246.5" width="375" height="120.5"/>
+                                        <subviews>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-k1-MPd">
+                                                <rect key="frame" x="116.5" y="36.5" width="142" height="48"/>
+                                                <color key="backgroundColor" red="0.81960784310000001" green="1" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="tintColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                <size key="titleShadowOffset" width="2" height="0.0"/>
+                                                <state key="normal" title="start now">
+                                                    <color key="titleColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ou-i6-4PG"/>
+                                                    <action selector="startGuessing:" destination="MmA-qD-abd" eventType="touchUpInside" id="Gd0-h9-3o2"/>
+                                                    <action selector="startNow:" destination="Igp-Zt-qqp" eventType="touchUpInside" id="iUd-dg-Lfy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="iLv-k1-MPd" firstAttribute="centerX" secondItem="JC3-4W-RJu" secondAttribute="centerX" id="BCw-gD-lH8"/>
+                                            <constraint firstItem="iLv-k1-MPd" firstAttribute="centerY" secondItem="JC3-4W-RJu" secondAttribute="centerY" id="dBd-vD-ep1"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="JC3-4W-RJu" firstAttribute="leading" secondItem="grL-g7-AmG" secondAttribute="leading" id="D3Q-g3-DO0"/>
+                                    <constraint firstAttribute="trailing" secondItem="JC3-4W-RJu" secondAttribute="trailing" id="DGO-mr-pTc"/>
+                                    <constraint firstAttribute="bottom" secondItem="JC3-4W-RJu" secondAttribute="bottom" id="DUJ-9O-b1r"/>
                                     <constraint firstItem="Noq-1w-2MG" firstAttribute="centerY" secondItem="grL-g7-AmG" secondAttribute="centerY" id="PLZ-hk-0ep"/>
                                     <constraint firstItem="Noq-1w-2MG" firstAttribute="leading" secondItem="grL-g7-AmG" secondAttribute="leading" constant="20" id="WdU-Od-aTS"/>
                                     <constraint firstAttribute="trailing" secondItem="zwc-sZ-0TO" secondAttribute="trailing" id="Y5u-j9-D1q"/>
@@ -269,6 +297,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Noq-1w-2MG" secondAttribute="trailing" constant="20" id="fjT-uZ-nkF"/>
                                     <constraint firstItem="rr6-Xs-Oa2" firstAttribute="top" secondItem="Noq-1w-2MG" secondAttribute="bottom" constant="25" id="jEe-uM-w06"/>
                                     <constraint firstItem="zwc-sZ-0TO" firstAttribute="leading" secondItem="grL-g7-AmG" secondAttribute="leading" id="mhC-V2-wY9"/>
+                                    <constraint firstItem="JC3-4W-RJu" firstAttribute="top" secondItem="rr6-Xs-Oa2" secondAttribute="bottom" id="noD-w2-yq5"/>
                                     <constraint firstItem="zwc-sZ-0TO" firstAttribute="top" secondItem="grL-g7-AmG" secondAttribute="top" id="p2p-Ei-QU6"/>
                                 </constraints>
                             </view>
@@ -285,6 +314,7 @@
                     <connections>
                         <outlet property="addWordView" destination="Ku0-la-bKb" id="jSb-Gy-TPC"/>
                         <outlet property="doneButton" destination="uGN-Ri-5Pi" id="lIZ-EI-1XJ"/>
+                        <outlet property="startNowButton" destination="iLv-k1-MPd" id="kKa-dg-WWD"/>
                         <outlet property="teamNameLabel" destination="5OC-ii-E6E" id="Z1A-Jj-bEi"/>
                         <outlet property="wordInput" destination="abY-fb-fvq" id="OED-Fx-sjR"/>
                         <outlet property="wordNumberLabel" destination="6Fa-vq-Whu" id="97W-NQ-FAw"/>
@@ -433,10 +463,11 @@
                     </view>
                     <connections>
                         <outlet property="passButton" destination="mLK-Rh-ha9" id="hxT-cr-BdI"/>
-                        <outlet property="theWord" destination="dlp-AG-nuw" id="hre-ZF-iTo"/>
+                        <outlet property="theWordLabel" destination="dlp-AG-nuw" id="YQl-l2-RPR"/>
                         <outlet property="timerLabel" destination="1Lf-FF-ZlU" id="Rr2-wb-RcU"/>
                         <segue destination="MmA-qD-abd" kind="show" identifier="nextTeamSegue" id="dUH-2J-5TI"/>
                         <segue destination="1ms-Ve-xbK" kind="show" identifier="presentResultSegue" id="JJ3-0H-3xz"/>
+                        <segue destination="MmA-qD-abd" kind="show" identifier="nextPhaseSegue" id="Wft-y9-1Ql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqD-h2-mtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,6 +541,6 @@
         <image name="validate" width="234" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dUH-2J-5TI"/>
+        <segue reference="0wq-8O-Kqc"/>
     </inferredMetricsTieBreakers>
 </document>

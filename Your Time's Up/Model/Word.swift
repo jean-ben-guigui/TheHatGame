@@ -8,12 +8,23 @@
 
 import Foundation
 
-struct Word {
+class Word {
     var description:String
-    var State:wordState
+    var state:wordState
     
     init(_ description:String) {
         self.description = description
-        self.State = wordState.notGuessed
+        self.state = wordState.notGuessed
+    }
+    
+    static func ==(_ word1:Word, _ word2:Word) -> Bool {
+        if word1.description == word2.description {
+            return true
+        }
+        return false
+    }
+    
+    func setState(_ newState:wordState) {
+        state = newState
     }
 }

@@ -85,8 +85,7 @@ class TeamNamesViewController: UIViewController {
     }
     
     func configure() {
-        startTheGameButton.layer.cornerRadius = 0.125 * startTheGameButton.bounds.size.width
-        startTheGameButton.layer.masksToBounds = true
+        startTheGameButton.makeMyAnglesRound()
         startTheGameButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
         setGameButtonState()
     }

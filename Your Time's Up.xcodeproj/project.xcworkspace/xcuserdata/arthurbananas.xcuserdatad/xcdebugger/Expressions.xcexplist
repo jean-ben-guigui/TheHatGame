@@ -3,6 +3,48 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AddWordViewController.validateWord(_:):AddWordViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordNumberInt % (nnTimesUp.teams.count)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Teams.nextTeamPlaying():Teams.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.list.count">
+            </PersistentString>
+            <PersistentString
+               value = "playingTeamIndex == self.list.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.randomWord():PlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordToGuess">
+            </PersistentString>
+            <PersistentString
+               value = "notGuessedWords[randomWordIndex].description">
+            </PersistentString>
+            <PersistentString
+               value = "UInt32(notGuessedWords.count - 1)">
+            </PersistentString>
+            <PersistentString
+               value = "nnTimesUp.words.list[randomWordIndex].description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WhosTurnViewController.configure():WhosTurnViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.fire():PlayViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "TeamNamesViewController.areTeamNamesEmpty():TeamNamesViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +53,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AddWordViewController.validateWord(_:):AddWordViewController.swift">
+         contextName = "PlayViewController.successAction(_:):PlayViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "wordNumberInt % (nnTimesUp.teams.count)">
+               value = "nnTimesUp.words.list[index]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

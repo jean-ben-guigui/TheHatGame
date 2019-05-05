@@ -31,7 +31,6 @@ class WhosTurnViewController: UIViewController {
             if (segue.identifier == "startGuessingSegue") {
                 if let destination = segue.destination as? PlayViewController {
                     destination.timesUp = selfTimesUp
-                    destination.randomWord()
                 }
             }
         }
@@ -43,6 +42,9 @@ class WhosTurnViewController: UIViewController {
         startGuessingButton.isEnabled = true
         if let nnTimesUp = timesUp {
             explanationLabel.text = nnTimesUp.phase.explanation
+            if let teamPlayingName = nnTimesUp.teams.getTeamPlayingName() {
+                whosTurnLabel.text = "Turn to team \(teamPlayingName) to play !"
+            }
         } else {
             //TODO throw error
             print("ERROR - configure WhosTurnViewController")

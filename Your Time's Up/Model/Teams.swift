@@ -42,7 +42,7 @@ class Teams {
     }
     
     func nextTeamPlaying() {
-        if !self.list.isEmpty {
+        if self.list.count > 1 {
             if let nnPlayingTeamId = playingTeamId {
                 if let playingTeamIndex = getTeamIndex(id: nnPlayingTeamId) {
                     let nextPlayingTeamIndex = playingTeamIndex == self.list.count ? 0 : playingTeamIndex + 1
@@ -58,6 +58,15 @@ class Teams {
         }
     }
     
+    func getTeamPlayingName() -> String? {
+        if let id = playingTeamId {
+            if let playingTeam = getTeam(id: id) {
+                return playingTeam.name
+            }
+        }
+        return nil
+    }
+    
     private func getTeamIndex(id:Int) -> Int? {
         var index = 0
         for team in self.list {
@@ -68,18 +77,4 @@ class Teams {
         }
         return nil
     }
-//
-//    private func findHighestTeamId() -> Int? {
-//        if self.teams.count == 0 {
-//            return nil
-//        } else {
-//            var HighestTeamId = 0
-//            for team in self.teams {
-//                if team.id > HighestTeamId {
-//                    HighestTeamId = team.id
-//                }
-//            }
-//            return HighestTeamId
-//        }
-//    }
 }

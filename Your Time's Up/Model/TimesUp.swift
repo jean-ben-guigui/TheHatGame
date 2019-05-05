@@ -22,12 +22,20 @@ class TimesUp {
     convenience init(initWithData:Bool) {
         self.init([])
         if initWithData {
-//            self.words = ["bien":wordState.notGuessed, "avron":wordState.notGuessed, "bibs":wordState.notGuessed, "fafLaMenace":wordState.notGuessed, "Choupie":wordState.notGuessed]
+            self.words.addWord("johny be good")
+            self.words.addWord("clude")
+            self.words.addWord("humgreufab")
+            self.words.addWord("javac")
+            self.teams.addTeam(name: "commeMaxime")
+            self.teams.addTeam(name: "wingFab")
+            self.teams.addTeam(name: "choupie")
+            self.phase.state = phaseState.first
         }
     }
     
     ///return false if game is over
     func nextPhase() -> Bool {
+        self.words.resetAllWords()
         switch phase.state {
         case phaseState.first:
             phase.state = phaseState.second
