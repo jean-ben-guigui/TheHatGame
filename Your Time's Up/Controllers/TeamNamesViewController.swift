@@ -9,7 +9,6 @@
 import UIKit
 
 class TeamNamesViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,34 +41,49 @@ class TeamNamesViewController: UIViewController {
         setGameButtonState()
     }
     @IBAction func thirdTeamNameEdited(_ sender: UITextField) {
-         setGameButtonState()
+        setGameButtonState()
     }
     @IBAction func fourthTeamNameEdited(_ sender: UITextField) {
-         setGameButtonState()
+        setGameButtonState()
     }
     
     @IBAction func StartTheGame(_ sender: UIButton) {
         performSegue(withIdentifier: "addWordsSegue", sender: sender)
     }
     
-//    func addTeam(sender:UITextField) {
-//        if let teamName = sender.text {
-//            if teamName == ""{
-//                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
-//                teams.removeValue(forKey: 0)
-//            } else {
-//                //Si le nom d'équipe est rentré, on le met à jour
-//                teams[0] = teamName
-//            }
-//        }
-//        startTheGameButton.isEnabled = !teams.isEmpty
-//    }
+    //    func addTeam(sender:UITextField) {
+    //        if let teamName = sender.text {
+    //            if teamName == ""{
+    //                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
+    //                teams.removeValue(forKey: 0)
+    //            } else {
+    //                //Si le nom d'équipe est rentré, on le met à jour
+    //                teams[0] = teamName
+    //            }
+    //        }
+    //        startTheGameButton.isEnabled = !teams.isEmpty
+    //    }
     
     func areTeamNamesEmpty() -> Bool {
         if firstTeamName.text != "" || secondTeamName.text != "" || thirdTeamName.text != "" || fourthTeamName.text != "" {
             return false
         }
         return true
+    }
+    
+    func areThereTwoTeamsName() -> Bool {
+        let teamNames = [firstTeamName.text, secondTeamName.text, thirdTeamName.text, fourthTeamName.text]
+        var oneTeamName = false
+        for teamName in teamNames {
+            if teamName != "" {
+                if oneTeamName {
+                    return true
+                } else {
+                    oneTeamName = true
+                }
+            }
+        }
+        return false
     }
     
     func addTeam(timesUp:TimesUp, button:UITextField) {
@@ -81,7 +95,7 @@ class TeamNamesViewController: UIViewController {
     }
     
     func setGameButtonState() {
-        startTheGameButton.isEnabled = !areTeamNamesEmpty()
+        startTheGameButton.isEnabled = areThereTwoTeamsName()
     }
     
     func configure() {
@@ -90,4 +104,3 @@ class TeamNamesViewController: UIViewController {
         setGameButtonState()
     }
 }
-

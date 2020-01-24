@@ -45,7 +45,7 @@ class Teams {
         if self.list.count > 1 {
             if let nnPlayingTeamId = playingTeamId {
                 if let playingTeamIndex = getTeamIndex(id: nnPlayingTeamId) {
-                    let nextPlayingTeamIndex = playingTeamIndex == self.list.count ? 0 : playingTeamIndex + 1
+                    let nextPlayingTeamIndex = playingTeamIndex == self.list.count - 1 ? 0 : playingTeamIndex + 1
                     self.playingTeamId = self.list[nextPlayingTeamIndex].id
                 }
             } else {

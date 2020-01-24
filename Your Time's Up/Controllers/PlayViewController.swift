@@ -26,11 +26,12 @@ class PlayViewController: UIViewController {
                     destination.timesUp = selfTimesUp
                 }
             } else if (segue.identifier == "presentResultSegue") {
-//                if let destination = segue.destination as? WhosTurnViewController {
-//                    destination.timesUp = selfTimesUp
-//                }
+                if let destination = segue.destination as? WhosTurnViewController {
+                    destination.timesUp = selfTimesUp
+                }
             } else if (segue.identifier == "nextPhaseSegue") {
                 if let destination = segue.destination as? WhosTurnViewController {
+                    selfTimesUp.teams.nextTeamPlaying()
                     destination.timesUp = selfTimesUp
                 }
             }

@@ -16,12 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        ///bouchon de merde
-//        let timesUp = TimesUp(initWithData: true)
-//        if let firstViewController = window?.rootViewController as? WhosTurnViewController {
+        
+        ///bouchon pour ResultTable
+        let timesUp = TimesUp(initWithData: true)
+        if let firstViewController = window?.rootViewController as? ResultTableViewController {
 //            timesUp.teams.nextTeamPlaying()
-//            firstViewController.timesUp = timesUp
-//        }
+            firstViewController.timesUp = timesUp
+        }
+        
+        ///bouchon pour WhosTurn
+        if let firstViewController = window?.rootViewController as? WhosTurnViewController {
+            timesUp.teams.nextTeamPlaying()
+            firstViewController.timesUp = timesUp
+        }
         return true
     }
 
