@@ -26,7 +26,7 @@ class PlayViewController: UIViewController {
                     destination.timesUp = selfTimesUp
                 }
             } else if (segue.identifier == "presentResultSegue") {
-                if let destination = segue.destination as? WhosTurnViewController {
+                if let destination = segue.destination as? ResultTableViewController {
                     destination.timesUp = selfTimesUp
                 }
             } else if (segue.identifier == "nextPhaseSegue") {
@@ -79,6 +79,9 @@ class PlayViewController: UIViewController {
                 } else {
                     performSegue(withIdentifier: "presentResultSegue", sender: self)
                 }
+            } else if notGuessedWords.count == 1 {
+                passButton.isEnabled = false;
+                wordToGuess = notGuessedWords[0]
             } else if timeLeft == 0 {
                 performSegue(withIdentifier: "nextTeamSegue", sender: self)
             } else {

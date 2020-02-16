@@ -22,21 +22,19 @@ class ResultTableViewController: UITableViewController {
     
     var timesUp:TimesUp?
 
-    @IBOutlet weak var ResultTableView: UITableView!
+//    @IBOutlet weak var ResultTableView: UITableView!
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        if let nntimesUp = self.timesUp {
-//            return nntimesUp.teams.list.count
-//        }
-        return 1
+        if let nntimesUp = self.timesUp {
+            return nntimesUp.teams.list.count
+        }
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,11 +43,16 @@ class ResultTableViewController: UITableViewController {
 
         // Configure the cell’s contents with the row and section number.
         // The Basic cell style guarantees a label view is present in textLabel.
-        if let cellTextLabel = cell.textLabel {
-            cellTextLabel.text = "Row \(indexPath.row)"
-        }
-        if let cellDetailTextLabel = cell.detailTextLabel {
-            cellDetailTextLabel.text = "bien"
+        
+        if let nntimesUp = self.timesUp {
+            if let teamToDisplay = nntimesUp.teams.getTeam(id: indexPath.row) {
+                if let cellDetailTextLabel = cell.detailTextLabel {
+                    cellDetailTextLabel.text = "\(teamToDisplay.scorePreviousToCurrentPhase)"
+                }
+                if let cellTextLabel = cell.textLabel {
+                    cellTextLabel.text = "\(teamToDisplay.name)"
+                }
+            }
         }
         return cell
     }
