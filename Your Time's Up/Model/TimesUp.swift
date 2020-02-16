@@ -35,6 +35,13 @@ class TimesUp {
     
     ///return false if game is over
     func nextPhase() -> Bool {
+//        for word in self.words {
+//            for team  in teams {
+//                if word.state == wordState.guessed() {
+//                    
+//                }
+//            }
+//        }
         self.words.resetAllWords()
         switch phase.state {
         case phaseState.first:
