@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608FDBA241AAC9700745AAA /* TeamsTests.swift */; };
+		D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704F62412A84700A7FF44 /* AppDelegate.swift */; };
+		D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704F82412A84700A7FF44 /* SceneDelegate.swift */; };
+		D6E704FB2412A84700A7FF44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704FA2412A84700A7FF44 /* ViewController.swift */; };
+		D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6E704FF2412A84700A7FF44 /* The_Hat_Game.xcdatamodeld */; };
+		D6E705112412A84C00A7FF44 /* The_Hat_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705102412A84C00A7FF44 /* The_Hat_GameTests.swift */; };
+		D6E7051C2412A84C00A7FF44 /* The_Hat_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7051B2412A84C00A7FF44 /* The_Hat_GameUITests.swift */; };
+		D6E7054D2412A8E200A7FF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E705302412A8E100A7FF44 /* Main.storyboard */; };
+		D6E705512412A8E200A7FF44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705362412A8E100A7FF44 /* Constants.swift */; };
+		D6E705522412A8E200A7FF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E705372412A8E100A7FF44 /* Assets.xcassets */; };
+		D6E705532412A8E200A7FF44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E705382412A8E100A7FF44 /* LaunchScreen.storyboard */; };
+		D6E705542412A8E200A7FF44 /* visualHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7053A2412A8E100A7FF44 /* visualHelper.swift */; };
+		D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705422412A8E200A7FF44 /* ResultViewController.swift */; };
+		D6E7055C2412A8E200A7FF44 /* TeamNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */; };
+		D6E7055D2412A8E200A7FF44 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */; };
+		D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */; };
+		D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705462412A8E200A7FF44 /* PlayViewController.swift */; };
+		D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705472412A8E200A7FF44 /* AddWordViewController.swift */; };
+		D6E7056D2412AB0A00A7FF44 /* TimesUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705642412AB0A00A7FF44 /* TimesUp.swift */; };
+		D6E7056E2412AB0A00A7FF44 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705652412AB0A00A7FF44 /* Words.swift */; };
+		D6E7056F2412AB0A00A7FF44 /* wordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705662412AB0A00A7FF44 /* wordState.swift */; };
+		D6E705712412AB0A00A7FF44 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705682412AB0A00A7FF44 /* Team.swift */; };
+		D6E705732412AB0A00A7FF44 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056A2412AB0A00A7FF44 /* Word.swift */; };
+		D6E705742412AB0A00A7FF44 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056B2412AB0A00A7FF44 /* Teams.swift */; };
+		D6E705752412AB0A00A7FF44 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056C2412AB0A00A7FF44 /* Phase.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6E7050D2412A84C00A7FF44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6E704EB2412A84700A7FF44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6E704F22412A84700A7FF44;
+			remoteInfo = "The Hat Game";
+		};
+		D6E705182412A84C00A7FF44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6E704EB2412A84700A7FF44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6E704F22412A84700A7FF44;
+			remoteInfo = "The Hat Game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D608FDBA241AAC9700745AAA /* TeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTests.swift; sourceTree = "<group>"; };
+		D6E704F32412A84700A7FF44 /* The Hat Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Hat Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6E704F62412A84700A7FF44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D6E704F82412A84700A7FF44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D6E704FA2412A84700A7FF44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6E705002412A84700A7FF44 /* The_Hat_Game.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Hat_Game.xcdatamodel; sourceTree = "<group>"; };
+		D6E705072412A84C00A7FF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6E7050C2412A84C00A7FF44 /* The Hat GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Hat GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6E705102412A84C00A7FF44 /* The_Hat_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Hat_GameTests.swift; sourceTree = "<group>"; };
+		D6E705122412A84C00A7FF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6E705172412A84C00A7FF44 /* The Hat GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Hat GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6E7051B2412A84C00A7FF44 /* The_Hat_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Hat_GameUITests.swift; sourceTree = "<group>"; };
+		D6E7051D2412A84C00A7FF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6E705312412A8E100A7FF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6E705362412A8E100A7FF44 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D6E705372412A8E100A7FF44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D6E705392412A8E100A7FF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D6E7053A2412A8E100A7FF44 /* visualHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = visualHelper.swift; sourceTree = "<group>"; };
+		D6E705422412A8E200A7FF44 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNamesViewController.swift; sourceTree = "<group>"; };
+		D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhosTurnViewController.swift; sourceTree = "<group>"; };
+		D6E705462412A8E200A7FF44 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		D6E705472412A8E200A7FF44 /* AddWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
+		D6E705642412AB0A00A7FF44 /* TimesUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesUp.swift; sourceTree = "<group>"; };
+		D6E705652412AB0A00A7FF44 /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		D6E705662412AB0A00A7FF44 /* wordState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordState.swift; sourceTree = "<group>"; };
+		D6E705682412AB0A00A7FF44 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		D6E7056A2412AB0A00A7FF44 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		D6E7056B2412AB0A00A7FF44 /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		D6E7056C2412AB0A00A7FF44 /* Phase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D6E704F02412A84700A7FF44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E705092412A84C00A7FF44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E705142412A84C00A7FF44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D6E704EA2412A84700A7FF44 = {
+			isa = PBXGroup;
+			children = (
+				D6E704F52412A84700A7FF44 /* The Hat Game */,
+				D6E7050F2412A84C00A7FF44 /* The Hat GameTests */,
+				D6E7051A2412A84C00A7FF44 /* The Hat GameUITests */,
+				D6E704F42412A84700A7FF44 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6E704F42412A84700A7FF44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6E704F32412A84700A7FF44 /* The Hat Game.app */,
+				D6E7050C2412A84C00A7FF44 /* The Hat GameTests.xctest */,
+				D6E705172412A84C00A7FF44 /* The Hat GameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6E704F52412A84700A7FF44 /* The Hat Game */ = {
+			isa = PBXGroup;
+			children = (
+				D6E704F62412A84700A7FF44 /* AppDelegate.swift */,
+				D6E704F82412A84700A7FF44 /* SceneDelegate.swift */,
+				D6E704FA2412A84700A7FF44 /* ViewController.swift */,
+				D6E705632412AB0A00A7FF44 /* Model */,
+				D6E705352412A8E100A7FF44 /* Supporting files */,
+				D6E7052F2412A8E100A7FF44 /* View */,
+				D6E705412412A8E200A7FF44 /* Controllers */,
+				D6E705072412A84C00A7FF44 /* Info.plist */,
+				D6E704FF2412A84700A7FF44 /* The_Hat_Game.xcdatamodeld */,
+			);
+			path = "The Hat Game";
+			sourceTree = "<group>";
+		};
+		D6E7050F2412A84C00A7FF44 /* The Hat GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6E705102412A84C00A7FF44 /* The_Hat_GameTests.swift */,
+				D6E705122412A84C00A7FF44 /* Info.plist */,
+				D608FDBA241AAC9700745AAA /* TeamsTests.swift */,
+			);
+			path = "The Hat GameTests";
+			sourceTree = "<group>";
+		};
+		D6E7051A2412A84C00A7FF44 /* The Hat GameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D6E7051B2412A84C00A7FF44 /* The_Hat_GameUITests.swift */,
+				D6E7051D2412A84C00A7FF44 /* Info.plist */,
+			);
+			path = "The Hat GameUITests";
+			sourceTree = "<group>";
+		};
+		D6E7052F2412A8E100A7FF44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6E705302412A8E100A7FF44 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6E705352412A8E100A7FF44 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				D6E705362412A8E100A7FF44 /* Constants.swift */,
+				D6E705372412A8E100A7FF44 /* Assets.xcassets */,
+				D6E705382412A8E100A7FF44 /* LaunchScreen.storyboard */,
+				D6E7053A2412A8E100A7FF44 /* visualHelper.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		D6E705412412A8E200A7FF44 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
+				D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */,
+				D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */,
+				D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */,
+				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
+				D6E705472412A8E200A7FF44 /* AddWordViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D6E705632412AB0A00A7FF44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6E705642412AB0A00A7FF44 /* TimesUp.swift */,
+				D6E705652412AB0A00A7FF44 /* Words.swift */,
+				D6E705662412AB0A00A7FF44 /* wordState.swift */,
+				D6E705682412AB0A00A7FF44 /* Team.swift */,
+				D6E7056A2412AB0A00A7FF44 /* Word.swift */,
+				D6E7056B2412AB0A00A7FF44 /* Teams.swift */,
+				D6E7056C2412AB0A00A7FF44 /* Phase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D6E704F22412A84700A7FF44 /* The Hat Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6E705202412A84D00A7FF44 /* Build configuration list for PBXNativeTarget "The Hat Game" */;
+			buildPhases = (
+				D6E704EF2412A84700A7FF44 /* Sources */,
+				D6E704F02412A84700A7FF44 /* Frameworks */,
+				D6E704F12412A84700A7FF44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Hat Game";
+			productName = "The Hat Game";
+			productReference = D6E704F32412A84700A7FF44 /* The Hat Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D6E7050B2412A84C00A7FF44 /* The Hat GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6E705232412A84D00A7FF44 /* Build configuration list for PBXNativeTarget "The Hat GameTests" */;
+			buildPhases = (
+				D6E705082412A84C00A7FF44 /* Sources */,
+				D6E705092412A84C00A7FF44 /* Frameworks */,
+				D6E7050A2412A84C00A7FF44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6E7050E2412A84C00A7FF44 /* PBXTargetDependency */,
+			);
+			name = "The Hat GameTests";
+			productName = "The Hat GameTests";
+			productReference = D6E7050C2412A84C00A7FF44 /* The Hat GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D6E705162412A84C00A7FF44 /* The Hat GameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6E705262412A84D00A7FF44 /* Build configuration list for PBXNativeTarget "The Hat GameUITests" */;
+			buildPhases = (
+				D6E705132412A84C00A7FF44 /* Sources */,
+				D6E705142412A84C00A7FF44 /* Frameworks */,
+				D6E705152412A84C00A7FF44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6E705192412A84C00A7FF44 /* PBXTargetDependency */,
+			);
+			name = "The Hat GameUITests";
+			productName = "The Hat GameUITests";
+			productReference = D6E705172412A84C00A7FF44 /* The Hat GameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6E704EB2412A84700A7FF44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Arthur Duver";
+				TargetAttributes = {
+					D6E704F22412A84700A7FF44 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					D6E7050B2412A84C00A7FF44 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D6E704F22412A84700A7FF44;
+					};
+					D6E705162412A84C00A7FF44 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D6E704F22412A84700A7FF44;
+					};
+				};
+			};
+			buildConfigurationList = D6E704EE2412A84700A7FF44 /* Build configuration list for PBXProject "The Hat Game" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D6E704EA2412A84700A7FF44;
+			productRefGroup = D6E704F42412A84700A7FF44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6E704F22412A84700A7FF44 /* The Hat Game */,
+				D6E7050B2412A84C00A7FF44 /* The Hat GameTests */,
+				D6E705162412A84C00A7FF44 /* The Hat GameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6E704F12412A84700A7FF44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6E705532412A8E200A7FF44 /* LaunchScreen.storyboard in Resources */,
+				D6E7054D2412A8E200A7FF44 /* Main.storyboard in Resources */,
+				D6E705522412A8E200A7FF44 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E7050A2412A84C00A7FF44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E705152412A84C00A7FF44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6E704EF2412A84700A7FF44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6E7056F2412AB0A00A7FF44 /* wordState.swift in Sources */,
+				D6E704FB2412A84700A7FF44 /* ViewController.swift in Sources */,
+				D6E705752412AB0A00A7FF44 /* Phase.swift in Sources */,
+				D6E7055C2412A8E200A7FF44 /* TeamNamesViewController.swift in Sources */,
+				D6E705542412A8E200A7FF44 /* visualHelper.swift in Sources */,
+				D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */,
+				D6E7055D2412A8E200A7FF44 /* ResultTableViewController.swift in Sources */,
+				D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */,
+				D6E7056D2412AB0A00A7FF44 /* TimesUp.swift in Sources */,
+				D6E705712412AB0A00A7FF44 /* Team.swift in Sources */,
+				D6E705732412AB0A00A7FF44 /* Word.swift in Sources */,
+				D6E7056E2412AB0A00A7FF44 /* Words.swift in Sources */,
+				D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */,
+				D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */,
+				D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */,
+				D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */,
+				D6E705742412AB0A00A7FF44 /* Teams.swift in Sources */,
+				D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */,
+				D6E705512412A8E200A7FF44 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E705082412A84C00A7FF44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */,
+				D6E705112412A84C00A7FF44 /* The_Hat_GameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E705132412A84C00A7FF44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6E7051C2412A84C00A7FF44 /* The_Hat_GameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6E7050E2412A84C00A7FF44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6E704F22412A84700A7FF44 /* The Hat Game */;
+			targetProxy = D6E7050D2412A84C00A7FF44 /* PBXContainerItemProxy */;
+		};
+		D6E705192412A84C00A7FF44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6E704F22412A84700A7FF44 /* The Hat Game */;
+			targetProxy = D6E705182412A84C00A7FF44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D6E705302412A8E100A7FF44 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6E705312412A8E100A7FF44 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D6E705382412A8E100A7FF44 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6E705392412A8E100A7FF44 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D6E7051E2412A84C00A7FF44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D6E7051F2412A84C00A7FF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D6E705212412A84D00A7FF44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35XQ58TLXS;
+				INFOPLIST_FILE = "The Hat Game/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurduver.The-Hat-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D6E705222412A84D00A7FF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35XQ58TLXS;
+				INFOPLIST_FILE = "The Hat Game/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurduver.The-Hat-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D6E705242412A84D00A7FF44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35XQ58TLXS;
+				INFOPLIST_FILE = "The Hat GameTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurduver.The-Hat-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Hat Game.app/The Hat Game";
+			};
+			name = Debug;
+		};
+		D6E705252412A84D00A7FF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35XQ58TLXS;
+				INFOPLIST_FILE = "The Hat GameTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurduver.The-Hat-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Hat Game.app/The Hat Game";
+			};
+			name = Release;
+		};
+		D6E705272412A84D00A7FF44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35XQ58TLXS;
+				INFOPLIST_FILE = "The Hat GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurduver.The-Hat-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Hat Game";
+			};
+			name = Debug;
+		};
+		D6E705282412A84D00A7FF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35XQ58TLXS;
+				INFOPLIST_FILE = "The Hat GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurduver.The-Hat-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Hat Game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6E704EE2412A84700A7FF44 /* Build configuration list for PBXProject "The Hat Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6E7051E2412A84C00A7FF44 /* Debug */,
+				D6E7051F2412A84C00A7FF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6E705202412A84D00A7FF44 /* Build configuration list for PBXNativeTarget "The Hat Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6E705212412A84D00A7FF44 /* Debug */,
+				D6E705222412A84D00A7FF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6E705232412A84D00A7FF44 /* Build configuration list for PBXNativeTarget "The Hat GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6E705242412A84D00A7FF44 /* Debug */,
+				D6E705252412A84D00A7FF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6E705262412A84D00A7FF44 /* Build configuration list for PBXNativeTarget "The Hat GameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6E705272412A84D00A7FF44 /* Debug */,
+				D6E705282412A84D00A7FF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D6E704FF2412A84700A7FF44 /* The_Hat_Game.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D6E705002412A84700A7FF44 /* The_Hat_Game.xcdatamodel */,
+			);
+			currentVersion = D6E705002412A84700A7FF44 /* The_Hat_Game.xcdatamodel */;
+			path = The_Hat_Game.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D6E704EB2412A84700A7FF44 /* Project object */;
+}
