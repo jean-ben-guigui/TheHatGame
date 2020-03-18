@@ -1,5 +1,5 @@
 //
-//  wordState.swift
+//  WordState.swift
 //  Your Time's Up
 //
 //  Created by Arthur Duver on 20/04/2019.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public enum wordState {
+public enum WordState {
     case notGuessed
     case guessed(Int) //teamId
 }
 
-public func ==(_ firstWord:wordState, _ secondWord:wordState) -> Bool {
+public func ==(_ firstWord:WordState, _ secondWord:WordState) -> Bool {
     switch (firstWord, secondWord) {
     case (.notGuessed, .notGuessed):
         return true
@@ -22,4 +22,8 @@ public func ==(_ firstWord:wordState, _ secondWord:wordState) -> Bool {
     default:
         return false
     }
+}
+
+public func !=(_ firstWord:WordState, _ secondWord:WordState) -> Bool {
+    firstWord == secondWord ? false : true
 }

@@ -17,32 +17,34 @@ struct Teams {
     }
     
     func getTeam(id:Int) -> Team? {
-        for team in self.list {
-            if team.id == id {
-                return team
-            }
+        guard let team = list.first(where: {
+            $0.id == id
+        }) else {
+            return nil
         }
-        return nil
+        return team
     }
     
     /// tries to add a team, returns true if team is added, return false if not.
-    mutating func addTeam(name:String) -> Bool {
+    mutating func addTeam(name:String) throws {
         let count = list.count
-        if(count > 0) {
-            return list.insert(Team.init(name: name, id: count + 1)).inserted
+        if count > 0 {
+            let insert = list.insert(Team.init(name: name, id: count)).inserted
+            if (!insert) {
+                throw TeamsError.teamAlreadyInSet
+            }
         } else {
             list.insert(Team.init(name: name, id: 0))
-            return true
+            return
         }
     }
     
     mutating func nextTeamPlaying() {
-        guard self.list.count > 1 else {
-            // should throw
-            print("ERROR - nextTeamPlaying - not enough team in list")
-            return
+        if playingTeamId >= list.count - 1 {
+            self.playingTeamId += 1
+        } else {
+            self.playingTeamId = 0
         }
-        self.playingTeamId += 1
     }
     
     func getTeamPlayingName() -> String? {
@@ -50,5 +52,18 @@ struct Teams {
             return playingTeam.name
         }
         return nil
+    }
+    
+    mutating func addTeamScore(id: Int, score: Int) throws {
+        guard var team = getTeam(id: id) else {
+            throw TeamsError.noTeam(withId: id)
+        }
+        team.setScore(team.scorePreviousToCurrentPhase + score)
+        let bien = self.list.update(with: team)
+        if bien != nil {
+            return
+        } else {
+            throw TeamsError.updateFailed
+        }
     }
 }

@@ -11,20 +11,19 @@ import UIKit
 class TeamNamesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         configure();
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let timesUp = TimesUp([])
-        addTeam(timesUp: timesUp, button: firstTeamName)
-        addTeam(timesUp: timesUp, button: secondTeamName)
-        addTeam(timesUp: timesUp, button: thirdTeamName)
-        addTeam(timesUp: timesUp, button: fourthTeamName)
-        //TODO check that there is not 2 teams sharing a same name (nouvelle méthode pour Teams)
+        let hatGame = HatGame([])
+        addTeam(hatGame: hatGame, button: firstTeamName)
+        addTeam(hatGame: hatGame, button: secondTeamName)
+        addTeam(hatGame: hatGame, button: thirdTeamName)
+        addTeam(hatGame: hatGame, button: fourthTeamName)
+        // TODO maybe check that there is not 2 teams sharing a same name (nouvelle méthode pour Teams). Since we check it when the startTheGameButton is pressed, no real needs to do so though.
         if (segue.identifier == "addWordsSegue") {
             if let addWordController = segue.destination as? AddWordViewController {
-                addWordController.timesUp = timesUp
+                addWordController.hatGame = hatGame
             }
         }
     }
@@ -51,21 +50,11 @@ class TeamNamesViewController: UIViewController {
         performSegue(withIdentifier: "addWordsSegue", sender: sender)
     }
     
-    //    func addTeam(sender:UITextField) {
-    //        if let teamName = sender.text {
-    //            if teamName == ""{
-    //                //Si le nom d'équipe a été éffacé, on le supprime dans le dictionnary teams.
-    //                teams.removeValue(forKey: 0)
-    //            } else {
-    //                //Si le nom d'équipe est rentré, on le met à jour
-    //                teams[0] = teamName
-    //            }
-    //        }
-    //        startTheGameButton.isEnabled = !teams.isEmpty
-    //    }
-    
     func areTeamNamesEmpty() -> Bool {
-        if firstTeamName.text != "" || secondTeamName.text != "" || thirdTeamName.text != "" || fourthTeamName.text != "" {
+        if firstTeamName.text != "" ||
+            secondTeamName.text != "" ||
+            thirdTeamName.text != "" ||
+            fourthTeamName.text != "" {
             return false
         }
         return true
@@ -73,23 +62,38 @@ class TeamNamesViewController: UIViewController {
     
     func areThereTwoTeamsName() -> Bool {
         let teamNames = [firstTeamName.text, secondTeamName.text, thirdTeamName.text, fourthTeamName.text]
-        var oneTeamName = false
+        var teamCount = 0
         for teamName in teamNames {
             if teamName != "" {
-                if oneTeamName {
+                teamCount += 1
+                if teamCount > 1 {
                     return true
-                } else {
-                    oneTeamName = true
                 }
             }
         }
         return false
     }
     
-    func addTeam(timesUp:TimesUp, button:UITextField) {
+    func addTeam(hatGame:HatGame, button:UITextField) {
         if let teamName = button.text {
             if teamName != "" {
-                timesUp.teams.addTeam(name: teamName)
+                do {
+                    try hatGame.addTeam(name: teamName)
+                } catch WordSetError.wordAlreadyInSet(let word) {
+                    let presenter = AlertPresenter(
+                        title: Constants.troubleAlertTitle,
+                        message: Constants.wordAlreadyEntered(word: word),
+                        completionAction: nil
+                    )
+                    presenter.present(in: self)
+                } catch {
+                    let presenter = AlertPresenter(
+                        title: Constants.troubleAlertTitle,
+                        message: Constants.unknowErrorMessage,
+                        completionAction: nil
+                    )
+                    presenter.present(in: self)
+                }
             }
         }
     }

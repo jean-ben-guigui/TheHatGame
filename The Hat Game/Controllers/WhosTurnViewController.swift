@@ -16,7 +16,7 @@ class WhosTurnViewController: UIViewController {
         configure()
     }
     
-    var timesUp:TimesUp?
+    var hatGame:HatGame?
     
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var whosTurnLabel: UILabel!
@@ -27,10 +27,10 @@ class WhosTurnViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let selfTimesUp = timesUp {
+        if let selfHatGame = hatGame {
             if (segue.identifier == "startGuessingSegue") {
                 if let destination = segue.destination as? PlayViewController {
-                    destination.timesUp = selfTimesUp
+                    destination.hatGame = selfHatGame
                 }
             }
         }
@@ -40,15 +40,15 @@ class WhosTurnViewController: UIViewController {
         startGuessingButton.layer.cornerRadius = 0.125 * startGuessingButton.bounds.size.width
         startGuessingButton.layer.masksToBounds = true
         startGuessingButton.isEnabled = true
-        if let nnTimesUp = timesUp {
-            explanationLabel.text = nnTimesUp.phase.explanation
-            if let teamPlayingName = nnTimesUp.teams.getTeamPlayingName() {
-                whosTurnLabel.text = "Turn to team \(teamPlayingName) to play !"
-            }
-        } else {
-            //TODO throw error
-            print("ERROR - configure WhosTurnViewController")
+        guard let hatGame = hatGame else {
+            fatalError("The hatGame was not injected properly")
+        }
+        explanationLabel.text = hatGame.phase.explanation
+        do {
+            let teamPlayingName = try hatGame.getTeamPlayingName()
+            whosTurnLabel.text = "Turn to team \(teamPlayingName) to play !"
+        } catch {
+            print("no team playing at the moment")
         }
     }
-
 }

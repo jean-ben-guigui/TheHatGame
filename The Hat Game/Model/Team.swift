@@ -24,4 +24,12 @@ struct Team: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+    
+    static func ==(_ lw:Team, _ rw:Team) -> Bool {
+        lw.id == rw.id
+    }
+    
+    mutating func setScore(_ score: Int) {
+        self.scorePreviousToCurrentPhase = score
+    }
 }

@@ -10,11 +10,11 @@ import Foundation
 
 struct Word: Hashable {
     var description:String
-    var state:wordState
+    var state:WordState
     
     init(_ description:String) {
         self.description = description
-        self.state = wordState.notGuessed
+        self.state = WordState.notGuessed
     }
     
     static func ==(_ word1:Word, _ word2:Word) -> Bool {
@@ -25,7 +25,7 @@ struct Word: Hashable {
         hasher.combine(description)
     }
     
-    mutating func setState(_ newState:wordState) {
+    mutating func setState(_ newState:WordState) {
         state = newState
     }
 }

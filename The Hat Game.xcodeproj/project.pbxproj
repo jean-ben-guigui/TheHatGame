@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608FDBA241AAC9700745AAA /* TeamsTests.swift */; };
+		D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68896F9241C3BAA0080EA28 /* TeamsError.swift */; };
+		D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */; };
 		D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704F62412A84700A7FF44 /* AppDelegate.swift */; };
 		D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704F82412A84700A7FF44 /* SceneDelegate.swift */; };
 		D6E704FB2412A84700A7FF44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704FA2412A84700A7FF44 /* ViewController.swift */; };
@@ -18,20 +20,20 @@
 		D6E705512412A8E200A7FF44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705362412A8E100A7FF44 /* Constants.swift */; };
 		D6E705522412A8E200A7FF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E705372412A8E100A7FF44 /* Assets.xcassets */; };
 		D6E705532412A8E200A7FF44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E705382412A8E100A7FF44 /* LaunchScreen.storyboard */; };
-		D6E705542412A8E200A7FF44 /* visualHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7053A2412A8E100A7FF44 /* visualHelper.swift */; };
+		D6E705542412A8E200A7FF44 /* VisualHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7053A2412A8E100A7FF44 /* VisualHelper.swift */; };
 		D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705422412A8E200A7FF44 /* ResultViewController.swift */; };
 		D6E7055C2412A8E200A7FF44 /* TeamNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */; };
 		D6E7055D2412A8E200A7FF44 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */; };
 		D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */; };
 		D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705462412A8E200A7FF44 /* PlayViewController.swift */; };
 		D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705472412A8E200A7FF44 /* AddWordViewController.swift */; };
-		D6E7056D2412AB0A00A7FF44 /* TimesUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705642412AB0A00A7FF44 /* TimesUp.swift */; };
-		D6E7056E2412AB0A00A7FF44 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705652412AB0A00A7FF44 /* Words.swift */; };
-		D6E7056F2412AB0A00A7FF44 /* wordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705662412AB0A00A7FF44 /* wordState.swift */; };
+		D6E7056D2412AB0A00A7FF44 /* HatGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705642412AB0A00A7FF44 /* HatGame.swift */; };
+		D6E7056E2412AB0A00A7FF44 /* WordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705652412AB0A00A7FF44 /* WordSet.swift */; };
+		D6E7056F2412AB0A00A7FF44 /* WordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705662412AB0A00A7FF44 /* WordState.swift */; };
 		D6E705712412AB0A00A7FF44 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705682412AB0A00A7FF44 /* Team.swift */; };
 		D6E705732412AB0A00A7FF44 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056A2412AB0A00A7FF44 /* Word.swift */; };
-		D6E705742412AB0A00A7FF44 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056B2412AB0A00A7FF44 /* Teams.swift */; };
 		D6E705752412AB0A00A7FF44 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056C2412AB0A00A7FF44 /* Phase.swift */; };
+		D6FB14F3241FE41B006C6055 /* WordSetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB14F2241FE41B006C6055 /* WordSetError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		D608FDBA241AAC9700745AAA /* TeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTests.swift; sourceTree = "<group>"; };
+		D68896F9241C3BAA0080EA28 /* TeamsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsError.swift; sourceTree = "<group>"; };
+		D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPresenter.swift; sourceTree = "<group>"; };
 		D6E704F32412A84700A7FF44 /* The Hat Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Hat Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E704F62412A84700A7FF44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6E704F82412A84700A7FF44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,20 +73,20 @@
 		D6E705362412A8E100A7FF44 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D6E705372412A8E100A7FF44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6E705392412A8E100A7FF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D6E7053A2412A8E100A7FF44 /* visualHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = visualHelper.swift; sourceTree = "<group>"; };
+		D6E7053A2412A8E100A7FF44 /* VisualHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualHelper.swift; sourceTree = "<group>"; };
 		D6E705422412A8E200A7FF44 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNamesViewController.swift; sourceTree = "<group>"; };
 		D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 		D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhosTurnViewController.swift; sourceTree = "<group>"; };
 		D6E705462412A8E200A7FF44 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D6E705472412A8E200A7FF44 /* AddWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
-		D6E705642412AB0A00A7FF44 /* TimesUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesUp.swift; sourceTree = "<group>"; };
-		D6E705652412AB0A00A7FF44 /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
-		D6E705662412AB0A00A7FF44 /* wordState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordState.swift; sourceTree = "<group>"; };
+		D6E705642412AB0A00A7FF44 /* HatGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatGame.swift; sourceTree = "<group>"; };
+		D6E705652412AB0A00A7FF44 /* WordSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSet.swift; sourceTree = "<group>"; };
+		D6E705662412AB0A00A7FF44 /* WordState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordState.swift; sourceTree = "<group>"; };
 		D6E705682412AB0A00A7FF44 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		D6E7056A2412AB0A00A7FF44 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		D6E7056B2412AB0A00A7FF44 /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		D6E7056C2412AB0A00A7FF44 /* Phase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		D6FB14F2241FE41B006C6055 /* WordSetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D68896F8241C3B920080EA28 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D68896F9241C3BAA0080EA28 /* TeamsError.swift */,
+				D6FB14F2241FE41B006C6055 /* WordSetError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		D6E704EA2412A84700A7FF44 = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +189,8 @@
 		D6E705352412A8E100A7FF44 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				D6E705362412A8E100A7FF44 /* Constants.swift */,
 				D6E705372412A8E100A7FF44 /* Assets.xcassets */,
 				D6E705382412A8E100A7FF44 /* LaunchScreen.storyboard */,
-				D6E7053A2412A8E100A7FF44 /* visualHelper.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -187,12 +198,12 @@
 		D6E705412412A8E200A7FF44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
 				D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */,
-				D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */,
+				D6E705472412A8E200A7FF44 /* AddWordViewController.swift */,
 				D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */,
 				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
-				D6E705472412A8E200A7FF44 /* AddWordViewController.swift */,
+				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
+				D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,15 +211,26 @@
 		D6E705632412AB0A00A7FF44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6E705642412AB0A00A7FF44 /* TimesUp.swift */,
-				D6E705652412AB0A00A7FF44 /* Words.swift */,
-				D6E705662412AB0A00A7FF44 /* wordState.swift */,
+				D6FB14F1241FBC40006C6055 /* Helpers */,
+				D68896F8241C3B920080EA28 /* Errors */,
+				D6E705642412AB0A00A7FF44 /* HatGame.swift */,
+				D6E705652412AB0A00A7FF44 /* WordSet.swift */,
+				D6E705662412AB0A00A7FF44 /* WordState.swift */,
 				D6E705682412AB0A00A7FF44 /* Team.swift */,
 				D6E7056A2412AB0A00A7FF44 /* Word.swift */,
-				D6E7056B2412AB0A00A7FF44 /* Teams.swift */,
 				D6E7056C2412AB0A00A7FF44 /* Phase.swift */,
+				D6E705362412A8E100A7FF44 /* Constants.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6FB14F1241FBC40006C6055 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D6E7053A2412A8E100A7FF44 /* VisualHelper.swift */,
+				D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,23 +364,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6E7056F2412AB0A00A7FF44 /* wordState.swift in Sources */,
+				D6E7056F2412AB0A00A7FF44 /* WordState.swift in Sources */,
 				D6E704FB2412A84700A7FF44 /* ViewController.swift in Sources */,
 				D6E705752412AB0A00A7FF44 /* Phase.swift in Sources */,
 				D6E7055C2412A8E200A7FF44 /* TeamNamesViewController.swift in Sources */,
-				D6E705542412A8E200A7FF44 /* visualHelper.swift in Sources */,
+				D6E705542412A8E200A7FF44 /* VisualHelper.swift in Sources */,
+				D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */,
 				D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */,
+				D6FB14F3241FE41B006C6055 /* WordSetError.swift in Sources */,
 				D6E7055D2412A8E200A7FF44 /* ResultTableViewController.swift in Sources */,
+				D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */,
 				D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */,
-				D6E7056D2412AB0A00A7FF44 /* TimesUp.swift in Sources */,
+				D6E7056D2412AB0A00A7FF44 /* HatGame.swift in Sources */,
 				D6E705712412AB0A00A7FF44 /* Team.swift in Sources */,
 				D6E705732412AB0A00A7FF44 /* Word.swift in Sources */,
-				D6E7056E2412AB0A00A7FF44 /* Words.swift in Sources */,
+				D6E7056E2412AB0A00A7FF44 /* WordSet.swift in Sources */,
 				D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */,
 				D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */,
 				D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */,
 				D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */,
-				D6E705742412AB0A00A7FF44 /* Teams.swift in Sources */,
 				D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */,
 				D6E705512412A8E200A7FF44 /* Constants.swift in Sources */,
 			);

@@ -19,26 +19,27 @@ class PlayViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let selfTimesUp = timesUp {
-            if (segue.identifier == "nextTeamSegue") {
-                if let destination = segue.destination as? WhosTurnViewController {
-                    selfTimesUp.teams.nextTeamPlaying()
-                    destination.timesUp = selfTimesUp
-                }
-            } else if (segue.identifier == "presentResultSegue") {
-                if let destination = segue.destination as? ResultTableViewController {
-                    destination.timesUp = selfTimesUp
-                }
-            } else if (segue.identifier == "nextPhaseSegue") {
-                if let destination = segue.destination as? WhosTurnViewController {
-                    selfTimesUp.teams.nextTeamPlaying()
-                    destination.timesUp = selfTimesUp
-                }
+        guard let hatGame = hatGame else {
+            fatalError()
+        }
+        if (segue.identifier == "nextTeamSegue") {
+            if let destination = segue.destination as? WhosTurnViewController {
+                hatGame.nextTeamPlaying()
+                destination.hatGame = hatGame
+            }
+        } else if (segue.identifier == "presentResultSegue") {
+            if let destination = segue.destination as? ResultTableViewController {
+                destination.hatGame = hatGame
+            }
+        } else if (segue.identifier == "nextPhaseSegue") {
+            if let destination = segue.destination as? WhosTurnViewController {
+                hatGame.nextTeamPlaying()
+                destination.hatGame = hatGame
             }
         }
     }
     
-    var timesUp:TimesUp?
+    var hatGame:HatGame?
     var wordToGuess:Word? {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -57,11 +58,11 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBAction func successAction(_ sender: UIButton) {
-        guard let timesUp = self.timesUp else {
-            return
+        guard let hatGame = self.hatGame else {
+            fatalError()
         }
-        if var word = wordToGuess {
-            timesUp.words.setGuessed(word, teamId: timesUp.teams.playingTeamId)
+        if let word = wordToGuess {
+            hatGame.setGuessedWord(word, teamId: hatGame.playingTeamId)
         }
         randomWord()
     }
@@ -72,29 +73,30 @@ class PlayViewController: UIViewController {
     
     ///does some check Up and generate a new word if it is appropriate
     func randomWord() {
-        if let nnTimesUp = timesUp {
-            let notGuessedWords = nnTimesUp.words.getNotGuessedWordsDescription()
-            if notGuessedWords.count == 0 {
-                if nnTimesUp.nextPhase(){
-                    performSegue(withIdentifier: "nextPhaseSegue", sender: self)
-                } else {
-                    performSegue(withIdentifier: "presentResultSegue", sender: self)
-                }
-            } else if notGuessedWords.count == 1 {
-                passButton.isEnabled = false;
-                wordToGuess = notGuessedWords[0]
-            } else if timeLeft == 0 {
-                performSegue(withIdentifier: "nextTeamSegue", sender: self)
+        guard let hatGame = self.hatGame else {
+            fatalError()
+        }
+        let notGuessedWords = hatGame.wordSet.getNotGuessedWords()
+        if notGuessedWords.count == 0 {
+            if hatGame.nextPhase(){
+                performSegue(withIdentifier: "nextPhaseSegue", sender: self)
             } else {
-                let randomWordIndex = Int(arc4random_uniform(UInt32(notGuessedWords.count - 1)))
-                let newWordToGuess = notGuessedWords[randomWordIndex]
-                if let oldWordToGuess = wordToGuess {
-                    if oldWordToGuess == newWordToGuess {
-                        return randomWord()
-                    }
-                }
-                wordToGuess = newWordToGuess
+                performSegue(withIdentifier: "presentResultSegue", sender: self)
             }
+        } else if notGuessedWords.count == 1 {
+            passButton.isEnabled = false;
+            wordToGuess = notGuessedWords[0]
+        } else if timeLeft == 0 {
+            performSegue(withIdentifier: "nextTeamSegue", sender: self)
+        } else {
+            let randomWordIndex = Int(arc4random_uniform(UInt32(notGuessedWords.count - 1)))
+            let newWordToGuess = notGuessedWords[randomWordIndex]
+            if let oldWordToGuess = wordToGuess {
+                if oldWordToGuess == newWordToGuess {
+                    return randomWord()
+                }
+            }
+            wordToGuess = newWordToGuess
         }
     }
     
@@ -112,15 +114,16 @@ class PlayViewController: UIViewController {
     
     func configure() {
         randomWord()
-        if let nnTimesUp = timesUp {
-            if nnTimesUp.phase.state == 1 {
+        if let nnHatGame = hatGame {
+            if nnHatGame.phase.state == 1 {
                 passButton.isEnabled = false
             } else {
                 passButton.isEnabled = true
                 passButton.setTitle("pass", for:UIControl.State.normal)
             }
         }
-        timeLeft = 30
+        let time = self.timeLeft ?? Constants.defaultRoundTime
+        self.timerLabel.text = "\(time) sec"
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
         timer?.tolerance = 0.100
     }
