@@ -21,9 +21,9 @@ class HatGame {
         self.phase.state = 1
     }
     
-    convenience init(initWithData:Bool) {
+    convenience init(data:Bool, result: Bool) {
         self.init([])
-        if initWithData {
+        if data {
             do {
                 try wordSet.addWord("johny be good")
                 try wordSet.addWord("clude")
@@ -36,6 +36,14 @@ class HatGame {
                 return
             }
             self.phase.state = 1
+        }
+        if result {
+            do {
+                try addTeamScore(id: 0, score: 5)
+                try addTeamScore(id: 1, score: 12)
+            } catch {
+                return
+            }
         }
     }
     

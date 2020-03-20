@@ -28,7 +28,7 @@ class PlayViewController: UIViewController {
                 destination.hatGame = hatGame
             }
         } else if (segue.identifier == "presentResultSegue") {
-            if let destination = segue.destination as? ResultTableViewController {
+            if let destination = segue.destination as? ResultViewController {
                 destination.hatGame = hatGame
             }
         } else if (segue.identifier == "nextPhaseSegue") {

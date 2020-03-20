@@ -1,5 +1,5 @@
 //
-//  ResultTableViewController.swift
+//  ResultViewController.swift
 //  Your Time's Up
 //
 //  Created by Arthur Duver on 19/05/2019.

@@ -19,13 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         ///bouchon pour ResultTable
-        let hatGame = HatGame(initWithData: true)
-        if let firstViewController = window?.rootViewController as? ResultTableViewController {
+        
+        if let firstViewController = window?.rootViewController as? ResultViewController {
+            let hatGame = HatGame(data: true, result: true)
             firstViewController.hatGame = hatGame
         }
         
         ///bouchon pour WhosTurn
         if let firstViewController = window?.rootViewController as? WhosTurnViewController {
+            let hatGame = HatGame(data: true, result: false)
             firstViewController.hatGame = hatGame
         }
     }
