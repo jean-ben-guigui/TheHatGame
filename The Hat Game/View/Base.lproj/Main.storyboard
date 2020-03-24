@@ -477,24 +477,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyy-sv-epR" userLabel="WinnerView">
-                                <rect key="frame" x="0.0" y="51" width="375" height="190.5"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="267"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳 AwesomeTeam won! 🥳" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-Be-pmS">
-                                        <rect key="frame" x="10" y="66.5" width="355" height="57.5"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="48"/>
-                                        <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I6V-ji-jbo">
+                                        <rect key="frame" x="20" y="44.5" width="335" height="178"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳🥳🥳" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="iC9-x6-mYa">
+                                                <rect key="frame" x="89.5" y="0.0" width="156" height="57.5"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="48"/>
+                                                <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text=" AwesomeTeam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="GeU-FX-nB2">
+                                                <rect key="frame" x="10" y="57.5" width="315.5" height="70"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="48"/>
+                                                <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is the winner!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-Be-pmS">
+                                                <rect key="frame" x="49.5" y="127.5" width="236" height="50.5"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
+                                                <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fEs-Be-pmS" secondAttribute="trailing" constant="10" id="073-83-Na9"/>
-                                    <constraint firstItem="fEs-Be-pmS" firstAttribute="centerY" secondItem="zyy-sv-epR" secondAttribute="centerY" id="drh-YR-IN9"/>
-                                    <constraint firstItem="fEs-Be-pmS" firstAttribute="leading" secondItem="zyy-sv-epR" secondAttribute="leading" constant="10" id="v35-pi-ovf"/>
+                                    <constraint firstItem="I6V-ji-jbo" firstAttribute="leading" secondItem="zyy-sv-epR" secondAttribute="leading" constant="20" symbolic="YES" id="3ti-Th-Alx"/>
+                                    <constraint firstItem="I6V-ji-jbo" firstAttribute="height" secondItem="zyy-sv-epR" secondAttribute="height" multiplier="2:3" id="Uxv-dj-xxl"/>
+                                    <constraint firstAttribute="trailing" secondItem="I6V-ji-jbo" secondAttribute="trailing" constant="20" symbolic="YES" id="iJj-xR-dAL"/>
+                                    <constraint firstItem="I6V-ji-jbo" firstAttribute="centerY" secondItem="zyy-sv-epR" secondAttribute="centerY" id="zUT-CB-Ewo"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TaI-Bs-3SB">
-                                <rect key="frame" x="0.0" y="241.5" width="375" height="425.5"/>
+                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
                                 <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="p3Q-zf-gl9">
@@ -503,7 +522,7 @@
                                     <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" id="dJ4-wC-sRY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" id="dJ4-wC-sRY" customClass="ResultCell" customModule="The_Hat_Game" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dJ4-wC-sRY" id="2OB-bl-M4D">
@@ -547,6 +566,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="rank" destination="zRw-st-beA" id="qEu-Gi-nib"/>
+                                            <outlet property="score" destination="t5m-xU-SeO" id="xOl-t1-jFy"/>
+                                            <outlet property="teamName" destination="1VY-mg-1Gx" id="25i-hm-aEH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -558,19 +582,21 @@
                         <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TaI-Bs-3SB" firstAttribute="leading" secondItem="fRE-4T-WD5" secondAttribute="leading" id="2LU-Fq-ewE"/>
-                            <constraint firstItem="TaI-Bs-3SB" firstAttribute="top" secondItem="zyy-sv-epR" secondAttribute="bottom" id="4iJ-Mk-Kfd"/>
-                            <constraint firstItem="zyy-sv-epR" firstAttribute="height" secondItem="0t3-5w-EVu" secondAttribute="height" multiplier="2:7" id="APq-fX-aFS"/>
+                            <constraint firstItem="zyy-sv-epR" firstAttribute="height" secondItem="0t3-5w-EVu" secondAttribute="height" multiplier="2:5" id="APq-fX-aFS"/>
                             <constraint firstItem="zyy-sv-epR" firstAttribute="trailing" secondItem="fRE-4T-WD5" secondAttribute="trailing" id="Ecp-SM-kmS"/>
                             <constraint firstItem="zyy-sv-epR" firstAttribute="leading" secondItem="fRE-4T-WD5" secondAttribute="leading" id="Sd5-sS-Ooo"/>
                             <constraint firstItem="fRE-4T-WD5" firstAttribute="trailing" secondItem="TaI-Bs-3SB" secondAttribute="trailing" id="bHM-Zc-2If"/>
                             <constraint firstItem="fRE-4T-WD5" firstAttribute="bottom" secondItem="TaI-Bs-3SB" secondAttribute="bottom" id="klg-Ti-D7D"/>
-                            <constraint firstItem="zyy-sv-epR" firstAttribute="top" secondItem="fRE-4T-WD5" secondAttribute="top" constant="51" id="oBG-cC-Gas"/>
+                            <constraint firstItem="zyy-sv-epR" firstAttribute="top" secondItem="fRE-4T-WD5" secondAttribute="top" constant="50" id="oBG-cC-Gas"/>
+                            <constraint firstItem="TaI-Bs-3SB" firstAttribute="top" secondItem="zyy-sv-epR" secondAttribute="bottom" id="zJN-Vi-G24"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fRE-4T-WD5"/>
                     </view>
                     <navigationItem key="navigationItem" id="qWb-dS-5Ph"/>
                     <connections>
                         <outlet property="resultTableView" destination="TaI-Bs-3SB" id="8lF-3H-Fhx"/>
+                        <outlet property="winnerIsLabel" destination="fEs-Be-pmS" id="87d-Zd-RsD"/>
+                        <outlet property="winnerTeamName" destination="GeU-FX-nB2" id="v8F-mb-3xI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4L-Li-kVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

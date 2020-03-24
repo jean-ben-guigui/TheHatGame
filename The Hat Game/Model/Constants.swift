@@ -25,4 +25,5 @@ struct Constants {
     }
     static let unknowErrorMessage = "An unknown error has happened"
     static let defaultRoundTime = 3
+    static let cannotDisplayResultsAlertMessage = "The game is over, but the results are unavailable, sorry about that"
 }

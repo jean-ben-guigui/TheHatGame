@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608FDBA241AAC9700745AAA /* TeamsTests.swift */; };
 		D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68896F9241C3BAA0080EA28 /* TeamsError.swift */; };
+		D6B920092424C70300D34F10 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B920082424C70300D34F10 /* ResultCell.swift */; };
 		D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */; };
 		D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704F62412A84700A7FF44 /* AppDelegate.swift */; };
 		D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E704F82412A84700A7FF44 /* SceneDelegate.swift */; };
@@ -23,7 +24,6 @@
 		D6E705542412A8E200A7FF44 /* VisualHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7053A2412A8E100A7FF44 /* VisualHelper.swift */; };
 		D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705422412A8E200A7FF44 /* ResultViewController.swift */; };
 		D6E7055C2412A8E200A7FF44 /* TeamNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */; };
-		D6E7055D2412A8E200A7FF44 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */; };
 		D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */; };
 		D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705462412A8E200A7FF44 /* PlayViewController.swift */; };
 		D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705472412A8E200A7FF44 /* AddWordViewController.swift */; };
@@ -56,6 +56,7 @@
 /* Begin PBXFileReference section */
 		D608FDBA241AAC9700745AAA /* TeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTests.swift; sourceTree = "<group>"; };
 		D68896F9241C3BAA0080EA28 /* TeamsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsError.swift; sourceTree = "<group>"; };
+		D6B920082424C70300D34F10 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPresenter.swift; sourceTree = "<group>"; };
 		D6E704F32412A84700A7FF44 /* The Hat Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Hat Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E704F62412A84700A7FF44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		D6E7053A2412A8E100A7FF44 /* VisualHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualHelper.swift; sourceTree = "<group>"; };
 		D6E705422412A8E200A7FF44 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNamesViewController.swift; sourceTree = "<group>"; };
-		D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 		D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhosTurnViewController.swift; sourceTree = "<group>"; };
 		D6E705462412A8E200A7FF44 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		D6E705472412A8E200A7FF44 /* AddWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D6E705302412A8E100A7FF44 /* Main.storyboard */,
+				D6B920082424C70300D34F10 /* ResultCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,7 +204,6 @@
 				D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */,
 				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
 				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
-				D6E705442412A8E200A7FF44 /* ResultTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,7 +372,6 @@
 				D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */,
 				D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */,
 				D6FB14F3241FE41B006C6055 /* WordSetError.swift in Sources */,
-				D6E7055D2412A8E200A7FF44 /* ResultTableViewController.swift in Sources */,
 				D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */,
 				D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */,
 				D6E7056D2412AB0A00A7FF44 /* HatGame.swift in Sources */,
@@ -383,6 +382,7 @@
 				D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */,
 				D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */,
 				D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */,
+				D6B920092424C70300D34F10 /* ResultCell.swift in Sources */,
 				D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */,
 				D6E705512412A8E200A7FF44 /* Constants.swift in Sources */,
 			);

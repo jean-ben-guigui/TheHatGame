@@ -130,6 +130,13 @@ class HatGame {
         }
     }
     
+    func getTeamSortedByScores() throws -> [Team] {
+        let teamsSorted = try teams.sorted(by: { (lTeam, rTeam) throws -> Bool in
+         lTeam.scorePreviousToCurrentPhase > rTeam.scorePreviousToCurrentPhase
+        })
+        return teamsSorted
+    }
+    
     // MARK: - WordSet
     func wordCount() -> Int {
         return wordSet.count()
