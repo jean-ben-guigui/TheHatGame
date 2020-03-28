@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class TeamNamesViewController: UIViewController {
+    
+    private lazy var wordSetEntityProvider: WordSetEntityProvider = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let provider = WordSetEntityProvider(with: appDelegate.coreDataStack.persistentContainer,
+                                   fetchedResultsControllerDelegate: nil)
+        return provider
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure();
@@ -24,10 +33,16 @@ class TeamNamesViewController: UIViewController {
         if (segue.identifier == "addWordsSegue") {
             if let addWordController = segue.destination as? AddWordViewController {
                 addWordController.hatGame = hatGame
+                wordSetEntityProvider.addWordSet(in: wordSetEntityProvider.persistentContainer.viewContext, completionHandler: { (wordSetEntity) in
+                    addWordController.wordSet = wordSetEntity
+                })
             }
         }
+        if (segue.identifier == "chooseWordSetSegue") {
+            // TODO add wordSetsToPass to the destination controller
+        }
     }
-    @IBOutlet weak var firstTeamName: UITextField!
+    @IBOutlet private weak var firstTeamName: UITextField!
     @IBOutlet weak var secondTeamName: UITextField!
     @IBOutlet weak var thirdTeamName: UITextField!
     @IBOutlet weak var fourthTeamName: UITextField!
@@ -47,7 +62,19 @@ class TeamNamesViewController: UIViewController {
     }
     
     @IBAction func StartTheGame(_ sender: UIButton) {
-        performSegue(withIdentifier: "addWordsSegue", sender: sender)
+        // fetches the WordSet objects from the database.
+        if wordSetEntityProvider.areWordSetsNil() {
+            self.performSegue(withIdentifier: "addWordsSegue", sender: sender)
+        } else {
+            let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (alertAction)  in
+                self.performSegue(withIdentifier: "chooseWordSetSegue", sender: sender)
+            })
+            let createNewSetAction = UIAlertAction(title: "No, create a new set", style: .cancel, handler: { [unowned self] (alertAction) in
+                self.performSegue(withIdentifier: "addWordsSegue", sender: sender)
+            })
+            let chooseWordSetPresenter = AlertPresenter(title: nil, message: "Do you want to use a set of words that you previously made?", completionActions: [yesAction, createNewSetAction])
+            chooseWordSetPresenter.present(in: self)
+        }
     }
     
     func areTeamNamesEmpty() -> Bool {

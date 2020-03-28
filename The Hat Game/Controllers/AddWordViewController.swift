@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class AddWordViewController: UIViewController {
+    
+    var hatGame:HatGame?
+    var wordToValidate:String = ""
+    var wordSet:WordSetEntity?
+    
+    private lazy var wordEntityProvider: WordEntityProvider = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let provider = WordEntityProvider(with: appDelegate.coreDataStack.persistentContainer,
+                                   fetchedResultsControllerDelegate: nil)
+        return provider
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,9 +39,6 @@ class AddWordViewController: UIViewController {
         }
     }
     
-    var hatGame:HatGame?
-    var wordToValidate:String = ""
-    
     @IBOutlet var addWordView: UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var startNowButton: UIButton!
@@ -45,6 +55,7 @@ class AddWordViewController: UIViewController {
         }
         do {
             try hatGame.addWordToWordSet(wordToValidate)
+            saveWord(word: wordToValidate)
         } catch {
             let presenter = AlertPresenter(title: Constants.troubleAlertTitle, message: Constants.wordAlreadyEntered(word: wordToValidate), completionAction: nil)
             presenter.present(in: self)
@@ -101,6 +112,49 @@ class AddWordViewController: UIViewController {
     
     func setTeamNameLabel(teamName:String) {
         teamNameLabel.text = "Team " + teamName + " enters a word"
+    }
+    
+    func saveWord(word: String) {
+//        DispatchQueue.global(qos: .default).async { [weak self] in
+            guard let wordSet = self.wordSet else {
+                return
+            }
+            let managedContext = wordSet.managedObjectContext!
+            
+            // 1 Create Word in base
+            self.wordEntityProvider.addWordEntity(data: word, context: managedContext, shouldSave: true, completionHandler: { (wordEntity) in
+                // 2 Add it to the wordSet
+                wordSet.addToWords(wordEntity)
+            })
+//        }
+        
+//        wordSet.addToWords()
+        
+        
+      
+      /* // 1
+      let managedContext =
+        appDelegate.persistentContainer.viewContext
+      
+      // 2
+      let entity =
+        NSEntityDescription.entity(forEntityName: "Person",
+                                   in: managedContext)!
+      
+      let person = NSManagedObject(entity: entity,
+                                   insertInto: managedContext)
+      
+      // 3
+      person.setValue(name, forKeyPath: "name")
+      
+      // 4
+      do {
+        try managedContext.save()
+        people.append(person)
+      } catch let error as NSError {
+        print("Could not save. \(error), \(error.userInfo)")
+      }
+ */
     }
     
     func configure(){

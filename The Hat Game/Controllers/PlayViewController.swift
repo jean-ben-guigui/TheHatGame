@@ -51,7 +51,7 @@ class PlayViewController: UIViewController {
     }
     
     var timer:Timer?
-    var timeLeft:Int?
+    var timeLeft = Constants.defaultRoundTime
 
     @IBOutlet weak var theWordLabel: UILabel!
     @IBOutlet weak var passButton: UIButton!
@@ -101,14 +101,12 @@ class PlayViewController: UIViewController {
     }
     
     ///called by the timer every second
-    @objc func fire() {
-        self.timeLeft? -= 1
-        if let time = self.timeLeft {
-            self.timerLabel.text = "\(time) sec"
-        }
+    @objc func fire(timer: Timer) {
+        self.timeLeft -= 1
+        self.timerLabel.text = "\(self.timeLeft) sec"
         if self.timeLeft == 0 {
-            self.timer?.invalidate()
-            self.timer = nil
+            timer.invalidate()
+            timesUp()
         }
     }
     
@@ -122,9 +120,13 @@ class PlayViewController: UIViewController {
                 passButton.setTitle("pass", for:UIControl.State.normal)
             }
         }
-        let time = self.timeLeft ?? Constants.defaultRoundTime
-        self.timerLabel.text = "\(time) sec"
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
-        timer?.tolerance = 0.100
+        self.timerLabel.text = "\(self.timeLeft) sec"
+        let guessTimer = Timer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+        guessTimer.tolerance = 0.100
+        RunLoop.current.add(guessTimer, forMode: .common)
+    }
+    
+    func timesUp() {
+        
     }
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608FDBA241AAC9700745AAA /* TeamsTests.swift */; };
+		D6439F51242BA53F00F5E416 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F50242BA53F00F5E416 /* CoreDataStack.swift */; };
+		D6439F54242BB4C900F5E416 /* WordSetEntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */; };
+		D6439F56242BB65F00F5E416 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F55242BB65E00F5E416 /* Schema.swift */; };
+		D6439F58242CB07600F5E416 /* WordEntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F57242CB07600F5E416 /* WordEntityProvider.swift */; };
+		D6439F5A242CB15F00F5E416 /* CoreData+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */; };
+		D6439F5C242D076900F5E416 /* WordSetPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F5B242D076900F5E416 /* WordSetPickerController.swift */; };
 		D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68896F9241C3BAA0080EA28 /* TeamsError.swift */; };
 		D6B920092424C70300D34F10 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B920082424C70300D34F10 /* ResultCell.swift */; };
 		D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */; };
@@ -55,6 +61,12 @@
 
 /* Begin PBXFileReference section */
 		D608FDBA241AAC9700745AAA /* TeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTests.swift; sourceTree = "<group>"; };
+		D6439F50242BA53F00F5E416 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetEntityProvider.swift; sourceTree = "<group>"; };
+		D6439F55242BB65E00F5E416 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		D6439F57242CB07600F5E416 /* WordEntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntityProvider.swift; sourceTree = "<group>"; };
+		D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Convenience.swift"; sourceTree = "<group>"; };
+		D6439F5B242D076900F5E416 /* WordSetPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetPickerController.swift; sourceTree = "<group>"; };
 		D68896F9241C3BAA0080EA28 /* TeamsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsError.swift; sourceTree = "<group>"; };
 		D6B920082424C70300D34F10 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPresenter.swift; sourceTree = "<group>"; };
@@ -63,7 +75,7 @@
 		D6E704F82412A84700A7FF44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D6E704FA2412A84700A7FF44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D6E705002412A84700A7FF44 /* The_Hat_Game.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Hat_Game.xcdatamodel; sourceTree = "<group>"; };
-		D6E705072412A84C00A7FF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6E705072412A84C00A7FF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D6E7050C2412A84C00A7FF44 /* The Hat GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Hat GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E705102412A84C00A7FF44 /* The_Hat_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Hat_GameTests.swift; sourceTree = "<group>"; };
 		D6E705122412A84C00A7FF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +126,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6439F52242BB48B00F5E416 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D6439F50242BA53F00F5E416 /* CoreDataStack.swift */,
+				D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */,
+				D6439F55242BB65E00F5E416 /* Schema.swift */,
+				D6439F57242CB07600F5E416 /* WordEntityProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
 		D68896F8241C3B920080EA28 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +169,7 @@
 		D6E704F52412A84700A7FF44 /* The Hat Game */ = {
 			isa = PBXGroup;
 			children = (
+				D6439F52242BB48B00F5E416 /* DataProvider */,
 				D6E704F62412A84700A7FF44 /* AppDelegate.swift */,
 				D6E704F82412A84700A7FF44 /* SceneDelegate.swift */,
 				D6E704FA2412A84700A7FF44 /* ViewController.swift */,
@@ -153,8 +177,6 @@
 				D6E705352412A8E100A7FF44 /* Supporting files */,
 				D6E7052F2412A8E100A7FF44 /* View */,
 				D6E705412412A8E200A7FF44 /* Controllers */,
-				D6E705072412A84C00A7FF44 /* Info.plist */,
-				D6E704FF2412A84700A7FF44 /* The_Hat_Game.xcdatamodeld */,
 			);
 			path = "The Hat Game";
 			sourceTree = "<group>";
@@ -190,6 +212,7 @@
 		D6E705352412A8E100A7FF44 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				D6E705072412A84C00A7FF44 /* Info.plist */,
 				D6E705372412A8E100A7FF44 /* Assets.xcassets */,
 				D6E705382412A8E100A7FF44 /* LaunchScreen.storyboard */,
 			);
@@ -204,6 +227,7 @@
 				D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */,
 				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
 				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
+				D6439F5B242D076900F5E416 /* WordSetPickerController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +235,7 @@
 		D6E705632412AB0A00A7FF44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D6E704FF2412A84700A7FF44 /* The_Hat_Game.xcdatamodeld */,
 				D6FB14F1241FBC40006C6055 /* Helpers */,
 				D68896F8241C3B920080EA28 /* Errors */,
 				D6E705642412AB0A00A7FF44 /* HatGame.swift */,
@@ -227,6 +252,7 @@
 		D6FB14F1241FBC40006C6055 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */,
 				D6E7053A2412A8E100A7FF44 /* VisualHelper.swift */,
 				D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */,
 			);
@@ -364,13 +390,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6439F56242BB65F00F5E416 /* Schema.swift in Sources */,
 				D6E7056F2412AB0A00A7FF44 /* WordState.swift in Sources */,
 				D6E704FB2412A84700A7FF44 /* ViewController.swift in Sources */,
+				D6439F5C242D076900F5E416 /* WordSetPickerController.swift in Sources */,
 				D6E705752412AB0A00A7FF44 /* Phase.swift in Sources */,
 				D6E7055C2412A8E200A7FF44 /* TeamNamesViewController.swift in Sources */,
 				D6E705542412A8E200A7FF44 /* VisualHelper.swift in Sources */,
 				D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */,
 				D6E7055B2412A8E200A7FF44 /* ResultViewController.swift in Sources */,
+				D6439F54242BB4C900F5E416 /* WordSetEntityProvider.swift in Sources */,
 				D6FB14F3241FE41B006C6055 /* WordSetError.swift in Sources */,
 				D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */,
 				D6E7055F2412A8E200A7FF44 /* PlayViewController.swift in Sources */,
@@ -380,9 +409,12 @@
 				D6E7056E2412AB0A00A7FF44 /* WordSet.swift in Sources */,
 				D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */,
 				D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */,
+				D6439F5A242CB15F00F5E416 /* CoreData+Convenience.swift in Sources */,
 				D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */,
+				D6439F51242BA53F00F5E416 /* CoreDataStack.swift in Sources */,
 				D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */,
 				D6B920092424C70300D34F10 /* ResultCell.swift in Sources */,
+				D6439F58242CB07600F5E416 /* WordEntityProvider.swift in Sources */,
 				D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */,
 				D6E705512412A8E200A7FF44 /* Constants.swift in Sources */,
 			);
