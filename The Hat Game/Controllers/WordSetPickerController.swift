@@ -37,12 +37,25 @@ class WordSetPickerController: UIViewController {
         setupTableView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPath = wordSetTableView.indexPathForSelectedRow {
+                let wordSet = fetchedResultsController?.object(at: indexPath)
+                if let detailViewController = segue.destination as? DetailViewController {
+                    detailViewController.wordSet = wordSet
+                }
+                wordSetTableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    }
+    
     private func setupTableView() {
         diffableDataSource = UITableViewDiffableDataSource<Section, WordSetEntity>(tableView: wordSetTableView) { (tableView, indexPath, wordSet) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "wordSetCell", for: indexPath)
             cell.textLabel?.text = wordSet.name
             return cell
         }
+        snapshot.appendSections([.main])
         updateSnapshot()
     }
     
@@ -51,7 +64,6 @@ class WordSetPickerController: UIViewController {
         
         do {
             try fetchedResultsController?.performFetch()
-            updateSnapshot()
         } catch {
             // Failed to fetch results from the database. Handle errors appropriately in your app.
             fatalError()
@@ -59,16 +71,25 @@ class WordSetPickerController: UIViewController {
     }
     
     func updateSnapshot() {
-        snapshot = NSDiffableDataSourceSnapshot<Section, WordSetEntity>()
-        snapshot.appendSections([.main])
         snapshot.appendItems(fetchedResultsController?.fetchedObjects ?? [])
+        
         diffableDataSource?.apply(self.snapshot)
     }
-
 }
+
+// MARK: - Fetched Result Controller Delegate
 
 extension WordSetPickerController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        // This will be used later on
+        updateSnapshot()
     }
+}
+
+// MARK: - Table View Delegate
+
+extension WordSetPickerController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    tableView.deselectRow(at: indexPath, animated: true)
+    performSegue(withIdentifier: "detailSegue", sender: self)
+  }
 }

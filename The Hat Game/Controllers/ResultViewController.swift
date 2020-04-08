@@ -27,8 +27,8 @@ class ResultViewController: UIViewController {
                 }
             } catch {
                let presenter = AlertPresenter(
-                title: Constants.unespectedErrorAlertTitle,
-                message: Constants.cannotDisplayResultsAlertMessage,
+                title: Constants.Alert.Title.unexpectedError.rawValue,
+                message: Constants.Alert.Message.cannotDisplayResults,
                 completionAction: nil)
                presenter.present(in: self)
             }

@@ -108,15 +108,15 @@ class TeamNamesViewController: UIViewController {
                     try hatGame.addTeam(name: teamName)
                 } catch WordSetError.wordAlreadyInSet(let word) {
                     let presenter = AlertPresenter(
-                        title: Constants.troubleAlertTitle,
-                        message: Constants.wordAlreadyEntered(word: word),
+                        title: Constants.Alert.Title.trouble.rawValue,
+                        message: Constants.Alert.Message.wordAlreadyEntered(word: word),
                         completionAction: nil
                     )
                     presenter.present(in: self)
                 } catch {
                     let presenter = AlertPresenter(
-                        title: Constants.troubleAlertTitle,
-                        message: Constants.unknowErrorMessage,
+                        title: Constants.Alert.Title.trouble.rawValue,
+                        message: Constants.Alert.Message.unknow,
                         completionAction: nil
                     )
                     presenter.present(in: self)

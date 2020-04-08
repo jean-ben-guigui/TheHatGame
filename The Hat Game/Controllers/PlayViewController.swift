@@ -83,12 +83,12 @@ class PlayViewController: UIViewController {
             } else {
                 performSegue(withIdentifier: "presentResultSegue", sender: self)
             }
+        } else if timeLeft == 0 {
+            performSegue(withIdentifier: "nextTeamSegue", sender: self)
         } else if notGuessedWords.count == 1 {
             passButton.isEnabled = false;
             wordToGuess = notGuessedWords[0]
-        } else if timeLeft == 0 {
-            performSegue(withIdentifier: "nextTeamSegue", sender: self)
-        } else {
+        }  else {
             let randomWordIndex = Int(arc4random_uniform(UInt32(notGuessedWords.count - 1)))
             let newWordToGuess = notGuessedWords[randomWordIndex]
             if let oldWordToGuess = wordToGuess {

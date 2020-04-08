@@ -10,6 +10,8 @@ import Foundation
 
 struct Constants {
     static let numberOfPhases = 3
+    static let minimumNumberOfWordsToPlay = 10
+    static let defaultRoundTime = 3
     
     enum phaseExplanation: String {
         case first = "Make your teammates guess the word by saying anything but that word."
@@ -18,12 +20,18 @@ struct Constants {
         case none = ""
     }
     
-    static let troubleAlertTitle = "Oops 😬"
-    static let unespectedErrorAlertTitle = "Error 😵"
-    static func wordAlreadyEntered(word: String) -> String {
-        return "The \(word) has already been entered"
+    struct Alert {
+        struct Message {
+            static let unknow = "An unknown error has happened"
+            static let cannotDisplayResults = "The game is over, but the results are unavailable, sorry about that"
+            static let tooFewWord = "You have entered less than \(minimumNumberOfWordsToPlay) words, are you sure you want to play with such few words?"
+            static func wordAlreadyEntered(word: String) -> String {
+                   return "The word \(word) has already been entered"
+               }
+        }
+        enum Title: String {
+            case trouble = "Oops 😬"
+            case unexpectedError = "Error 😵"
+        }
     }
-    static let unknowErrorMessage = "An unknown error has happened"
-    static let defaultRoundTime = 3
-    static let cannotDisplayResultsAlertMessage = "The game is over, but the results are unavailable, sorry about that"
 }

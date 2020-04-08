@@ -16,13 +16,14 @@ class WordSetEntityProvider {
     private weak var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate?
     
     /**
-        Date formatter for recording the timestamp in the default post title.
-        */
-       private lazy var mediumDateFormatter: DateFormatter = {
-           let formatter = DateFormatter()
-           formatter.timeStyle = .medium
-            formatter.timeStyle = .none
-           return formatter
+     Date formatter for recording the timestamp in the default post title.
+    */
+    private lazy var mediumDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        formatter.locale = Locale.current
+        return formatter
        }()
     
     init(with persistentContainer: NSPersistentContainer,
@@ -32,7 +33,7 @@ class WordSetEntityProvider {
     }
     
     /**
-     A fetched results controller for the WordSetEntoty, sorted.
+     A fetched results controller for the WordSetEntity, sorted.
      */
     lazy var fetchedResultsController: NSFetchedResultsController<WordSetEntity> = {
         let fetchRequest: NSFetchRequest<WordSetEntity> = WordSetEntity.fetchRequest()
@@ -55,10 +56,19 @@ class WordSetEntityProvider {
     
     func addWordSet(in context: NSManagedObjectContext, shouldSave: Bool = true, completionHandler: ((_ newWordEntity: WordSetEntity) -> Void)? = nil) {
         let wordSetEntity = WordSetEntity(context: context)
-        wordSetEntity.name = "Untitled " + mediumDateFormatter.string(from: Date())
+        let now = Date()
+        wordSetEntity.name = mediumDateFormatter.string(from: now)
         
         if shouldSave {
             context.save(with: .addWordSetEntity)
+        }
+        completionHandler?(wordSetEntity)
+    }
+    
+    func addWord(in context: NSManagedObjectContext, wordEntity: WordEntity, wordSetEntity: WordSetEntity, shouldSave: Bool = true, completionHandler: ((_ updatedWordEntity: WordSetEntity) -> Void)? = nil) {
+        wordSetEntity.addToWords(wordEntity)
+        if shouldSave {
+            context.save(with: .addWordToWordSetEntity)
         }
         completionHandler?(wordSetEntity)
     }

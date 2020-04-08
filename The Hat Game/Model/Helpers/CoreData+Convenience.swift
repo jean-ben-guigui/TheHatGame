@@ -33,6 +33,7 @@ enum ContextSaveContextualInfo: String {
     case deleteWordEntity = "deleting a word"
     case addWordSetEntity = "adding a wordSet"
     case deleteWordSetEntity = "deleting a wordSet"
+    case addWordToWordSetEntity = "addind a word to a wordSet"
 }
 
 extension NSManagedObjectContext {

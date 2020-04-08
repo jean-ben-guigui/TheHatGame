@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608FDBA241AAC9700745AAA /* TeamsTests.swift */; };
+		D6090A2F243B6D2E00D20994 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6090A2E243B6D2E00D20994 /* DetailViewController.swift */; };
 		D6439F51242BA53F00F5E416 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F50242BA53F00F5E416 /* CoreDataStack.swift */; };
 		D6439F54242BB4C900F5E416 /* WordSetEntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */; };
 		D6439F56242BB65F00F5E416 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F55242BB65E00F5E416 /* Schema.swift */; };
 		D6439F58242CB07600F5E416 /* WordEntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F57242CB07600F5E416 /* WordEntityProvider.swift */; };
 		D6439F5A242CB15F00F5E416 /* CoreData+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */; };
 		D6439F5C242D076900F5E416 /* WordSetPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F5B242D076900F5E416 /* WordSetPickerController.swift */; };
+		D64EDBD82435E48700B77330 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64EDBD72435E48700B77330 /* Play.storyboard */; };
 		D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68896F9241C3BAA0080EA28 /* TeamsError.swift */; };
 		D6B920092424C70300D34F10 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B920082424C70300D34F10 /* ResultCell.swift */; };
 		D6BBF11F24222B620033A764 /* ConfirmationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */; };
@@ -61,12 +63,14 @@
 
 /* Begin PBXFileReference section */
 		D608FDBA241AAC9700745AAA /* TeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTests.swift; sourceTree = "<group>"; };
+		D6090A2E243B6D2E00D20994 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D6439F50242BA53F00F5E416 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetEntityProvider.swift; sourceTree = "<group>"; };
 		D6439F55242BB65E00F5E416 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		D6439F57242CB07600F5E416 /* WordEntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntityProvider.swift; sourceTree = "<group>"; };
 		D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Convenience.swift"; sourceTree = "<group>"; };
 		D6439F5B242D076900F5E416 /* WordSetPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetPickerController.swift; sourceTree = "<group>"; };
+		D64EDBD72435E48700B77330 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		D68896F9241C3BAA0080EA28 /* TeamsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsError.swift; sourceTree = "<group>"; };
 		D6B920082424C70300D34F10 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		D6BBF11E24222B620033A764 /* ConfirmationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPresenter.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			children = (
 				D6E705302412A8E100A7FF44 /* Main.storyboard */,
 				D6B920082424C70300D34F10 /* ResultCell.swift */,
+				D64EDBD72435E48700B77330 /* Play.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
 				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
 				D6439F5B242D076900F5E416 /* WordSetPickerController.swift */,
+				D6090A2E243B6D2E00D20994 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64EDBD82435E48700B77330 /* Play.storyboard in Resources */,
 				D6E705532412A8E200A7FF44 /* LaunchScreen.storyboard in Resources */,
 				D6E7054D2412A8E200A7FF44 /* Main.storyboard in Resources */,
 				D6E705522412A8E200A7FF44 /* Assets.xcassets in Resources */,
@@ -417,6 +424,7 @@
 				D6439F58242CB07600F5E416 /* WordEntityProvider.swift in Sources */,
 				D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */,
 				D6E705512412A8E200A7FF44 /* Constants.swift in Sources */,
+				D6090A2F243B6D2E00D20994 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
