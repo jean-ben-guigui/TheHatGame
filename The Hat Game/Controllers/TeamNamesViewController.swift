@@ -40,12 +40,15 @@ class TeamNamesViewController: UIViewController {
         }
         if (segue.identifier == "chooseWordSetSegue") {
             // TODO add wordSetsToPass to the destination controller
+            if let wordSetPickerController = segue.destination as? WordSetPickerController {
+                wordSetPickerController.hatGame = hatGame
+            }
         }
     }
     @IBOutlet private weak var firstTeamName: UITextField!
-    @IBOutlet weak var secondTeamName: UITextField!
-    @IBOutlet weak var thirdTeamName: UITextField!
-    @IBOutlet weak var fourthTeamName: UITextField!
+    @IBOutlet private weak var secondTeamName: UITextField!
+    @IBOutlet private weak var thirdTeamName: UITextField!
+    @IBOutlet private weak var fourthTeamName: UITextField!
     
     @IBOutlet weak var startTheGameButton: UIButton!
     @IBAction func firstTeamNameEdited(_ sender: UITextField) {
@@ -131,7 +134,13 @@ class TeamNamesViewController: UIViewController {
     
     func configure() {
         startTheGameButton.makeMyAnglesRound()
-        startTheGameButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        if let placeholderColor = UIColor(named: "placeholderColor") {
+            firstTeamName.setPlaceHolderColor(color: placeholderColor)
+            secondTeamName.setPlaceHolderColor(color: placeholderColor)
+            thirdTeamName.setPlaceHolderColor(color: placeholderColor)
+            fourthTeamName.setPlaceHolderColor(color: placeholderColor)
+        }
+        startTheGameButton.setTitleColor(UIColor.systemGray5, for: UIControl.State.disabled)
         setGameButtonState()
     }
 }

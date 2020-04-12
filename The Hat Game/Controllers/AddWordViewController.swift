@@ -130,18 +130,14 @@ class AddWordViewController: UIViewController {
         let managedContext = wordSet.managedObjectContext!
         
         // 1 Create Word in base
-        self.wordEntityProvider.addWordEntity(data: word, context: managedContext, shouldSave: true, completionHandler: { (wordEntity) in
+        self.wordEntityProvider.addWordEntity(data: word,
+                                              context: managedContext,
+                                              shouldSave: true,
+                                              completionHandler: { (wordEntity) in
             // 2 Add it to the wordSet
-            self.wordSetEntityProvider.addWord(in: managedContext, wordEntity: wordEntity, wordSetEntity: wordSet, completionHandler: { (bien) in
-                if let words = bien.words {
-                    print("il y a tant de mots : \(words.count)");
-                    for word in words {
-                        if let word = word as? WordEntity {
-                            print(word.data)
-                        }
-                    }
-                }
-            })
+            self.wordSetEntityProvider.addWord(in: managedContext,
+                                               wordEntity: wordEntity,
+                                               wordSetEntity: wordSet)
         })
     }
     

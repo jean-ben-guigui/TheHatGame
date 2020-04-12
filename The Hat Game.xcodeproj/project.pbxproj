@@ -41,6 +41,8 @@
 		D6E705712412AB0A00A7FF44 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E705682412AB0A00A7FF44 /* Team.swift */; };
 		D6E705732412AB0A00A7FF44 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056A2412AB0A00A7FF44 /* Word.swift */; };
 		D6E705752412AB0A00A7FF44 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7056C2412AB0A00A7FF44 /* Phase.swift */; };
+		D6EB5A53243DE60A000EF3DE /* WordSetUITableViewDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB5A52243DE60A000EF3DE /* WordSetUITableViewDiffableDataSource.swift */; };
+		D6EB5A55243DE716000EF3DE /* WordSetTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB5A54243DE716000EF3DE /* WordSetTableViewSection.swift */; };
 		D6FB14F3241FE41B006C6055 /* WordSetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB14F2241FE41B006C6055 /* WordSetError.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		D6E705682412AB0A00A7FF44 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		D6E7056A2412AB0A00A7FF44 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		D6E7056C2412AB0A00A7FF44 /* Phase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		D6EB5A52243DE60A000EF3DE /* WordSetUITableViewDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetUITableViewDiffableDataSource.swift; sourceTree = "<group>"; };
+		D6EB5A54243DE716000EF3DE /* WordSetTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetTableViewSection.swift; sourceTree = "<group>"; };
 		D6FB14F2241FE41B006C6055 /* WordSetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,12 +231,12 @@
 		D6E705412412A8E200A7FF44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6EB5A56243DF682000EF3DE /* WordSetPicker */,
 				D6E705432412A8E200A7FF44 /* TeamNamesViewController.swift */,
 				D6E705472412A8E200A7FF44 /* AddWordViewController.swift */,
 				D6E705452412A8E200A7FF44 /* WhosTurnViewController.swift */,
 				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
 				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
-				D6439F5B242D076900F5E416 /* WordSetPickerController.swift */,
 				D6090A2E243B6D2E00D20994 /* DetailViewController.swift */,
 			);
 			path = Controllers;
@@ -253,6 +257,16 @@
 				D6E705362412A8E100A7FF44 /* Constants.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6EB5A56243DF682000EF3DE /* WordSetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D6439F5B242D076900F5E416 /* WordSetPickerController.swift */,
+				D6EB5A52243DE60A000EF3DE /* WordSetUITableViewDiffableDataSource.swift */,
+				D6EB5A54243DE716000EF3DE /* WordSetTableViewSection.swift */,
+			);
+			path = WordSetPicker;
 			sourceTree = "<group>";
 		};
 		D6FB14F1241FBC40006C6055 /* Helpers */ = {
@@ -415,6 +429,7 @@
 				D6E705732412AB0A00A7FF44 /* Word.swift in Sources */,
 				D6E7056E2412AB0A00A7FF44 /* WordSet.swift in Sources */,
 				D6E7055E2412A8E200A7FF44 /* WhosTurnViewController.swift in Sources */,
+				D6EB5A53243DE60A000EF3DE /* WordSetUITableViewDiffableDataSource.swift in Sources */,
 				D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */,
 				D6439F5A242CB15F00F5E416 /* CoreData+Convenience.swift in Sources */,
 				D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */,
@@ -424,6 +439,7 @@
 				D6439F58242CB07600F5E416 /* WordEntityProvider.swift in Sources */,
 				D6E705012412A84700A7FF44 /* The_Hat_Game.xcdatamodeld in Sources */,
 				D6E705512412A8E200A7FF44 /* Constants.swift in Sources */,
+				D6EB5A55243DE716000EF3DE /* WordSetTableViewSection.swift in Sources */,
 				D6090A2F243B6D2E00D20994 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

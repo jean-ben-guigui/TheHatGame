@@ -65,12 +65,34 @@ class WordSetEntityProvider {
         completionHandler?(wordSetEntity)
     }
     
+    func delete(wordSet: WordSetEntity, shouldSave: Bool = true, completionHandler: (() -> Void)? = nil) {
+        guard let context = wordSet.managedObjectContext else {
+            return
+        }
+        context.delete(wordSet)
+        if shouldSave {
+            context.save(with: .deleteWordSetEntity)
+        }
+        completionHandler?()
+    }
+    
     func addWord(in context: NSManagedObjectContext, wordEntity: WordEntity, wordSetEntity: WordSetEntity, shouldSave: Bool = true, completionHandler: ((_ updatedWordEntity: WordSetEntity) -> Void)? = nil) {
         wordSetEntity.addToWords(wordEntity)
         if shouldSave {
             context.save(with: .addWordToWordSetEntity)
         }
         completionHandler?(wordSetEntity)
+    }
+    
+    func changeName(wordSet: WordSetEntity, newName: String, shouldSave: Bool = true, completionHandler: ((_ updatedWordEntity: WordSetEntity) -> Void)? = nil) {
+        guard let context = wordSet.managedObjectContext else {
+            return
+        }
+        wordSet.name = newName
+        if shouldSave {
+            context.save(with: .addWordToWordSetEntity)
+        }
+        completionHandler?(wordSet)
     }
     
     func areWordSetsNil() -> Bool {

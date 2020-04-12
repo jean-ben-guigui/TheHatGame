@@ -22,7 +22,24 @@ struct WordSet {
                 try addWord(word)
             }
             catch {
-                
+                print("Silent error")
+            }
+        }
+    }
+    
+    init(wordSetEntity:  WordSetEntity) {
+        self.words = Set<Word>()
+        guard let words = wordSetEntity.words else {
+            return
+        }
+        for word in words {
+            if let word = word as? String {
+                do {
+                    try addWord(word)
+                }
+                catch {
+                    print("Silent error")
+                }
             }
         }
     }

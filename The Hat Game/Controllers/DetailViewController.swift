@@ -19,7 +19,10 @@ class DetailViewController: UIViewController {
     
     private var diffableDataSource: UITableViewDiffableDataSource<Section, String>?
     
-    var wordSet: WordSetEntity?
+    @IBAction func wordSetTitleEdited(_ sender: UITextField) {
+        
+    }
+    var wordSet: WordSetEntity!
     
     @IBOutlet weak var detailTableView: UITableView!
     
@@ -32,7 +35,7 @@ class DetailViewController: UIViewController {
     }
     
     func updateSnapshot() {
-        guard let wordSet = wordSet, let words = wordSet.words else {
+        guard let words = wordSet.words else {
             return
         }
         

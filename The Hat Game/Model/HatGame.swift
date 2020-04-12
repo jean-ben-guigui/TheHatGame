@@ -142,6 +142,10 @@ class HatGame {
         return wordSet.count()
     }
     
+    func setWordSet(wordSet: WordSet) {
+        self.wordSet = wordSet
+    }
+    
     @discardableResult
     func addWordToWordSet(_ word: String) throws -> Word {
         let addedWord = try wordSet.addWord(word)
