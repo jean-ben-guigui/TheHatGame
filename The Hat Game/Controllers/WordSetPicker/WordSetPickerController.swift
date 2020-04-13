@@ -37,6 +37,14 @@ class WordSetPickerController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         setupFetchedResultController()
         setupTableView()
+    }   
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        // Takes care of toggling the button's title.
+        super.setEditing(!isEditing, animated: true)
+
+        // Toggle table view editing.
+        wordSetTableView.setEditing(!wordSetTableView.isEditing, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

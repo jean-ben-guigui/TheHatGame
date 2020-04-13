@@ -59,13 +59,14 @@ class WordSetUITableViewDiffableDataSource: UITableViewDiffableDataSource<WordSe
                             commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if let identifierToDelete = itemIdentifier(for: indexPath) {
-                guard let wordSetEntityProvider = wordSetEntityProvider, let wordSet = fetchedResultsController?.object(at: indexPath) else {
-                    //TODO displays error message
-                        return
-                }
-                wordSetEntityProvider.delete(wordSet: wordSet, shouldSave: true)
+            guard let wordSetEntityProvider = wordSetEntityProvider, let wordSet = fetchedResultsController?.object(at: indexPath) else {
+                //TODO displays error message
+                    return
             }
+            wordSetEntityProvider.delete(wordSet: wordSet, shouldSave: true)
+        }
+        else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 }
