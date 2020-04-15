@@ -29,7 +29,7 @@ class TeamNamesViewController: UIViewController {
         addTeam(hatGame: hatGame, button: secondTeamName)
         addTeam(hatGame: hatGame, button: thirdTeamName)
         addTeam(hatGame: hatGame, button: fourthTeamName)
-        // TODO maybe check that there is not 2 teams sharing a same name (nouvelle méthode pour Teams). Since we check it when the startTheGameButton is pressed, no real needs to do so though.
+        // TODO maybe check that there is not 2 teams sharing a same name (new method for Teams). Since we check it when the startTheGameButton is pressed, no real needs to do so though.
         if (segue.identifier == "addWordsSegue") {
             if let addWordController = segue.destination as? AddWordViewController {
                 addWordController.hatGame = hatGame
@@ -69,13 +69,20 @@ class TeamNamesViewController: UIViewController {
         if wordSetEntityProvider.areWordSetsNil() {
             self.performSegue(withIdentifier: "addWordsSegue", sender: sender)
         } else {
-            let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (alertAction)  in
+            let yesAction = UIAlertAction(title: Constants.chooseWordSet.yes.rawValue,
+                                          style: .default,
+                                          handler: { [unowned self] (alertAction)  in
                 self.performSegue(withIdentifier: "chooseWordSetSegue", sender: sender)
             })
-            let createNewSetAction = UIAlertAction(title: "No, create a new set", style: .cancel, handler: { [unowned self] (alertAction) in
+            let createNewSetAction = UIAlertAction(title: Constants.chooseWordSet.no.rawValue,
+                                                   style: .default,
+                                                   handler: { [unowned self] (alertAction) in
                 self.performSegue(withIdentifier: "addWordsSegue", sender: sender)
             })
-            let chooseWordSetPresenter = AlertPresenter(title: nil, message: "Do you want to use a set of words that you previously made?", completionActions: [yesAction, createNewSetAction])
+            let cancelAction = UIAlertAction(title: Constants.cancelMessage, style: .cancel, handler: nil)
+            let chooseWordSetPresenter = AlertPresenter(title: nil,
+                                                        message: Constants.chooseWordSet.title.rawValue,
+                                                        completionActions: [yesAction, createNewSetAction, cancelAction])
             chooseWordSetPresenter.present(in: self)
         }
     }

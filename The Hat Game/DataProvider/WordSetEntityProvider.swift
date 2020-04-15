@@ -37,7 +37,7 @@ class WordSetEntityProvider {
      */
     lazy var fetchedResultsController: NSFetchedResultsController<WordSetEntity> = {
         let fetchRequest: NSFetchRequest<WordSetEntity> = WordSetEntity.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: Schema.WordSetEntity.name.rawValue, ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: Schema.WordSetEntity.name.rawValue, ascending: true)]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                     managedObjectContext: persistentContainer.viewContext,
@@ -88,11 +88,24 @@ class WordSetEntityProvider {
         guard let context = wordSet.managedObjectContext else {
             return
         }
-        wordSet.name = newName
-        if shouldSave {
-            context.save(with: .addWordToWordSetEntity)
-        }
-        completionHandler?(wordSet)
+//        wordSet.name = newName
+//        if shouldSave {
+//            context.save(with: .updatingWordSetEntity)
+//        }
+        addWordSet(in: context, shouldSave: false, completionHandler: { [weak wordSet] (wordSetEntity)  in
+            guard let wordSet = wordSet else {
+                context.delete(wordSetEntity)
+                context.save(with: .updatingWordSetEntityFailed)
+                return
+            }
+            wordSetEntity.words = wordSet.words
+            context.delete(wordSet)
+            wordSetEntity.name = newName
+            if shouldSave {
+                context.save(with: .updatingWordSetEntity)
+            }
+            completionHandler?(wordSetEntity)
+        })
     }
     
     func areWordSetsNil() -> Bool {

@@ -14,24 +14,30 @@ class DetailViewController: UIViewController {
     enum Section {
         case main
     }
+    
+    private lazy var wordSetEntityProvider: WordSetEntityProvider = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let provider = WordSetEntityProvider(with: appDelegate.coreDataStack.persistentContainer,
+                                   fetchedResultsControllerDelegate: self)
+        return provider
+    }()
 
     var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
     
     private var diffableDataSource: UITableViewDiffableDataSource<Section, String>?
-    
-    @IBAction func wordSetTitleEdited(_ sender: UITextField) {
-        
-    }
+
     var wordSet: WordSetEntity!
-    
-    @IBOutlet weak var detailTableView: UITableView!
+
+    @IBAction private func wordSetNameEdited(_ sender: UITextField) {
+        wordSetEntityProvider.changeName(wordSet: wordSet, newName: sender.text ?? "")
+    }
+    @IBOutlet private weak var detailTableView: UITableView!
+    @IBOutlet private weak var wordSetNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        setupTableView()
+        setupTableViewHeader()
+        setupTableViewCore()
     }
     
     func updateSnapshot() {
@@ -53,7 +59,7 @@ class DetailViewController: UIViewController {
         diffableDataSource?.apply(self.snapshot)
     }
     
-    func setupTableView() {
+    func setupTableViewCore() {
         diffableDataSource = UITableViewDiffableDataSource<Section, String>(tableView: detailTableView) { (tableView, indexPath, word) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath)
             cell.textLabel?.text = word
@@ -61,6 +67,10 @@ class DetailViewController: UIViewController {
         }
         snapshot.appendSections([.main])
         updateSnapshot()
+    }
+    
+    func setupTableViewHeader() {
+        wordSetNameTextField.text = wordSet.name
     }
 
 }

@@ -37,7 +37,7 @@ class WordSetPickerController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         setupFetchedResultController()
         setupTableView()
-    }   
+    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         // Takes care of toggling the button's title.
@@ -95,46 +95,73 @@ class WordSetPickerController: UIViewController {
     }
     
     func updateSnapshot() {
-        snapshot = NSDiffableDataSourceSnapshot<WordSetTableViewSection, WordSetEntity>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(fetchedResultsController?.fetchedObjects ?? [])
-        diffableDataSource?.apply(self.snapshot)
+        self.snapshot = NSDiffableDataSourceSnapshot<WordSetTableViewSection, WordSetEntity>()
+        self.snapshot.appendSections([.main])
+        self.snapshot.appendItems(fetchedResultsController?.fetchedObjects ?? [])
+        
+        // Uncomment for debugging purposes.
+//        for object in fetchedResultsController?.fetchedObjects ?? []{
+//            print(object.name)
+//            print(object.hash)
+//            print(object.hashValue)
+//        }
+        
+        diffableDataSource?.apply(self.snapshot, animatingDifferences: true)
     }
 }
 
 // MARK: - Fetched Result Controller Delegate
 
 extension WordSetPickerController: NSFetchedResultsControllerDelegate {
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        guard let indexPath = indexPath else {
-            return
-        }
-        switch type {
-        case .insert:
-            updateSnapshot()
-        case .delete:
-            if let identifierToDelete = self.diffableDataSource?.itemIdentifier(for: indexPath) {
-              snapshot.deleteItems([identifierToDelete])
-              diffableDataSource?.apply(snapshot)
-            }
-        case .update:
-            updateSnapshot()
-        case .move:
-            updateSnapshot()
-        @unknown default:
-            updateSnapshot()
-        }
-    }
-    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        wordSetTableView.endUpdates();
+        updateSnapshot()
     }
+    // There is still problems with this implementation. I tried to implement this so that I don't need to request everything from the data base each time. Without success though.
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        switch type {
+//        case .insert:
+//            if let newWordSet = anObject as? WordSetEntity {
+//                snapshot.appendItems([newWordSet])
+//                diffableDataSource?.apply(snapshot)
+//            }
+//            else {
+//                updateSnapshot()
+//            }
+//        case .delete:
+//            guard let indexPath = indexPath else {
+//                return
+//            }
+//            if let identifierToDelete = self.diffableDataSource?.itemIdentifier(for: indexPath) {
+//              snapshot.deleteItems([identifierToDelete])
+//              diffableDataSource?.apply(snapshot)
+//            }
+//        case .update:
+//            guard let indexPath = indexPath, let newWordSet = anObject as? WordSetEntity, let identifierToDelete = self.diffableDataSource?.itemIdentifier(for: indexPath) else {
+//               return updateSnapshot()
+//            }
+//            snapshot.deleteItems([identifierToDelete])
+//            diffableDataSource?.apply(snapshot)
+//
+//            snapshot.appendItems([newWordSet])
+//            diffableDataSource?.apply(snapshot)
+//        case .move:
+//            updateSnapshot()
+//            print("silent warning, you should never be able to move something in wordSetEntity since it is already sorted by name.")
+//        @unknown default:
+//            updateSnapshot()
+//            print("silent warning, unknow default from a switch")
+//        }
+//    }
 }
 
 // MARK: - Table View Delegate
 
 extension WordSetPickerController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "chooseWorSetSegue", sender: self)
+        if isEditing {
+            performSegue(withIdentifier: "detailSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "chooseWorSetSegue", sender: self)
+        }
     }
 }

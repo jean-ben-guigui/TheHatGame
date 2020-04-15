@@ -20,6 +20,12 @@ struct Constants {
         case none = ""
     }
     
+    enum chooseWordSet: String {
+        case title = "Do you want to use a set of words that you previously made?"
+        case no = "No, create a new set"
+        case yes = "Yes"
+    }
+    
     struct Alert {
         struct Message {
             static let unknow = "An unknown error has happened"
@@ -34,4 +40,6 @@ struct Constants {
             case unexpectedError = "Error 😵"
         }
     }
+    
+    static let cancelMessage = "Cancel"
 }
