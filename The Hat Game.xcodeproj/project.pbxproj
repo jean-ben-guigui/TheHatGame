@@ -15,6 +15,7 @@
 		D6439F58242CB07600F5E416 /* WordEntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F57242CB07600F5E416 /* WordEntityProvider.swift */; };
 		D6439F5A242CB15F00F5E416 /* CoreData+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */; };
 		D6439F5C242D076900F5E416 /* WordSetPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F5B242D076900F5E416 /* WordSetPickerController.swift */; };
+		D64428802448A731002F2819 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644287F2448A731002F2819 /* InformationsViewController.swift */; };
 		D64EDBD82435E48700B77330 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64EDBD72435E48700B77330 /* Play.storyboard */; };
 		D68896FA241C3BAA0080EA28 /* TeamsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68896F9241C3BAA0080EA28 /* TeamsError.swift */; };
 		D6B920092424C70300D34F10 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B920082424C70300D34F10 /* ResultCell.swift */; };
@@ -72,6 +73,7 @@
 		D6439F57242CB07600F5E416 /* WordEntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntityProvider.swift; sourceTree = "<group>"; };
 		D6439F59242CB15F00F5E416 /* CoreData+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Convenience.swift"; sourceTree = "<group>"; };
 		D6439F5B242D076900F5E416 /* WordSetPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetPickerController.swift; sourceTree = "<group>"; };
+		D644287F2448A731002F2819 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		D64EDBD72435E48700B77330 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		D68896F9241C3BAA0080EA28 /* TeamsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsError.swift; sourceTree = "<group>"; };
 		D6B920082424C70300D34F10 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				D6E705462412A8E200A7FF44 /* PlayViewController.swift */,
 				D6E705422412A8E200A7FF44 /* ResultViewController.swift */,
 				D6090A2E243B6D2E00D20994 /* DetailViewController.swift */,
+				D644287F2448A731002F2819 /* InformationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				D6E705602412A8E200A7FF44 /* AddWordViewController.swift in Sources */,
 				D6439F5A242CB15F00F5E416 /* CoreData+Convenience.swift in Sources */,
 				D6E704F72412A84700A7FF44 /* AppDelegate.swift in Sources */,
+				D64428802448A731002F2819 /* InformationsViewController.swift in Sources */,
 				D6439F51242BA53F00F5E416 /* CoreDataStack.swift in Sources */,
 				D6E704F92412A84700A7FF44 /* SceneDelegate.swift in Sources */,
 				D6B920092424C70300D34F10 /* ResultCell.swift in Sources */,

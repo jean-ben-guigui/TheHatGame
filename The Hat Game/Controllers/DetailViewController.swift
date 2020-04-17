@@ -33,10 +33,12 @@ class DetailViewController: UIViewController {
     }
     @IBOutlet private weak var detailTableView: UITableView!
     @IBOutlet private weak var wordSetNameTextField: UITextField!
+    @IBOutlet var emptyTableView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableViewHeader()
+        setupTableViewFooter()
         setupTableViewCore()
     }
     
@@ -71,6 +73,12 @@ class DetailViewController: UIViewController {
     
     func setupTableViewHeader() {
         wordSetNameTextField.text = wordSet.name
+    }
+    
+    func setupTableViewFooter() {
+        if let wordCount = wordSet.words?.count, wordCount < 1 {
+            detailTableView.backgroundView = emptyTableView
+        }
     }
 
 }

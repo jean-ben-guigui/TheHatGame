@@ -53,13 +53,13 @@ class HatGame {
         for word in self.wordSet.words {
             switch word.state{
             case .notGuessed :
-                fatalError()
+                fatalError("There is a word that is not guessed, therefore we shouldn't pass here")
             case .guessed(let id) :
                 do {
                     try addTeamScore(id: id, score: 1)
                 }
                 catch {
-                    fatalError()
+                    fatalError("A team id is invalid: \(id)")
                 }
             }
         }
@@ -107,8 +107,8 @@ class HatGame {
     }
     
     func nextTeamPlaying() {
-        if playingTeamId <= teams.count - 1 {
-            self.playingTeamId += 1
+        if playingTeamId < teams.count - 1 {
+            self.playingTeamId = (self.playingTeamId + 1)
         } else {
             self.playingTeamId = 0
         }

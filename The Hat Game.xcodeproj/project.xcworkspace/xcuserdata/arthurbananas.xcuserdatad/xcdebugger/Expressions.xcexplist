@@ -3,101 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "WordSetEntityProvider.addWordSet(in:shouldSave:completionHandler:):WordSetEntityProvider.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "wordSetEntity.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in WordSetEntityProvider.mediumDateFormatter.getter:WordSetEntityProvider.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Date()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PlayViewController.configure():PlayViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Constants.defaultRoundTime">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailViewController.wordSetNameEdited(_:):DetailViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "sender.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PlayViewController.fire():PlayViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "WordSetPickerController.updateSnapshot():WordSetPickerController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "fetchedResultsController?.fetchedObjects">
-            </PersistentString>
-            <PersistentString
-               value = "fetchedResultsController?.fetchedObjects?.first?.words?.firstObject">
-            </PersistentString>
-            <PersistentString
-               value = "fetchedResultsController?.fetchedObjects[0].words">
-            </PersistentString>
-            <PersistentString
-               value = "self.snapshot">
-            </PersistentString>
-            <PersistentString
-               value = "wordSets">
-            </PersistentString>
-            <PersistentString
-               value = "fetchedResultsController?.fetchedObjects?.first?.words">
-            </PersistentString>
-            <PersistentString
-               value = "diffableDataSource">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "UIView.roundCorners.setter:VisualHelper.swift">
          <PersistentStrings>
             <PersistentString
                value = "0.125*self.bounds.size.width">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WordSetUITableViewDiffableDataSource.tableView(_:commit:forRowAt:):WordSetUITableViewDiffableDataSource.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "fetchedResultsController?.object(at: indexPath).words">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailViewController.updateSnapshot():DetailViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "wordSet?.words">
-            </PersistentString>
-            <PersistentString
-               value = "wordSet?.words?.count">
-            </PersistentString>
-            <PersistentString
-               value = "wordSet?.words?.array">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WordSetEntityProvider.changeName(wordSet:newName:shouldSave:completionHandler:):WordSetEntityProvider.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "wordSet.words">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -116,16 +25,92 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WordSetEntityProvider.addWordSet(in:shouldSave:completionHandler:):WordSetEntityProvider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordSetEntity.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordSetEntityProvider.changeName(wordSet:newName:shouldSave:completionHandler:):WordSetEntityProvider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordSet.words">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in WordSetEntityProvider.mediumDateFormatter.getter:WordSetEntityProvider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Date()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.updateSnapshot():DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordSet?.words?.array">
+            </PersistentString>
+            <PersistentString
+               value = "wordSet?.words?.count">
+            </PersistentString>
+            <PersistentString
+               value = "wordSet?.words">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WhosTurnViewController.viewDidLoad():WhosTurnViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.hatGame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.wordSetNameEdited(_:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WordSetPickerController.controller(_:didChange:at:for:newIndexPath:):WordSetPickerController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "newWordSet.name">
+               value = "newWordSet">
             </PersistentString>
             <PersistentString
                value = "anObject">
             </PersistentString>
             <PersistentString
-               value = "newWordSet">
+               value = "newWordSet.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.fire():PlayViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WordSet.init(wordSetEntity:):WordSet.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "words.count">
+            </PersistentString>
+            <PersistentString
+               value = "word.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordSetUITableViewDiffableDataSource.tableView(_:commit:forRowAt:):WordSetUITableViewDiffableDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchedResultsController?.object(at: indexPath).words">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -137,6 +122,88 @@
             </PersistentString>
             <PersistentString
                value = "wordEntity.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordSetPickerController.prepare(for:sender:):WordSetPickerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "hatGame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.configure():PlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Constants.defaultRoundTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ResultViewController.playAgain(_:):ResultViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayViewController.successAction(_:):PlayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "hatGame.playingTeamId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HatGame.nextPhase():HatGame.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordSet.words">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ResultViewController.setWinnerLabelsVisibility(alpha:animationTime:tie:):ResultViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.winnerIsLabel.alpha">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WhosTurnViewController.prepare(for:sender:):WhosTurnViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController?.isToolbarHidden">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WordSetPickerController.updateSnapshot():WordSetPickerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchedResultsController?.fetchedObjects?.first?.words">
+            </PersistentString>
+            <PersistentString
+               value = "fetchedResultsController?.fetchedObjects?.first?.words?.firstObject">
+            </PersistentString>
+            <PersistentString
+               value = "diffableDataSource">
+            </PersistentString>
+            <PersistentString
+               value = "self.snapshot">
+            </PersistentString>
+            <PersistentString
+               value = "wordSets">
+            </PersistentString>
+            <PersistentString
+               value = "fetchedResultsController?.fetchedObjects">
+            </PersistentString>
+            <PersistentString
+               value = "fetchedResultsController?.fetchedObjects[0].words">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

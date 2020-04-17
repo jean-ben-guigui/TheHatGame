@@ -21,9 +21,11 @@ class ResultViewController: UIViewController {
             }
             do {
                 self.scores = try self.hatGame!.getTeamSortedByScores()
+                let bestScore = self.scores[0]
+                let tie = self.scores[1].scorePreviousToCurrentPhase == self.scores[0].scorePreviousToCurrentPhase
                 DispatchQueue.main.async {
-                    self.winnerTeamName.text = self.scores[0].name
-                    self.setWinnerLabelsVisibility(alpha: 1.0, animationTime: 2)
+                    self.winnerTeamName.text = tie ? Constants.tieResult : bestScore.name
+                    self.setWinnerLabelsVisibility(alpha: 1.0, animationTime: 2, tie: tie)
                 }
             } catch {
                let presenter = AlertPresenter(
@@ -35,9 +37,16 @@ class ResultViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var emojisLabel: UILabel!
     @IBOutlet weak var winnerIsLabel: UILabel!
     @IBOutlet weak var winnerTeamName: UILabel!
     @IBOutlet weak var resultTableView: UITableView!
+    
+    
+    @IBAction func playAgain(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     var hatGame:HatGame?
     var scores = [Team]() {
         didSet {
@@ -52,10 +61,15 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func setWinnerLabelsVisibility(alpha: Double, animationTime: Double = 0) {
+    func setWinnerLabelsVisibility(alpha: Double, animationTime: Double = 0, tie: Bool = false) {
         UIView.animate(withDuration: animationTime, delay: 0, options: .curveEaseIn,  animations: {
             self.winnerTeamName.alpha = CGFloat(alpha)
-            self.winnerIsLabel.alpha = CGFloat(alpha)
+            self.emojisLabel.alpha = CGFloat(alpha)
+            if !tie {
+                self.winnerIsLabel.alpha = CGFloat(alpha)
+            } else {
+                self.emojisLabel.text = "😮😮😮"
+            }
         })
     }
 }
@@ -75,7 +89,7 @@ extension ResultViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
         let teamToDisplay = scores[indexPath.row]
-        cell.score?.text = "\(teamToDisplay.scorePreviousToCurrentPhase)"
+        cell.score?.text = "\(teamToDisplay.scorePreviousToCurrentPhase) pts"
         cell.teamName?.text = "\(teamToDisplay.name)"
         switch indexPath.row {
         case 0:

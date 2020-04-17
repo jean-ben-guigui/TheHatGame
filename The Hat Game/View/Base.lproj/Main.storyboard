@@ -11,7 +11,8 @@
         <!--Navigation Controller-->
         <scene sceneID="IGA-K9-poB">
             <objects>
-                <navigationController id="7D2-gq-TIp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNavigationController" modalPresentationStyle="fullScreen" id="7D2-gq-TIp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qiB-8v-4my"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Kih-mu-Swb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,35 +25,46 @@
             </objects>
             <point key="canvasLocation" x="-1730" y="105"/>
         </scene>
-        <!--Team Names View Controller-->
+        <!--Team Names-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Team Names View Controller" customClass="TeamNamesViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" userLabel="Team Names" customClass="TeamNamesViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Main View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-Ls-6lZ" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBN-3w-aYR" userLabel="Title View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="212.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter up to 4 team names:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
-                                                <rect key="frame" x="37.5" y="100" width="300" height="50.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                                <color key="textColor" name="appleColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8us-j4-I9c">
+                                                <rect key="frame" x="37.5" y="53.5" width="300" height="105.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are your teams?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-dQ-u7I">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="42"/>
+                                                        <color key="textColor" name="appleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can have 2, 3 or 4 teams to play the game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
+                                                        <rect key="frame" x="0.0" y="50.5" width="300" height="55"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <color key="textColor" name="appleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="centerX" secondItem="CBN-3w-aYR" secondAttribute="centerX" id="HJc-iI-wck"/>
-                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="centerY" secondItem="CBN-3w-aYR" secondAttribute="centerY" id="SS7-AP-mVG"/>
-                                            <constraint firstItem="U1l-kK-2Qa" firstAttribute="width" secondItem="CBN-3w-aYR" secondAttribute="width" multiplier="0.8" id="tqR-Pz-r9q"/>
+                                            <constraint firstItem="8us-j4-I9c" firstAttribute="centerY" secondItem="CBN-3w-aYR" secondAttribute="centerY" id="Arj-R1-3uB"/>
+                                            <constraint firstItem="8us-j4-I9c" firstAttribute="width" secondItem="CBN-3w-aYR" secondAttribute="width" multiplier="0.8" id="Bja-Jv-YSi"/>
+                                            <constraint firstItem="8us-j4-I9c" firstAttribute="centerX" secondItem="CBN-3w-aYR" secondAttribute="centerX" id="J88-hz-m45"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czM-eh-2fl" userLabel="Enter Team Names View">
-                                        <rect key="frame" x="0.0" y="250.5" width="375" height="166"/>
+                                        <rect key="frame" x="0.0" y="212.5" width="375" height="166"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-2s-peS" userLabel="Enter Team Names Stack View">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="166"/>
@@ -64,7 +76,7 @@
                                                                 <rect key="frame" x="0.0" y="1.5" width="27" height="31"/>
                                                                 <color key="tintColor" name="appleColor"/>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team's name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wvr-ae-JXL" userLabel="first name" customClass="DesignableTextField" customModule="The_Hat_Game" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wvr-ae-JXL" userLabel="first name" customClass="DesignableTextField" customModule="The_Hat_Game" customModuleProvider="target">
                                                                 <rect key="frame" x="32" y="0.0" width="303" height="34"/>
                                                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -87,7 +99,7 @@
                                                                 <rect key="frame" x="0.0" y="1.5" width="27" height="31"/>
                                                                 <color key="tintColor" name="appleColor"/>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team's name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YQD-SK-uqT" userLabel="second name">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YQD-SK-uqT" userLabel="second name">
                                                                 <rect key="frame" x="32" y="0.0" width="303" height="34"/>
                                                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -105,7 +117,7 @@
                                                                 <rect key="frame" x="0.0" y="1.5" width="27" height="31"/>
                                                                 <color key="tintColor" name="appleColor"/>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team's name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-d6-jkk" userLabel="third name">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-d6-jkk" userLabel="third name">
                                                                 <rect key="frame" x="32" y="0.0" width="303" height="34"/>
                                                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -123,7 +135,7 @@
                                                                 <rect key="frame" x="0.0" y="1.5" width="27" height="31"/>
                                                                 <color key="tintColor" name="appleColor"/>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team's name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-TQ-eUR" userLabel="fourth name">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Awesome team name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-TQ-eUR" userLabel="fourth name">
                                                                 <rect key="frame" x="32" y="0.0" width="303" height="34"/>
                                                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -155,10 +167,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A14-IW-3Te" userLabel="Footer View">
-                                        <rect key="frame" x="0.0" y="416.5" width="375" height="250.5"/>
+                                        <rect key="frame" x="0.0" y="378.5" width="375" height="212.5"/>
                                         <subviews>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sX3-I5-IkG">
-                                                <rect key="frame" x="141" y="104.5" width="93" height="42"/>
+                                                <rect key="frame" x="141" y="85.5" width="93" height="42"/>
                                                 <color key="backgroundColor" name="appleColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" name="appleColor"/>
@@ -203,8 +215,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Teams" id="gmx-C5-6RF"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="fcB-nP-2Nr"/>
                     <connections>
                         <outlet property="firstTeamName" destination="wvr-ae-JXL" id="EVF-Cc-7M5"/>
                         <outlet property="fourthTeamName" destination="fO8-TQ-eUR" id="CXl-NL-ZeY"/>
@@ -226,7 +237,133 @@
                 <viewControllerPlaceholder storyboardName="Play" id="emL-F8-Ywn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7i-M6-IOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-235" y="-497"/>
+            <point key="canvasLocation" x="-246" y="-288"/>
+        </scene>
+        <!--Informations-->
+        <scene sceneID="HnH-5b-kqh">
+            <objects>
+                <viewController storyboardIdentifier="informationViewController" id="1oV-So-BA4" userLabel="Informations" customClass="InformationsViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cuP-bj-eAe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qf-dZ-dc7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="538"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o2T-UG-iOK">
+                                        <rect key="frame" x="15" y="54" width="345" height="430"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ici-pV-Goo">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="110"/>
+                                                <string key="text">To play the hat game, you shall first divide the players into teams, with a maximum of 4 teams.Try to mix up ages and abilities 🧜‍♀️</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" name="appleColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piy-12-1xv">
+                                                <rect key="frame" x="0.0" y="125" width="345" height="137.5"/>
+                                                <string key="text">Then each player shall secretly write down the name of a famous person or character (or anything you want, really) on the phone's screen</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" name="appleColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finally you will make your teammates guess these words" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mne-2a-usI">
+                                                <rect key="frame" x="0.0" y="277.5" width="345" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" name="appleColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't worry if you don't remember all that, you will be guided the whole time " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYR-vD-CdF">
+                                                <rect key="frame" x="0.0" y="347.5" width="345" height="82.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" name="appleColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="o2T-UG-iOK" secondAttribute="trailing" constant="15" id="Goc-X4-ani"/>
+                                    <constraint firstItem="o2T-UG-iOK" firstAttribute="centerY" secondItem="2qf-dZ-dc7" secondAttribute="centerY" id="bSv-oA-fW2"/>
+                                    <constraint firstItem="o2T-UG-iOK" firstAttribute="leading" secondItem="2qf-dZ-dc7" secondAttribute="leading" constant="15" id="g8T-9M-0ek"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBB-Y2-Dyp">
+                                <rect key="frame" x="0.0" y="538" width="375" height="129"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PTB-L8-ehh">
+                                        <rect key="frame" x="15" y="15" width="345" height="99"/>
+                                        <subviews>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-U0-1Hm">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="42"/>
+                                                <color key="backgroundColor" name="appleColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="tintColor" name="appleColor"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                <size key="titleShadowOffset" width="2" height="0.0"/>
+                                                <state key="normal" title="dismiss">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KwC-BF-1Tu"/>
+                                                    <segue destination="7D2-gq-TIp" kind="show" identifier="dismissInformations" id="SCe-6d-t2v"/>
+                                                </connections>
+                                            </button>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQD-54-cm1">
+                                                <rect key="frame" x="0.0" y="57" width="345" height="42"/>
+                                                <color key="backgroundColor" name="appleColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="tintColor" name="appleColor"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                <size key="titleShadowOffset" width="2" height="0.0"/>
+                                                <state key="normal" title="don't show again">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YY-pR-zN7"/>
+                                                    <action selector="dontShowAgain:" destination="1oV-So-BA4" eventType="touchUpInside" id="LcQ-4s-G8H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PTB-L8-ehh" secondAttribute="bottom" constant="15" id="G8r-Rb-Q4X"/>
+                                    <constraint firstItem="PTB-L8-ehh" firstAttribute="top" secondItem="iBB-Y2-Dyp" secondAttribute="top" constant="15" id="GfJ-br-1eK"/>
+                                    <constraint firstAttribute="trailing" secondItem="PTB-L8-ehh" secondAttribute="trailing" constant="15" id="YMu-j7-uof"/>
+                                    <constraint firstItem="PTB-L8-ehh" firstAttribute="leading" secondItem="iBB-Y2-Dyp" secondAttribute="leading" constant="15" id="gUd-8V-drg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dfF-ZV-osz" firstAttribute="trailing" secondItem="2qf-dZ-dc7" secondAttribute="trailing" id="BLQ-rC-Z4J"/>
+                            <constraint firstItem="iBB-Y2-Dyp" firstAttribute="leading" secondItem="dfF-ZV-osz" secondAttribute="leading" id="EDs-YS-lTx"/>
+                            <constraint firstItem="iBB-Y2-Dyp" firstAttribute="top" secondItem="2qf-dZ-dc7" secondAttribute="bottom" id="Pw8-Wm-f5w"/>
+                            <constraint firstItem="2qf-dZ-dc7" firstAttribute="leading" secondItem="dfF-ZV-osz" secondAttribute="leading" id="VFY-dL-suB"/>
+                            <constraint firstItem="dfF-ZV-osz" firstAttribute="bottom" secondItem="iBB-Y2-Dyp" secondAttribute="bottom" id="i2d-OT-f2B"/>
+                            <constraint firstItem="2qf-dZ-dc7" firstAttribute="top" secondItem="dfF-ZV-osz" secondAttribute="top" id="jJ4-qj-5L5"/>
+                            <constraint firstItem="dfF-ZV-osz" firstAttribute="trailing" secondItem="iBB-Y2-Dyp" secondAttribute="trailing" id="uNz-xa-IQE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dfF-ZV-osz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B84-aG-tnn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRM-uo-dzu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="-660"/>
         </scene>
         <!--Word Sets-->
         <scene sceneID="WXq-Pg-RCn">
@@ -301,7 +438,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-WU-BVM">
-                                <rect key="frame" x="0.0" y="0.0" width="369" height="645"/>
+                                <rect key="frame" x="0.0" y="0.0" width="369" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="W7Q-gz-0n4">
                                     <rect key="frame" x="0.0" y="0.0" width="369" height="44"/>
@@ -309,7 +446,7 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the word set" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5QS-fX-3zE">
                                             <rect key="frame" x="20" y="11" width="349" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="wordSetNameEdited:" destination="Olw-aj-y8K" eventType="editingDidEnd" id="laL-HY-qou"/>
@@ -322,6 +459,11 @@
                                         <constraint firstItem="5QS-fX-3zE" firstAttribute="leading" secondItem="W7Q-gz-0n4" secondAttribute="leading" constant="20" id="dxX-uB-ciA"/>
                                         <constraint firstAttribute="trailing" secondItem="5QS-fX-3zE" secondAttribute="trailing" id="s6Y-px-DCO"/>
                                     </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="XuG-qK-3cU">
+                                    <rect key="frame" x="0.0" y="143.5" width="369" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wordCell" textLabel="JGD-w4-MNc" style="IBUITableViewCellStyleDefault" id="slx-NM-Roi">
@@ -350,8 +492,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="LQg-WU-BVM" firstAttribute="top" secondItem="rwI-43-vCJ" secondAttribute="top" id="C1t-3A-xEv"/>
-                            <constraint firstItem="rwI-43-vCJ" firstAttribute="bottom" secondItem="LQg-WU-BVM" secondAttribute="bottom" constant="2" id="CSX-sD-dj0"/>
                             <constraint firstItem="rwI-43-vCJ" firstAttribute="trailing" secondItem="LQg-WU-BVM" secondAttribute="trailing" constant="6" id="LEc-t1-IH7"/>
+                            <constraint firstItem="rwI-43-vCJ" firstAttribute="bottom" secondItem="LQg-WU-BVM" secondAttribute="bottom" id="NOt-KY-AMc"/>
                             <constraint firstItem="LQg-WU-BVM" firstAttribute="leading" secondItem="rwI-43-vCJ" secondAttribute="leading" id="Sm8-ev-QAZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rwI-43-vCJ"/>
@@ -367,17 +509,38 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="LQg-WU-BVM" id="XA0-8G-TCb"/>
+                        <outlet property="emptyTableView" destination="Cux-4l-Kd6" id="SSz-oW-yqr"/>
                         <outlet property="wordSetNameTextField" destination="5QS-fX-3zE" id="GSy-GI-ekQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEP-Lo-Ppg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Cux-4l-Kd6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This word set seems to be empty, you should probably delete it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="sl9-Pa-Cwk">
+                            <rect key="frame" x="15" y="15" width="345" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="sl9-Pa-Cwk" secondAttribute="trailing" constant="15" id="IMN-6n-XNz"/>
+                        <constraint firstItem="sl9-Pa-Cwk" firstAttribute="top" secondItem="Cux-4l-Kd6" secondAttribute="top" constant="15" id="gM1-ol-fGL"/>
+                        <constraint firstAttribute="bottom" secondItem="sl9-Pa-Cwk" secondAttribute="bottom" constant="15" id="hQu-fo-Uo2"/>
+                        <constraint firstItem="sl9-Pa-Cwk" firstAttribute="leading" secondItem="Cux-4l-Kd6" secondAttribute="leading" constant="15" id="sae-Aw-sqx"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="iYd-2Q-3SG"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="1630.4347826086957"/>
         </scene>
-        <!--Add Word View Controller-->
+        <!--Add Word-->
         <scene sceneID="gN3-tJ-Vgr">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="npd-aI-MDo" customClass="AddWordViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="npd-aI-MDo" userLabel="Add Word" customClass="AddWordViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ke4-MY-f6B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,6 +675,7 @@
                         <viewLayoutGuide key="safeArea" id="bqZ-mC-VAK"/>
                     </view>
                     <navigationItem key="navigationItem" id="384-ih-246"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addWordView" destination="Ke4-MY-f6B" id="U6P-74-89j"/>
                         <outlet property="doneButton" destination="N7M-gX-saV" id="w2Z-yr-pyK"/>
@@ -519,17 +683,17 @@
                         <outlet property="teamNameLabel" destination="NKX-Ae-VJ5" id="PjL-y6-hzN"/>
                         <outlet property="wordInput" destination="PC0-jk-z20" id="qdj-Qh-4qu"/>
                         <outlet property="wordNumberLabel" destination="gVo-OR-9lg" id="6fe-bq-CSg"/>
-                        <segue destination="uu7-T8-hMl" kind="showDetail" identifier="whosTurnSegue" id="MLE-Dm-hwf"/>
+                        <segue destination="uu7-T8-hMl" kind="show" identifier="whosTurnSegue" id="MLE-Dm-hwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyw-MQ-my3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="105"/>
+            <point key="canvasLocation" x="454" y="105"/>
         </scene>
-        <!--Whos Turn View Controller-->
+        <!--Whos Turn-->
         <scene sceneID="EUd-an-XPO">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="uu7-T8-hMl" customClass="WhosTurnViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="uu7-T8-hMl" userLabel="Whos Turn" customClass="WhosTurnViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MNw-Zu-VlN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,17 +755,17 @@
                         <outlet property="explanationLabel" destination="8Qv-FS-uAF" id="6rf-8i-lUZ"/>
                         <outlet property="startGuessingButton" destination="CHU-yg-neC" id="RSK-2B-HhN"/>
                         <outlet property="whosTurnLabel" destination="ySS-Ym-CB4" id="GTS-ag-LOk"/>
-                        <segue destination="J6B-OD-5DE" kind="showDetail" identifier="startGuessingSegue" id="5Y1-oY-O6Q"/>
+                        <segue destination="J6B-OD-5DE" kind="show" identifier="startGuessingSegue" id="5Y1-oY-O6Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3d-sO-EyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="865"/>
+            <point key="canvasLocation" x="454" y="865"/>
         </scene>
-        <!--Play View Controller-->
+        <!--Play-->
         <scene sceneID="LXd-jL-peS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="J6B-OD-5DE" customClass="PlayViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="J6B-OD-5DE" userLabel="Play" customClass="PlayViewController" customModule="The_Hat_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="owW-bk-i5H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -669,30 +833,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h7Z-tY-GIM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XDl-BK-wT1"/>
+                    <navigationItem key="navigationItem" title="poooo" id="XDl-BK-wT1"/>
                     <connections>
                         <outlet property="passButton" destination="Fig-6E-c9Q" id="ftv-AT-3Yb"/>
                         <outlet property="theWordLabel" destination="fIw-lL-3x9" id="TJ7-st-oRk"/>
                         <outlet property="timerLabel" destination="aQe-Du-G65" id="har-85-EyB"/>
-                        <segue destination="uu7-T8-hMl" kind="showDetail" identifier="nextTeamSegue" id="ejE-th-1wC"/>
-                        <segue destination="uu7-T8-hMl" kind="showDetail" identifier="nextPhaseSegue" id="U8h-oi-DKY"/>
-                        <segue destination="g3G-9i-PHX" kind="showDetail" identifier="presentResultSegue" id="79U-Bl-ckm"/>
+                        <segue destination="uu7-T8-hMl" kind="show" identifier="nextTeamSegue" id="ejE-th-1wC"/>
+                        <segue destination="uu7-T8-hMl" kind="show" identifier="nextPhaseSegue" id="U8h-oi-DKY"/>
+                        <segue destination="g3G-9i-PHX" kind="show" identifier="presentResultSegue" id="79U-Bl-ckm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMa-y9-g3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1895" y="865"/>
         </scene>
-        <!--Result View Controller-->
+        <!--Result-->
         <scene sceneID="7xo-6d-I9E">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="g3G-9i-PHX" customClass="ResultViewController" customModule="The_Hat_Game" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="g3G-9i-PHX" userLabel="Result" customClass="ResultViewController" customModule="The_Hat_Game" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YeG-F0-rZG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaP-CH-Zna" userLabel="WinnerView">
-                                <rect key="frame" x="0.0" y="50" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-Uq-oUY">
                                         <rect key="frame" x="20" y="44.5" width="335" height="178"/>
@@ -727,14 +891,9 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cn-kN-46q">
-                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="334"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" name="appleColor"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="Lh8-qb-fOD">
-                                    <rect key="frame" x="0.0" y="108" width="375" height="0.0"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.1333177388" green="0.13334330920000001" blue="0.13331216570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" id="w0y-li-NJ3" customClass="ResultCell" customModule="The_Hat_Game" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="52"/>
@@ -792,22 +951,57 @@
                                     <outlet property="delegate" destination="g3G-9i-PHX" id="dmC-7U-4AS"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kj2-QP-s2N">
+                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <subviews>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ory-ho-TnD">
+                                        <rect key="frame" x="107" y="15" width="161" height="36"/>
+                                        <color key="backgroundColor" name="appleColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="tintColor" name="appleColor"/>
+                                        <inset key="contentEdgeInsets" minX="30" minY="4" maxX="30" maxY="4"/>
+                                        <size key="titleShadowOffset" width="2" height="0.0"/>
+                                        <state key="normal" title="play again">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playAgain:" destination="g3G-9i-PHX" eventType="touchUpInside" id="rQV-rT-O1P"/>
+                                            <action selector="startGuessing:" destination="uu7-T8-hMl" eventType="touchUpInside" id="0X4-pE-7Hy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ory-ho-TnD" secondAttribute="bottom" constant="15" id="OUX-0o-OQa"/>
+                                    <constraint firstItem="Ory-ho-TnD" firstAttribute="centerX" secondItem="Kj2-QP-s2N" secondAttribute="centerX" id="WLk-sf-3MU"/>
+                                    <constraint firstItem="Ory-ho-TnD" firstAttribute="top" secondItem="Kj2-QP-s2N" secondAttribute="top" constant="15" id="nol-VP-kAf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="akz-LD-c4i" firstAttribute="bottom" secondItem="9cn-kN-46q" secondAttribute="bottom" id="Icy-1V-CUi"/>
+                            <constraint firstItem="Kj2-QP-s2N" firstAttribute="top" secondItem="9cn-kN-46q" secondAttribute="bottom" id="1yP-Yc-t4e"/>
+                            <constraint firstItem="Kj2-QP-s2N" firstAttribute="leading" secondItem="akz-LD-c4i" secondAttribute="leading" id="IGH-Yr-tgO"/>
+                            <constraint firstItem="akz-LD-c4i" firstAttribute="trailing" secondItem="Kj2-QP-s2N" secondAttribute="trailing" id="Z1M-ss-6i4"/>
                             <constraint firstItem="OaP-CH-Zna" firstAttribute="trailing" secondItem="akz-LD-c4i" secondAttribute="trailing" id="br1-W8-s2Z"/>
                             <constraint firstItem="OaP-CH-Zna" firstAttribute="height" secondItem="YeG-F0-rZG" secondAttribute="height" multiplier="2:5" id="eDv-aw-x6f"/>
-                            <constraint firstItem="OaP-CH-Zna" firstAttribute="top" secondItem="akz-LD-c4i" secondAttribute="top" constant="50" id="enc-G9-aaq"/>
+                            <constraint firstItem="OaP-CH-Zna" firstAttribute="top" secondItem="akz-LD-c4i" secondAttribute="top" id="enc-G9-aaq"/>
                             <constraint firstItem="9cn-kN-46q" firstAttribute="leading" secondItem="akz-LD-c4i" secondAttribute="leading" id="f1y-Qa-vjW"/>
                             <constraint firstItem="OaP-CH-Zna" firstAttribute="leading" secondItem="akz-LD-c4i" secondAttribute="leading" id="jTj-90-4Xk"/>
                             <constraint firstItem="9cn-kN-46q" firstAttribute="top" secondItem="OaP-CH-Zna" secondAttribute="bottom" id="lo1-rs-lrF"/>
                             <constraint firstItem="akz-LD-c4i" firstAttribute="trailing" secondItem="9cn-kN-46q" secondAttribute="trailing" id="rd3-e9-RRS"/>
+                            <constraint firstItem="Kj2-QP-s2N" firstAttribute="bottom" secondItem="akz-LD-c4i" secondAttribute="bottom" id="zMi-vi-1yo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="akz-LD-c4i"/>
                     </view>
                     <navigationItem key="navigationItem" id="fuQ-N8-qm9"/>
                     <connections>
+                        <outlet property="emojisLabel" destination="TtW-PD-TXE" id="fKZ-aQ-36H"/>
                         <outlet property="resultTableView" destination="9cn-kN-46q" id="c9e-8Y-D6Q"/>
                         <outlet property="winnerIsLabel" destination="Udg-jv-jeC" id="8q9-La-eda"/>
                         <outlet property="winnerTeamName" destination="6ZE-s6-yFi" id="gGw-JD-OMd"/>
@@ -815,7 +1009,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqG-dg-v2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2986" y="865"/>
+            <point key="canvasLocation" x="2984.8000000000002" y="864.91754122938539"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

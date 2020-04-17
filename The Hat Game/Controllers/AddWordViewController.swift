@@ -37,7 +37,7 @@ class AddWordViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let hatGame = hatGame else {
-            fatalError()
+            fatalError("prepareforsegue, Cannot found hatGame in addWordViewcontroller")
         }
         if (segue.identifier == "whosTurnSegue") {
             if let destination = segue.destination as? WhosTurnViewController {
@@ -58,7 +58,7 @@ class AddWordViewController: UIViewController {
     /// - adjust the number /24 and the name of the team that should be entering the next word
     @IBAction func validateWord(_ sender: UIButton) {
         guard let hatGame = hatGame else {
-            fatalError()
+            fatalError("validate word: Cannot found hatGame in addWordViewcontroller")
         }
         do {
             try hatGame.addWordToWordSet(wordToValidate)

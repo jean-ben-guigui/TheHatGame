@@ -20,7 +20,7 @@ class PlayViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let hatGame = hatGame else {
-            fatalError()
+            fatalError("prepareforsegue, Cannot found hatGame in addWordViewcontroller")
         }
         if (segue.identifier == "nextTeamSegue") {
             if let destination = segue.destination as? WhosTurnViewController {
@@ -59,7 +59,7 @@ class PlayViewController: UIViewController {
     
     @IBAction func successAction(_ sender: UIButton) {
         guard let hatGame = self.hatGame else {
-            fatalError()
+            fatalError("successAction, Cannot found hatGame in addWordViewcontroller")
         }
         if let word = wordToGuess {
             hatGame.setGuessedWord(word, teamId: hatGame.playingTeamId)
@@ -74,7 +74,7 @@ class PlayViewController: UIViewController {
     ///does some check Up and generate a new word if it is appropriate
     func randomWord() {
         guard let hatGame = self.hatGame else {
-            fatalError()
+            fatalError("No hatGame found, problem with dependency injection.")
         }
         let notGuessedWords = hatGame.wordSet.getNotGuessedWords()
         if notGuessedWords.count == 0 {

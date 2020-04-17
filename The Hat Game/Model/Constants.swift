@@ -42,4 +42,6 @@ struct Constants {
     }
     
     static let cancelMessage = "Cancel"
+    static let emptyWordSet = "This word set seems to be empty, you should probably delete it."
+    static let tieResult = "It's a tie!"
 }

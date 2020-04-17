@@ -29,13 +29,14 @@ struct WordSet {
     
     init(wordSetEntity:  WordSetEntity) {
         self.words = Set<Word>()
-        guard let words = wordSetEntity.words else {
+        guard let wordsFromWordSet = wordSetEntity.words else {
             return
         }
-        for word in words {
-            if let word = word as? String {
+//        self.words = wordsFromWordSet
+        for word in wordsFromWordSet {
+            if let word = word as? WordEntity, let data = word.data  {
                 do {
-                    try addWord(word)
+                    try addWord(data)
                 }
                 catch {
                     print("Silent error")
