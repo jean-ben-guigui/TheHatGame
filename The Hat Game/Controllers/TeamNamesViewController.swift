@@ -23,6 +23,10 @@ class TeamNamesViewController: UIViewController {
         configure();
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let hatGame = HatGame([])
         addTeam(hatGame: hatGame, button: firstTeamName)

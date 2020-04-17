@@ -44,7 +44,7 @@ class ResultViewController: UIViewController {
     
     
     @IBAction func playAgain(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: false)
     }
     
     var hatGame:HatGame?

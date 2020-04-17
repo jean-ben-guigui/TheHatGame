@@ -27,9 +27,9 @@ class WhosTurnViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if !self.navigationController!.isToolbarHidden {
-            self.navigationController?.setToolbarHidden(true, animated: true)
-//        }
+        if let navigationBarHidden = self.navigationController?.isNavigationBarHidden, !navigationBarHidden {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
         if let selfHatGame = hatGame {
             if (segue.identifier == "startGuessingSegue") {
                 if let destination = segue.destination as? PlayViewController {
