@@ -22,7 +22,7 @@ struct WordSet {
                 try addWord(word)
             }
             catch {
-                print("Silent error")
+				//silent error
             }
         }
     }
@@ -39,7 +39,7 @@ struct WordSet {
                     try addWord(data)
                 }
                 catch {
-                    print("Silent error")
+					//silent error
                 }
             }
         }

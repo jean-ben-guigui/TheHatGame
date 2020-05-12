@@ -78,7 +78,7 @@ class WordSetPickerController: UIViewController {
             return cell
         }
         
-        diffableDataSource?.wordSetEntityProvider = wordSetEntityProvider
+//        diffableDataSource?.wordSetEntityProvider = wordSetEntityProvider
         diffableDataSource?.fetchedResultsController = fetchedResultsController
         
         updateSnapshot()
@@ -98,13 +98,6 @@ class WordSetPickerController: UIViewController {
         self.snapshot = NSDiffableDataSourceSnapshot<WordSetTableViewSection, WordSetEntity>()
         self.snapshot.appendSections([.main])
         self.snapshot.appendItems(fetchedResultsController?.fetchedObjects ?? [])
-        
-        // Uncomment for debugging purposes.
-//        for object in fetchedResultsController?.fetchedObjects ?? []{
-//            print(object.name)
-//            print(object.hash)
-//            print(object.hashValue)
-//        }
         
         diffableDataSource?.apply(self.snapshot, animatingDifferences: true)
     }

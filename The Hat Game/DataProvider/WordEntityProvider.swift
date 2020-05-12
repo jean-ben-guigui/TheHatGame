@@ -19,10 +19,11 @@ class WordEntityProvider {
        self.fetchedResultsControllerDelegate = fetchedResultsControllerDelegate
     }
     
-    func addWordEntity(data: String, context: NSManagedObjectContext, shouldSave: Bool = true, completionHandler: ((_ newWordEntity: WordEntity) -> Void)? = nil) {
+	func addWordEntity(data: String, wordSet: WordSetEntity, context: NSManagedObjectContext, shouldSave: Bool = true, completionHandler: ((_ newWordEntity: WordEntity) -> Void)? = nil) {
         context.performAndWait {
             let word = WordEntity(context: context)
             word.data = data
+			word.wordSet = wordSet
             
             if shouldSave {
                 context.save(with: .addWordEntity)

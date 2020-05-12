@@ -35,6 +35,7 @@ struct Constants {
             static func wordAlreadyEntered(word: String) -> String {
                    return "The word \(word) has already been entered"
 			}
+			static let nextTeamNotFound = "There was an error determining the next team, you may need to restart the app."
         }
         enum Title: String {
             case trouble = "Oops 😬"

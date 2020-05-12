@@ -88,10 +88,6 @@ class WordSetEntityProvider {
         guard let context = wordSet.managedObjectContext else {
             return
         }
-//        wordSet.name = newName
-//        if shouldSave {
-//            context.save(with: .updatingWordSetEntity)
-//        }
         addWordSet(in: context, shouldSave: false, completionHandler: { [weak wordSet] (wordSetEntity)  in
             guard let wordSet = wordSet, let words = wordSet.words else {
                 context.delete(wordSetEntity)
@@ -102,9 +98,10 @@ class WordSetEntityProvider {
                 guard let word = word as? WordEntity else {
                     return
                 }
-                let wordEntity = WordEntity()
+				let wordEntity = WordEntity(context: context)
                 wordEntity.data = word.data
-                wordSetEntity.addToWords(wordEntity)
+				wordEntity.wordSet = wordSet
+				wordSetEntity.addToWords(wordEntity)
             }
             context.delete(wordSet)
             wordSetEntity.name = newName
@@ -125,7 +122,5 @@ class WordSetEntityProvider {
         } catch {
             return true
         }
-        
-//        let test = try? managedContext.fetch(fetchRequest)
     }
 }

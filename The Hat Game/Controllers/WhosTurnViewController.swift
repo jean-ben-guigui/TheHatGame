@@ -51,7 +51,8 @@ class WhosTurnViewController: UIViewController {
             let teamPlayingName = try hatGame.getTeamPlayingName()
             whosTurnLabel.text = "Turn to team \(teamPlayingName) to play !"
         } catch {
-            print("no team playing at the moment")
+			let presenter = AlertPresenter(title: Constants.Alert.Title.trouble.rawValue, message: Constants.Alert.Message.nextTeamNotFound, completionAction: nil)
+			presenter.present(in: self)
         }
     }
 }

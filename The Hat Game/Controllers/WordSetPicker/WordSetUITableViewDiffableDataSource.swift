@@ -32,7 +32,6 @@ class WordSetUITableViewDiffableDataSource: UITableViewDiffableDataSource<WordSe
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let wordSetEntityProvider = wordSetEntityProvider, let wordSet = fetchedResultsController?.object(at: indexPath) else {
-                //TODO displays error message
 				DispatchQueue.main.async { [weak self] in
 					guard let self = self else {
 						return
@@ -46,9 +45,6 @@ class WordSetUITableViewDiffableDataSource: UITableViewDiffableDataSource<WordSe
 				return
             }
             wordSetEntityProvider.delete(wordSet: wordSet, shouldSave: true)
-        }
-        else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 }

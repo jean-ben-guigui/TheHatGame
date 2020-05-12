@@ -180,6 +180,9 @@
                                                 <state key="normal" title="Done">
                                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDg-t7-9Ed"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -205,6 +208,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="y7x-Ls-6lZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DjH-rB-qkI"/>
                             <constraint firstItem="y7x-Ls-6lZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S1R-gT-dXi"/>
@@ -212,6 +216,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y7x-Ls-6lZ" secondAttribute="bottom" id="b4Q-GQ-JpG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ost-uB-l2q" appends="YES" id="WG3-Af-Wgg"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fcB-nP-2Nr"/>
                     <connections>
@@ -225,6 +232,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ost-uB-l2q">
+                    <connections>
+                        <action selector="tapOnContainer:" destination="BYZ-38-t0r" id="6et-70-qPz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="104.7976011994003"/>
         </scene>
@@ -329,7 +341,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KwC-BF-1Tu"/>
                                                     <segue destination="7D2-gq-TIp" kind="show" identifier="dismissInformations" id="SCe-6d-t2v"/>
                                                 </connections>
                                             </button>
@@ -349,7 +360,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YY-pR-zN7"/>
                                                     <action selector="dontShowAgain:" destination="1oV-So-BA4" eventType="touchUpInside" id="LcQ-4s-G8H"/>
                                                 </connections>
                                             </button>
@@ -455,14 +465,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-WU-BVM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-WU-BVM">
                                 <rect key="frame" x="0.0" y="0.0" width="369" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="W7Q-gz-0n4">
                                     <rect key="frame" x="0.0" y="0.0" width="369" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the word set" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5QS-fX-3zE">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the word set" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5QS-fX-3zE">
                                             <rect key="frame" x="20" y="11" width="349" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -508,6 +518,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LQg-WU-BVM" firstAttribute="top" secondItem="rwI-43-vCJ" secondAttribute="top" id="C1t-3A-xEv"/>
                             <constraint firstItem="rwI-43-vCJ" firstAttribute="trailing" secondItem="LQg-WU-BVM" secondAttribute="trailing" constant="6" id="LEc-t1-IH7"/>
@@ -515,16 +526,10 @@
                             <constraint firstItem="LQg-WU-BVM" firstAttribute="leading" secondItem="rwI-43-vCJ" secondAttribute="leading" id="Sm8-ev-QAZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rwI-43-vCJ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zlO-a7-TKo" appends="YES" id="10c-dg-cGN"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="JYu-ZC-SfS">
-                        <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="WordSetName" textAlignment="natural" minimumFontSize="17" id="PZg-t2-Zb8">
-                            <rect key="frame" x="124" y="9.5" width="127" height="25.5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                    </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="LQg-WU-BVM" id="XA0-8G-TCb"/>
                         <outlet property="emptyTableView" destination="Cux-4l-Kd6" id="SSz-oW-yqr"/>
@@ -552,6 +557,11 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="iYd-2Q-3SG"/>
                 </view>
+                <tapGestureRecognizer id="zlO-a7-TKo">
+                    <connections>
+                        <action selector="tapContainerView:" destination="Olw-aj-y8K" id="bZj-bc-CWF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="1630.4347826086957"/>
         </scene>
@@ -563,34 +573,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spi-D1-bCV">
-                                <rect key="frame" x="0.0" y="311" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="7jv-Wv-3LO"/>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5E-8U-Co2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-YK-AzQ" userLabel="Team View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="271.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Avron enters a word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="NKX-Ae-VJ5">
-                                                <rect key="frame" x="37.5" y="105.5" width="300" height="61"/>
+                                                <rect key="frame" x="37.5" y="15" width="300" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="51"/>
                                                 <color key="textColor" name="appleColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="NKX-Ae-VJ5" firstAttribute="top" secondItem="XTa-YK-AzQ" secondAttribute="top" constant="15" id="KGm-Ad-sJZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="NKX-Ae-VJ5" secondAttribute="bottom" constant="15" id="L5F-f6-SFd"/>
                                             <constraint firstItem="NKX-Ae-VJ5" firstAttribute="centerX" secondItem="XTa-YK-AzQ" secondAttribute="centerX" id="M0A-RD-Dk5"/>
                                             <constraint firstItem="NKX-Ae-VJ5" firstAttribute="width" secondItem="XTa-YK-AzQ" secondAttribute="width" multiplier="0.8" id="XMX-wb-YYe"/>
-                                            <constraint firstItem="NKX-Ae-VJ5" firstAttribute="centerY" secondItem="XTa-YK-AzQ" secondAttribute="centerY" id="saP-Ws-0nQ"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hNv-gu-UWQ" userLabel="Enter Word Stack View">
-                                        <rect key="frame" x="20" y="291.5" width="335" height="35"/>
+                                        <rect key="frame" x="20" y="91" width="335" height="35"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="johnny depp" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PC0-jk-z20">
                                                 <rect key="frame" x="0.0" y="0.5" width="280" height="34"/>
@@ -599,7 +603,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="Csw-Gb-9Eh"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                 <connections>
                                                     <action selector="wordEdited:" destination="npd-aI-MDo" eventType="editingChanged" id="bbC-P6-P2d"/>
                                                 </connections>
@@ -624,7 +628,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-yr-WjU" userLabel="Number Of Words Stack View">
-                                        <rect key="frame" x="319" y="351.5" width="36" height="20.5"/>
+                                        <rect key="frame" x="319" y="151" width="36" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVo-OR-9lg" userLabel="Word Number">
                                                 <rect key="frame" x="0.0" y="0.0" width="10.5" height="20.5"/>
@@ -641,19 +645,38 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKS-mm-sqP">
-                                        <rect key="frame" x="0.0" y="372" width="375" height="246"/>
+                                        <rect key="frame" x="0.0" y="171.5" width="375" height="402.5"/>
+                                        <subviews>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlb-BK-ueS">
+                                                <rect key="frame" x="118" y="15" width="139" height="47"/>
+                                                <color key="backgroundColor" name="appleColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <color key="tintColor" name="appleColor"/>
+                                                <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                <size key="titleShadowOffset" width="2" height="0.0"/>
+                                                <state key="normal" title="start now">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startNow:" destination="npd-aI-MDo" eventType="touchUpInside" id="rN5-dT-rZL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Zlb-BK-ueS" firstAttribute="centerX" secondItem="zKS-mm-sqP" secondAttribute="centerX" id="FrC-Ti-bOM"/>
+                                            <constraint firstItem="Zlb-BK-ueS" firstAttribute="top" secondItem="zKS-mm-sqP" secondAttribute="top" constant="15" id="oLR-Fq-MVf"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="wxa-yr-WjU" firstAttribute="top" secondItem="hNv-gu-UWQ" secondAttribute="bottom" constant="25" id="56I-3l-SMe"/>
                                     <constraint firstAttribute="bottom" secondItem="zKS-mm-sqP" secondAttribute="bottom" id="78Z-ig-MFf"/>
-                                    <constraint firstItem="hNv-gu-UWQ" firstAttribute="centerY" secondItem="i5E-8U-Co2" secondAttribute="centerY" id="82l-Na-rxy"/>
                                     <constraint firstItem="zKS-mm-sqP" firstAttribute="top" secondItem="wxa-yr-WjU" secondAttribute="bottom" id="9CR-eG-bl8"/>
                                     <constraint firstItem="hNv-gu-UWQ" firstAttribute="leading" secondItem="i5E-8U-Co2" secondAttribute="leading" constant="20" id="Afm-mH-D2t"/>
                                     <constraint firstItem="zKS-mm-sqP" firstAttribute="leading" secondItem="i5E-8U-Co2" secondAttribute="leading" id="ODI-ue-4fB"/>
                                     <constraint firstItem="XTa-YK-AzQ" firstAttribute="leading" secondItem="i5E-8U-Co2" secondAttribute="leading" id="Ted-9P-mQt"/>
-                                    <constraint firstItem="hNv-gu-UWQ" firstAttribute="top" secondItem="XTa-YK-AzQ" secondAttribute="bottom" constant="20" id="hu1-nb-Nya"/>
+                                    <constraint firstItem="hNv-gu-UWQ" firstAttribute="top" secondItem="XTa-YK-AzQ" secondAttribute="bottom" id="hu1-nb-Nya"/>
                                     <constraint firstAttribute="trailing" secondItem="zKS-mm-sqP" secondAttribute="trailing" id="qcb-7O-zgn"/>
                                     <constraint firstAttribute="trailing" secondItem="hNv-gu-UWQ" secondAttribute="trailing" constant="20" id="uD8-HP-dh2"/>
                                     <constraint firstAttribute="trailing" secondItem="wxa-yr-WjU" secondAttribute="trailing" constant="20" id="vC2-l0-ViZ"/>
@@ -663,41 +686,26 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bqZ-mC-VAK" firstAttribute="bottom" secondItem="i5E-8U-Co2" secondAttribute="bottom" id="5bl-tx-al1"/>
-                            <constraint firstItem="i5E-8U-Co2" firstAttribute="top" secondItem="Ke4-MY-f6B" secondAttribute="top" id="7il-sj-NOo"/>
+                            <constraint firstItem="bqZ-mC-VAK" firstAttribute="top" secondItem="i5E-8U-Co2" secondAttribute="top" id="Rag-7M-0QE"/>
                             <constraint firstAttribute="trailing" secondItem="i5E-8U-Co2" secondAttribute="trailing" id="efd-DG-gDg"/>
                             <constraint firstItem="i5E-8U-Co2" firstAttribute="leading" secondItem="Ke4-MY-f6B" secondAttribute="leading" id="pX0-yx-CzZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bqZ-mC-VAK"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Tee-wL-cp9" appends="YES" id="syi-WD-Joz"/>
+                        </connections>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" id="Ja6-OG-miu">
-                            <button key="customView" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jdY-xc-riR">
-                                <rect key="frame" x="16" y="5" width="343" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="appleColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="tintColor" name="appleColor"/>
-                                <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
-                                <size key="titleShadowOffset" width="2" height="0.0"/>
-                                <state key="normal" title="start now">
-                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="startGuessing:" destination="uu7-T8-hMl" eventType="touchUpInside" id="Lyc-pE-exM"/>
-                                    <action selector="startNow:" destination="npd-aI-MDo" eventType="touchUpInside" id="hZR-PZ-j79"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="384-ih-246"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addWordView" destination="Ke4-MY-f6B" id="U6P-74-89j"/>
                         <outlet property="doneButton" destination="N7M-gX-saV" id="w2Z-yr-pyK"/>
-                        <outlet property="startNowButton" destination="jdY-xc-riR" id="TJA-Fd-ICT"/>
+                        <outlet property="startNowButton" destination="Zlb-BK-ueS" id="HyM-q7-9fY"/>
                         <outlet property="teamNameLabel" destination="NKX-Ae-VJ5" id="PjL-y6-hzN"/>
                         <outlet property="wordInput" destination="PC0-jk-z20" id="qdj-Qh-4qu"/>
                         <outlet property="wordNumberLabel" destination="gVo-OR-9lg" id="6fe-bq-CSg"/>
@@ -705,6 +713,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyw-MQ-my3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Tee-wL-cp9">
+                    <connections>
+                        <action selector="tapOnContainer:" destination="npd-aI-MDo" id="5hT-I4-Ybp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="454" y="105"/>
         </scene>
@@ -760,6 +773,7 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="h2I-cy-fZD" firstAttribute="centerY" secondItem="MNw-Zu-VlN" secondAttribute="centerY" id="JSP-E2-dcO"/>
                             <constraint firstItem="h2I-cy-fZD" firstAttribute="leading" secondItem="MNw-Zu-VlN" secondAttribute="leading" id="N4h-hY-egD"/>
@@ -767,6 +781,9 @@
                             <constraint firstAttribute="trailing" secondItem="h2I-cy-fZD" secondAttribute="trailing" id="eGE-pg-tJe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N7K-4F-B9g"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Tee-wL-cp9" appends="YES" id="OtT-rS-Bnf"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="0p3-5c-cHw"/>
                     <connections>
@@ -1036,9 +1053,6 @@
     <resources>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="validate" width="234" height="256"/>
-        <namedColor name="appleColor">
-            <color red="0.13699999451637268" green="0.82899999618530273" blue="0.032999999821186066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="appleColor">
             <color red="0.13699999451637268" green="0.82899999618530273" blue="0.032999999821186066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
