@@ -93,12 +93,19 @@ class WordSetEntityProvider {
 //            context.save(with: .updatingWordSetEntity)
 //        }
         addWordSet(in: context, shouldSave: false, completionHandler: { [weak wordSet] (wordSetEntity)  in
-            guard let wordSet = wordSet else {
+            guard let wordSet = wordSet, let words = wordSet.words else {
                 context.delete(wordSetEntity)
                 context.save(with: .updatingWordSetEntityFailed)
                 return
             }
-            wordSetEntity.words = wordSet.words
+            for word in words {
+                guard let word = word as? WordEntity else {
+                    return
+                }
+                let wordEntity = WordEntity()
+                wordEntity.data = word.data
+                wordSetEntity.addToWords(wordEntity)
+            }
             context.delete(wordSet)
             wordSetEntity.name = newName
             if shouldSave {

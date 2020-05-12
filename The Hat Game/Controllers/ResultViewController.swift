@@ -15,26 +15,7 @@ class ResultViewController: UIViewController {
 
         setWinnerLabelsVisibility(alpha: 0.0)
         
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else {
-                return
-            }
-            do {
-                self.scores = try self.hatGame!.getTeamSortedByScores()
-                let bestScore = self.scores[0]
-                let tie = self.scores[1].scorePreviousToCurrentPhase == self.scores[0].scorePreviousToCurrentPhase
-                DispatchQueue.main.async {
-                    self.winnerTeamName.text = tie ? Constants.tieResult : bestScore.name
-                    self.setWinnerLabelsVisibility(alpha: 1.0, animationTime: 2, tie: tie)
-                }
-            } catch {
-               let presenter = AlertPresenter(
-                title: Constants.Alert.Title.unexpectedError.rawValue,
-                message: Constants.Alert.Message.cannotDisplayResults,
-                completionAction: nil)
-               presenter.present(in: self)
-            }
-        }
+        setupTableView()
     }
     
     @IBOutlet weak var emojisLabel: UILabel!
@@ -47,8 +28,9 @@ class ResultViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: false)
     }
     
-    var hatGame:HatGame?
-    var scores = [Team]() {
+    var hatGame: HatGame!
+    var viewModel: Results!
+    var scores = [TeamRank]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else {
@@ -72,6 +54,29 @@ class ResultViewController: UIViewController {
             }
         })
     }
+    
+    private func setupTableView() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            do {
+                self.scores = try self.viewModel.getTeamRanks()
+                let bestScore = self.scores[0]
+                let tie = self.scores[1].team.scorePreviousToCurrentPhase == self.scores[0].team.scorePreviousToCurrentPhase
+                DispatchQueue.main.async {
+                    self.winnerTeamName.text = tie ? Constants.tieResult : bestScore.team.name
+                    self.setWinnerLabelsVisibility(alpha: 1.0, animationTime: 2, tie: tie)
+                }
+            } catch {
+               let presenter = AlertPresenter(
+                title: Constants.Alert.Title.unexpectedError.rawValue,
+                message: Constants.Alert.Message.cannotDisplayResults,
+                completionAction: nil)
+               presenter.present(in: self)
+            }
+        }
+    }
 }
 
 // MARK: - Table View Data Source
@@ -89,18 +94,9 @@ extension ResultViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
         let teamToDisplay = scores[indexPath.row]
-        cell.score?.text = "\(teamToDisplay.scorePreviousToCurrentPhase) pts"
-        cell.teamName?.text = "\(teamToDisplay.name)"
-        switch indexPath.row {
-        case 0:
-            cell.rank?.text =  "1rst"
-        case 1:
-            cell.rank?.text =  "2nd"
-        case 2:
-            cell.rank?.text = "3rd"
-        default:
-            cell.rank?.text = "\(indexPath.row + 1)th"
-        }
+        cell.score?.text = "\(teamToDisplay.team.scorePreviousToCurrentPhase) pts"
+        cell.teamName?.text = "\(teamToDisplay.team.name)"
+        cell.rank?.text = teamToDisplay.rank
         
         return cell
     }

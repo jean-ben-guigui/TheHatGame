@@ -72,7 +72,7 @@ class WordSetPickerController: UIViewController {
         guard let fetchedResultsController = fetchedResultsController else {
             return
         }
-        diffableDataSource = WordSetUITableViewDiffableDataSource(tableView: wordSetTableView) { (tableView, indexPath, wordSet) -> UITableViewCell? in
+		diffableDataSource = WordSetUITableViewDiffableDataSource(tableView: wordSetTableView, viewController: self) { (tableView, indexPath, wordSet) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "wordSetCell", for: indexPath)
             cell.textLabel?.text = wordSet.name
             return cell

@@ -149,6 +149,7 @@ class AddWordViewController: UIViewController {
             guard let hatGame = self.hatGame else {
                 return
             }
+			self.wordInput.delegate = self
             self.doneButton.makeMeRound()
             self.doneButton.isEnabled = false
             self.startNowButton.makeMyAnglesRound()
@@ -166,4 +167,11 @@ class AddWordViewController: UIViewController {
             }
         }
     }
+}
+
+extension AddWordViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
 }

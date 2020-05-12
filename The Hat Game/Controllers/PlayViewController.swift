@@ -19,9 +19,6 @@ class PlayViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let hatGame = hatGame else {
-            fatalError("prepareforsegue, Cannot found hatGame in addWordViewcontroller")
-        }
         if (segue.identifier == "nextTeamSegue") {
             if let destination = segue.destination as? WhosTurnViewController {
                 hatGame.nextTeamPlaying()
@@ -30,6 +27,7 @@ class PlayViewController: UIViewController {
         } else if (segue.identifier == "presentResultSegue") {
             if let destination = segue.destination as? ResultViewController {
                 destination.hatGame = hatGame
+                destination.viewModel = Results(hatGame: hatGame)
             }
         } else if (segue.identifier == "nextPhaseSegue") {
             if let destination = segue.destination as? WhosTurnViewController {
@@ -39,7 +37,7 @@ class PlayViewController: UIViewController {
         }
     }
     
-    var hatGame:HatGame?
+    var hatGame:HatGame!
     var wordToGuess:Word? {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -50,32 +48,26 @@ class PlayViewController: UIViewController {
         }
     }
     
-    var timer:Timer?
-    var timeLeft = Constants.defaultRoundTime
+    private var timer:Timer?
+    private var timeLeft = Constants.defaultRoundTime
 
-    @IBOutlet weak var theWordLabel: UILabel!
-    @IBOutlet weak var passButton: UIButton!
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet private weak var theWordLabel: UILabel!
+    @IBOutlet private weak var passButton: UIButton!
+    @IBOutlet private weak var timerLabel: UILabel!
     
-    @IBAction func successAction(_ sender: UIButton) {
-        guard let hatGame = self.hatGame else {
-            fatalError("successAction, Cannot found hatGame in addWordViewcontroller")
-        }
+    @IBAction private func successAction(_ sender: UIButton) {
         if let word = wordToGuess {
             hatGame.setGuessedWord(word, teamId: hatGame.playingTeamId)
         }
         randomWord()
     }
    
-    @IBAction func passAction(_ sender: UIButton) {
+    @IBAction private func passAction(_ sender: UIButton) {
         randomWord()
     }
     
     ///does some check Up and generate a new word if it is appropriate
-    func randomWord() {
-        guard let hatGame = self.hatGame else {
-            fatalError("No hatGame found, problem with dependency injection.")
-        }
+    private func randomWord() {
         let notGuessedWords = hatGame.wordSet.getNotGuessedWords()
         if notGuessedWords.count == 0 {
             if hatGame.nextPhase(){
@@ -86,10 +78,10 @@ class PlayViewController: UIViewController {
         } else if timeLeft == 0 {
             performSegue(withIdentifier: "nextTeamSegue", sender: self)
         } else if notGuessedWords.count == 1 {
-            passButton.isEnabled = false;
+//            passButton.isEnabled = false;
             wordToGuess = notGuessedWords[0]
         }  else {
-            let randomWordIndex = Int(arc4random_uniform(UInt32(notGuessedWords.count - 1)))
+			let randomWordIndex = Int.random(in: 0..<notGuessedWords.count)
             let newWordToGuess = notGuessedWords[randomWordIndex]
             if let oldWordToGuess = wordToGuess {
                 if oldWordToGuess == newWordToGuess {
@@ -101,32 +93,27 @@ class PlayViewController: UIViewController {
     }
     
     ///called by the timer every second
-    @objc func fire(timer: Timer) {
+    @objc private func fire(timer: Timer) {
         self.timeLeft -= 1
         self.timerLabel.text = "\(self.timeLeft) sec"
         if self.timeLeft == 0 {
+            passButton.isEnabled = true
             timer.invalidate()
-            timesUp()
+//            timesUp()
         }
     }
     
-    func configure() {
+    private func configure() {
         randomWord()
-        if let nnHatGame = hatGame {
-            if nnHatGame.phase.state == 1 {
-                passButton.isEnabled = false
-            } else {
-                passButton.isEnabled = true
-                passButton.setTitle("pass", for:UIControl.State.normal)
-            }
-        }
+//        if hatGame.phase.state == 1 {
+//            passButton.isEnabled = false
+//        } else {
+        passButton.isEnabled = true
+        passButton.setTitle("pass", for:UIControl.State.normal)
+//        }
         self.timerLabel.text = "\(self.timeLeft) sec"
         let guessTimer = Timer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
         guessTimer.tolerance = 0.100
         RunLoop.current.add(guessTimer, forMode: .common)
-    }
-    
-    func timesUp() {
-        
     }
 }

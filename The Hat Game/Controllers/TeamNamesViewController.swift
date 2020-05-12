@@ -53,8 +53,9 @@ class TeamNamesViewController: UIViewController {
     @IBOutlet private weak var secondTeamName: UITextField!
     @IBOutlet private weak var thirdTeamName: UITextField!
     @IBOutlet private weak var fourthTeamName: UITextField!
+	@IBOutlet weak var startTheGameButton: UIButton!
+	
     
-    @IBOutlet weak var startTheGameButton: UIButton!
     @IBAction func firstTeamNameEdited(_ sender: UITextField) {
         setGameButtonState()
     }
@@ -147,11 +148,24 @@ class TeamNamesViewController: UIViewController {
         startTheGameButton.makeMyAnglesRound()
         if let placeholderColor = UIColor(named: "placeholderColor") {
             firstTeamName.setPlaceHolderColor(color: placeholderColor)
+			firstTeamName.delegate = self
             secondTeamName.setPlaceHolderColor(color: placeholderColor)
+			secondTeamName.delegate = self
             thirdTeamName.setPlaceHolderColor(color: placeholderColor)
+			thirdTeamName.delegate = self
             fourthTeamName.setPlaceHolderColor(color: placeholderColor)
+			fourthTeamName.delegate = self
         }
         startTheGameButton.setTitleColor(UIColor.systemGray5, for: UIControl.State.disabled)
         setGameButtonState()
     }
+	
+	
+}
+
+extension TeamNamesViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
 }

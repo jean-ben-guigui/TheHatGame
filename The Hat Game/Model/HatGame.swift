@@ -41,6 +41,7 @@ class HatGame {
             do {
                 try addTeamScore(id: 0, score: 5)
                 try addTeamScore(id: 1, score: 12)
+                try addTeamScore(id: 2, score: 12)
             } catch {
                 return
             }
