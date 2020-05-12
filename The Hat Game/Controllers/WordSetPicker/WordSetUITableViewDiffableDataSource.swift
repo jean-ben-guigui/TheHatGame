@@ -11,45 +11,17 @@ import UIKit
 import CoreData
 
 class WordSetUITableViewDiffableDataSource: UITableViewDiffableDataSource<WordSetTableViewSection, WordSetEntity> {
-    
+	
     var wordSetEntityProvider: WordSetEntityProvider?
     var fetchedResultsController: NSFetchedResultsController<WordSetEntity>?
+	var viewController: UIViewController
+	
+	init(tableView: UITableView, viewController: UIViewController, cellProvider: @escaping CellProvider) {
+		self.viewController = viewController
+		super.init(tableView: tableView, cellProvider: cellProvider)
+	}
     
-    // MARK: reordering support
-    
-//    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-    
-//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        guard let sourceIdentifier = itemIdentifier(for: sourceIndexPath) else { return }
-//        guard sourceIndexPath != destinationIndexPath else { return }
-//        let destinationIdentifier = itemIdentifier(for: destinationIndexPath)
-//
-//        var snapshot = self.snapshot()
-//
-//        if let destinationIdentifier = destinationIdentifier {
-//            if let sourceIndex = snapshot.indexOfItem(sourceIdentifier),
-//               let destinationIndex = snapshot.indexOfItem(destinationIdentifier) {
-//                let isAfter = destinationIndex > sourceIndex &&
-//                    snapshot.sectionIdentifier(containingItem: sourceIdentifier) ==
-//                    snapshot.sectionIdentifier(containingItem: destinationIdentifier)
-//                snapshot.deleteItems([sourceIdentifier])
-//                if isAfter {
-//                    snapshot.insertItems([sourceIdentifier], afterItem: destinationIdentifier)
-//                } else {
-//                    snapshot.insertItems([sourceIdentifier], beforeItem: destinationIdentifier)
-//                }
-//            }
-//        } else {
-//            let destinationSectionIdentifier = snapshot.sectionIdentifiers[destinationIndexPath.section]
-//            snapshot.deleteItems([sourceIdentifier])
-//            snapshot.appendItems([sourceIdentifier], toSection: destinationSectionIdentifier)
-//        }
-//        apply(snapshot, animatingDifferences: false)
-//    }
-    
-    // MARK: editing support
+    // MARK: - editing support
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -60,13 +32,19 @@ class WordSetUITableViewDiffableDataSource: UITableViewDiffableDataSource<WordSe
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let wordSetEntityProvider = wordSetEntityProvider, let wordSet = fetchedResultsController?.object(at: indexPath) else {
-                //TODO displays error message
-                    return
+				DispatchQueue.main.async { [weak self] in
+					guard let self = self else {
+						return
+					}
+					let presenter = AlertPresenter(
+						title: Constants.Alert.Title.trouble.rawValue,
+						message: Constants.Alert.Message.unableToDelete,
+						completionAction: nil)
+					presenter.present(in: self.viewController)
+				}
+				return
             }
             wordSetEntityProvider.delete(wordSet: wordSet, shouldSave: true)
-        }
-        else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 }

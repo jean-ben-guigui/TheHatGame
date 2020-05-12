@@ -72,13 +72,13 @@ class WordSetPickerController: UIViewController {
         guard let fetchedResultsController = fetchedResultsController else {
             return
         }
-        diffableDataSource = WordSetUITableViewDiffableDataSource(tableView: wordSetTableView) { (tableView, indexPath, wordSet) -> UITableViewCell? in
+		diffableDataSource = WordSetUITableViewDiffableDataSource(tableView: wordSetTableView, viewController: self) { (tableView, indexPath, wordSet) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "wordSetCell", for: indexPath)
             cell.textLabel?.text = wordSet.name
             return cell
         }
         
-        diffableDataSource?.wordSetEntityProvider = wordSetEntityProvider
+//        diffableDataSource?.wordSetEntityProvider = wordSetEntityProvider
         diffableDataSource?.fetchedResultsController = fetchedResultsController
         
         updateSnapshot()
@@ -98,13 +98,6 @@ class WordSetPickerController: UIViewController {
         self.snapshot = NSDiffableDataSourceSnapshot<WordSetTableViewSection, WordSetEntity>()
         self.snapshot.appendSections([.main])
         self.snapshot.appendItems(fetchedResultsController?.fetchedObjects ?? [])
-        
-        // Uncomment for debugging purposes.
-//        for object in fetchedResultsController?.fetchedObjects ?? []{
-//            print(object.name)
-//            print(object.hash)
-//            print(object.hashValue)
-//        }
         
         diffableDataSource?.apply(self.snapshot, animatingDifferences: true)
     }

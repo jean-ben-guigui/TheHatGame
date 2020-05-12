@@ -35,7 +35,11 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var wordSetNameTextField: UITextField!
     @IBOutlet var emptyTableView: UIView!
     
-    override func viewDidLoad() {
+	@IBAction private func tapContainerView(_ sender: Any) {
+		self.view.endEditing(true)
+	}
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
         setupTableViewHeader()
         setupTableViewFooter()
@@ -47,13 +51,11 @@ class DetailViewController: UIViewController {
             return
         }
         
-        print("il y a tant de mots : \(words.count)");
         var wordsData = [String]()
         for word in words {
             if let word = word as? WordEntity {
                 if let data = word.data {
                     wordsData.append(data)
-                    print(data)
                 }
             }
         }

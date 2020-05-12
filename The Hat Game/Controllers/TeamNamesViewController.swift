@@ -33,7 +33,6 @@ class TeamNamesViewController: UIViewController {
         addTeam(hatGame: hatGame, button: secondTeamName)
         addTeam(hatGame: hatGame, button: thirdTeamName)
         addTeam(hatGame: hatGame, button: fourthTeamName)
-        // TODO maybe check that there is not 2 teams sharing a same name (new method for Teams). Since we check it when the startTheGameButton is pressed, no real needs to do so though.
         if (segue.identifier == "addWordsSegue") {
             if let addWordController = segue.destination as? AddWordViewController {
                 addWordController.hatGame = hatGame
@@ -43,7 +42,6 @@ class TeamNamesViewController: UIViewController {
             }
         }
         if (segue.identifier == "chooseWordSetSegue") {
-            // TODO add wordSetsToPass to the destination controller
             if let wordSetPickerController = segue.destination as? WordSetPickerController {
                 wordSetPickerController.hatGame = hatGame
             }
@@ -53,21 +51,25 @@ class TeamNamesViewController: UIViewController {
     @IBOutlet private weak var secondTeamName: UITextField!
     @IBOutlet private weak var thirdTeamName: UITextField!
     @IBOutlet private weak var fourthTeamName: UITextField!
+	@IBOutlet private weak var startTheGameButton: UIButton!
+	
     
-    @IBOutlet weak var startTheGameButton: UIButton!
-    @IBAction func firstTeamNameEdited(_ sender: UITextField) {
+    @IBAction private func firstTeamNameEdited(_ sender: UITextField) {
         setGameButtonState()
     }
-    @IBAction func secondTeamNameEdited(_ sender: UITextField) {
+    @IBAction private func secondTeamNameEdited(_ sender: UITextField) {
         setGameButtonState()
     }
-    @IBAction func thirdTeamNameEdited(_ sender: UITextField) {
+    @IBAction private func thirdTeamNameEdited(_ sender: UITextField) {
         setGameButtonState()
     }
-    @IBAction func fourthTeamNameEdited(_ sender: UITextField) {
+    @IBAction private func fourthTeamNameEdited(_ sender: UITextField) {
         setGameButtonState()
     }
-    
+	@IBAction private func tapOnContainer(_ sender: Any) {
+		self.view.endEditing(true)
+	}
+	
     @IBAction func StartTheGame(_ sender: UIButton) {
         // fetches the WordSet objects from the database.
         if wordSetEntityProvider.areWordSetsNil() {
@@ -147,11 +149,24 @@ class TeamNamesViewController: UIViewController {
         startTheGameButton.makeMyAnglesRound()
         if let placeholderColor = UIColor(named: "placeholderColor") {
             firstTeamName.setPlaceHolderColor(color: placeholderColor)
+			firstTeamName.delegate = self
             secondTeamName.setPlaceHolderColor(color: placeholderColor)
+			secondTeamName.delegate = self
             thirdTeamName.setPlaceHolderColor(color: placeholderColor)
+			thirdTeamName.delegate = self
             fourthTeamName.setPlaceHolderColor(color: placeholderColor)
+			fourthTeamName.delegate = self
         }
         startTheGameButton.setTitleColor(UIColor.systemGray5, for: UIControl.State.disabled)
         setGameButtonState()
     }
+	
+	
+}
+
+extension TeamNamesViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
 }

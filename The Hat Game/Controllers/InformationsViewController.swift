@@ -18,8 +18,8 @@ class InformationsViewController: UIViewController {
     
     
     @IBAction func dontShowAgain(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        defaults.setValue(true, forKey: "skipHelp")
+        UserDefaults.standard.setValue(true, forKey: "skipHelp")
+		performSegue(withIdentifier: "dismissInformations", sender: self)
     }
     
     /*
