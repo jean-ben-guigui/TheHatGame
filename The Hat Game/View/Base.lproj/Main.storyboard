@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7D2-gq-TIp">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -39,7 +39,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBN-3w-aYR" userLabel="Title View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8us-j4-I9c">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8us-j4-I9c" userLabel="Instruction View">
                                                 <rect key="frame" x="37.5" y="15" width="300" height="105.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are your teams?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-dQ-u7I">
@@ -48,7 +48,7 @@
                                                         <color key="textColor" name="appleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can have 2, 3 or 4 teams to play the game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can play with 2, 3 or 4 teams" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-kK-2Qa">
                                                         <rect key="frame" x="0.0" y="50.5" width="300" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <color key="textColor" name="appleColor"/>
@@ -65,7 +65,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czM-eh-2fl" userLabel="Enter Team Names View">
-                                        <rect key="frame" x="0.0" y="135.5" width="375" height="166"/>
+                                        <rect key="frame" x="0.0" y="145.5" width="375" height="166"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-2s-peS" userLabel="Enter Team Names Stack View">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="166"/>
@@ -168,10 +168,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPP-BS-g4I" userLabel="Done View">
-                                        <rect key="frame" x="0.0" y="301.5" width="375" height="289.5"/>
+                                        <rect key="frame" x="0.0" y="311.5" width="375" height="279.5"/>
                                         <subviews>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82w-P7-NHy">
-                                                <rect key="frame" x="137" y="20" width="101" height="47"/>
+                                                <rect key="frame" x="137" y="25" width="101" height="47"/>
                                                 <color key="backgroundColor" name="appleColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="tintColor" name="appleColor"/>
@@ -180,6 +180,11 @@
                                                 <state key="normal" title="Done">
                                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="StartTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDg-t7-9Ed"/>
                                                 </connections>
@@ -187,7 +192,8 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="82w-P7-NHy" firstAttribute="top" secondItem="FPP-BS-g4I" secondAttribute="top" constant="20" id="t1h-6E-2G5"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="82w-P7-NHy" secondAttribute="bottom" id="Xjf-l9-Fyq"/>
+                                            <constraint firstItem="82w-P7-NHy" firstAttribute="top" secondItem="FPP-BS-g4I" secondAttribute="top" constant="25" id="t1h-6E-2G5"/>
                                             <constraint firstItem="82w-P7-NHy" firstAttribute="centerX" secondItem="FPP-BS-g4I" secondAttribute="centerX" id="zaw-IU-0FS"/>
                                         </constraints>
                                     </view>
@@ -198,7 +204,7 @@
                                     <constraint firstItem="CBN-3w-aYR" firstAttribute="leading" secondItem="y7x-Ls-6lZ" secondAttribute="leading" id="FBB-rP-Zuu"/>
                                     <constraint firstAttribute="trailing" secondItem="CBN-3w-aYR" secondAttribute="trailing" id="Fh8-Wk-YzQ"/>
                                     <constraint firstItem="FPP-BS-g4I" firstAttribute="top" secondItem="czM-eh-2fl" secondAttribute="bottom" id="Prc-3t-Ydj"/>
-                                    <constraint firstItem="czM-eh-2fl" firstAttribute="top" secondItem="CBN-3w-aYR" secondAttribute="bottom" constant="15" id="QPc-IO-QaQ"/>
+                                    <constraint firstItem="czM-eh-2fl" firstAttribute="top" secondItem="CBN-3w-aYR" secondAttribute="bottom" constant="25" id="QPc-IO-QaQ"/>
                                     <constraint firstItem="czM-eh-2fl" firstAttribute="leading" secondItem="y7x-Ls-6lZ" secondAttribute="leading" id="T7G-GX-h0i"/>
                                     <constraint firstAttribute="trailing" secondItem="FPP-BS-g4I" secondAttribute="trailing" id="cmi-Z1-IF0"/>
                                     <constraint firstItem="CBN-3w-aYR" firstAttribute="top" secondItem="y7x-Ls-6lZ" secondAttribute="top" id="g4k-vP-pP9"/>
@@ -257,7 +263,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-5E-KY2">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="321"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o2T-UG-iOK">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o2T-UG-iOK">
                                                         <rect key="frame" x="5" y="20" width="365" height="281"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ici-pV-Goo">
@@ -657,6 +663,11 @@
                                                 <state key="normal" title="start now">
                                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="startNow:" destination="npd-aI-MDo" eventType="touchUpInside" id="rN5-dT-rZL"/>
                                                 </connections>
@@ -754,6 +765,11 @@
                                         <state key="normal" title="begin">
                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="startGuessing:" destination="uu7-T8-hMl" eventType="touchUpInside" id="qgA-sM-m7e"/>
                                         </connections>
@@ -806,49 +822,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="mXW-Vr-Yzf">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="crZ-5M-i1j">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="crZ-5M-i1j">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Word!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIw-lL-3x9">
-                                                <rect key="frame" x="112" y="0.0" width="151.5" height="111.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIw-lL-3x9">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <color key="textColor" name="appleColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-p9-3on">
-                                        <rect key="frame" x="0.0" y="231.5" width="375" height="111"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5T-ny-Rcy">
+                                        <rect key="frame" x="0.0" y="262.5" width="375" height="142"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daa-Na-PhQ">
-                                                <rect key="frame" x="0.0" y="32.5" width="177.5" height="46"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <state key="normal" title="Success">
-                                                    <color key="titleColor" name="appleColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="successAction:" destination="J6B-OD-5DE" eventType="touchUpInside" id="5mr-w5-4eX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-6E-c9Q">
-                                                <rect key="frame" x="197.5" y="32.5" width="177.5" height="46"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <state key="normal" title="Pass">
-                                                    <color key="titleColor" name="appleColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="passAction:" destination="J6B-OD-5DE" eventType="touchUpInside" id="sBm-Ml-cwt"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-p9-3on">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="142"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daa-Na-PhQ">
+                                                        <rect key="frame" x="0.0" y="44" width="157.5" height="54"/>
+                                                        <color key="backgroundColor" name="appleColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                        <state key="normal" title="Success">
+                                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="successAction:" destination="J6B-OD-5DE" eventType="touchUpInside" id="5mr-w5-4eX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-6E-c9Q">
+                                                        <rect key="frame" x="177.5" y="44" width="157.5" height="54"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                        <state key="normal" title="Pass">
+                                                            <color key="titleColor" name="appleColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="appleColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="passAction:" destination="J6B-OD-5DE" eventType="touchUpInside" id="sBm-Ml-cwt"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="right" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-rW-7UN">
-                                        <rect key="frame" x="0.0" y="462.5" width="375" height="111.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="WAM-p9-3on" secondAttribute="bottom" id="CI0-46-Y93"/>
+                                            <constraint firstItem="WAM-p9-3on" firstAttribute="top" secondItem="D5T-ny-Rcy" secondAttribute="top" id="dHJ-VT-HRw"/>
+                                            <constraint firstAttribute="trailing" secondItem="WAM-p9-3on" secondAttribute="trailing" constant="20" id="kLi-XP-Vyy"/>
+                                            <constraint firstItem="WAM-p9-3on" firstAttribute="leading" secondItem="D5T-ny-Rcy" secondAttribute="leading" constant="20" id="zJx-76-QGq"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-rW-7UN">
+                                        <rect key="frame" x="0.0" y="524.5" width="375" height="142.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-Du-G65">
-                                                <rect key="frame" x="20" y="45.5" width="335" height="20.5"/>
+                                                <rect key="frame" x="20" y="8" width="335" height="126.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" name="appleColor"/>
                                                 <nil key="highlightedColor"/>
@@ -880,7 +927,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMa-y9-g3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="865"/>
+            <point key="canvasLocation" x="1735" y="865"/>
         </scene>
         <!--Result-->
         <scene sceneID="7xo-6d-I9E">
@@ -891,7 +938,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaP-CH-Zna" userLabel="WinnerView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-Uq-oUY">
                                         <rect key="frame" x="20" y="44.5" width="335" height="178"/>
@@ -926,7 +973,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cn-kN-46q">
-                                <rect key="frame" x="0.0" y="311" width="375" height="230"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="323"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" name="appleColor"/>
                                 <prototypes>
@@ -987,7 +1034,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kj2-QP-s2N">
-                                <rect key="frame" x="0.0" y="541" width="375" height="77"/>
+                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ory-ho-TnD">
                                         <rect key="frame" x="114" y="15" width="147" height="47"/>
@@ -1001,7 +1048,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1048,7 +1095,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MLE-Dm-hwf"/>
+        <segue reference="U8h-oi-DKY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>

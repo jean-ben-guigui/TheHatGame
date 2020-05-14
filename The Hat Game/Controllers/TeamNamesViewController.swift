@@ -146,7 +146,7 @@ class TeamNamesViewController: UIViewController {
     }
     
     func configure() {
-        startTheGameButton.makeMyAnglesRound()
+//        startTheGameButton.makeMyAnglesRound()
         if let placeholderColor = UIColor(named: "placeholderColor") {
             firstTeamName.setPlaceHolderColor(color: placeholderColor)
 			firstTeamName.delegate = self
@@ -157,6 +157,7 @@ class TeamNamesViewController: UIViewController {
             fourthTeamName.setPlaceHolderColor(color: placeholderColor)
 			fourthTeamName.delegate = self
         }
+		firstTeamName.becomeFirstResponder()
         startTheGameButton.setTitleColor(UIColor.systemGray5, for: UIControl.State.disabled)
         setGameButtonState()
     }

@@ -41,10 +41,14 @@ class PlayViewController: UIViewController {
     var wordToGuess:Word? {
         didSet {
             DispatchQueue.main.async { [weak self] in
-                if let word = self?.wordToGuess {
-                    self?.theWordLabel.text = word.description
-                }
-            }
+				if let word = self?.wordToGuess {
+					if word.description != "" {
+						self?.setWordToGuessAnimated(newWord: word.description)
+					} else {
+						self?.setWordToGuessAnimated(animationTime: 0, newWord: word.description)
+					}
+				}
+			}
         }
     }
     
@@ -101,6 +105,12 @@ class PlayViewController: UIViewController {
             timer.invalidate()
 //            timesUp()
         }
+    }
+	
+	private func setWordToGuessAnimated(animationTime: Double = 0.25, newWord: String) {
+		UIView.transition(with: theWordLabel, duration: animationTime, options: [.curveEaseIn, .transitionFlipFromRight], animations: {
+		   self.theWordLabel.text = newWord
+        })
     }
     
     private func configure() {

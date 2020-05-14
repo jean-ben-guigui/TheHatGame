@@ -74,6 +74,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "main:AppDelegate.swift">
+      </ContextState>
+      <ContextState
          contextName = "WhosTurnViewController.viewDidLoad():WhosTurnViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -218,10 +221,7 @@
          contextName = "WordSetPickerController.updateSnapshot():WordSetPickerController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "diffableDataSource">
-            </PersistentString>
-            <PersistentString
-               value = "fetchedResultsController?.fetchedObjects?.first?.words?.firstObject">
+               value = "self.isViewLoaded">
             </PersistentString>
             <PersistentString
                value = "fetchedResultsController?.fetchedObjects?.first?.words">
@@ -230,10 +230,16 @@
                value = "self.snapshot">
             </PersistentString>
             <PersistentString
+               value = "fetchedResultsController?.fetchedObjects">
+            </PersistentString>
+            <PersistentString
                value = "wordSets">
             </PersistentString>
             <PersistentString
-               value = "fetchedResultsController?.fetchedObjects">
+               value = "fetchedResultsController?.fetchedObjects?.first?.words?.firstObject">
+            </PersistentString>
+            <PersistentString
+               value = "diffableDataSource">
             </PersistentString>
             <PersistentString
                value = "fetchedResultsController?.fetchedObjects[0].words">

@@ -98,8 +98,12 @@ class WordSetPickerController: UIViewController {
         self.snapshot = NSDiffableDataSourceSnapshot<WordSetTableViewSection, WordSetEntity>()
         self.snapshot.appendSections([.main])
         self.snapshot.appendItems(fetchedResultsController?.fetchedObjects ?? [])
-        
-        diffableDataSource?.apply(self.snapshot, animatingDifferences: true)
+		DispatchQueue.main.async() { [weak self] in
+			guard let self = self else {
+				return
+			}
+			self.diffableDataSource?.apply(self.snapshot, animatingDifferences: true)
+		}
     }
 }
 

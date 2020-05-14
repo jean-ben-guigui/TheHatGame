@@ -40,8 +40,8 @@ class WhosTurnViewController: UIViewController {
     }
     
     func configure() {
-        startGuessingButton.layer.cornerRadius = 0.125 * startGuessingButton.bounds.size.width
-        startGuessingButton.layer.masksToBounds = true
+//        startGuessingButton.layer.cornerRadius = 0.125 * startGuessingButton.bounds.size.width
+//        startGuessingButton.layer.masksToBounds = true
         startGuessingButton.isEnabled = true
         guard let hatGame = hatGame else {
             fatalError("The hatGame was not injected properly")

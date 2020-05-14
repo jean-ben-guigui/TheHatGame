@@ -155,7 +155,7 @@ class AddWordViewController: UIViewController {
 			self.wordInput.delegate = self
             self.doneButton.makeMeRound()
             self.doneButton.isEnabled = false
-            self.startNowButton.makeMyAnglesRound()
+//            self.startNowButton.makeMyAnglesRound()
             do {
                 let firstTeam = try hatGame.getTeam(id:0)
                 self.setTeamNameLabel(teamName: firstTeam.name)
