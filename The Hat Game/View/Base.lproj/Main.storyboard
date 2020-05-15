@@ -42,7 +42,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8us-j4-I9c" userLabel="Instruction View">
                                                 <rect key="frame" x="37.5" y="15" width="300" height="105.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are your teams?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-dQ-u7I">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are your teams?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-dQ-u7I">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="50.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="42"/>
                                                         <color key="textColor" name="appleColor"/>
@@ -639,13 +639,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVo-OR-9lg" userLabel="Word Number">
                                                 <rect key="frame" x="0.0" y="0.0" width="10.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" name="appleColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUa-xr-bSM" userLabel="Max Number">
                                                 <rect key="frame" x="10.5" y="0.0" width="25.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.82032768140000001" green="1" blue="0.47062698590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" name="appleColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -740,61 +740,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-cy-fZD">
-                                <rect key="frame" x="0.0" y="178" width="375" height="311.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-cy-fZD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Turn to team AwesomeTeam to play !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-Ym-CB4">
-                                        <rect key="frame" x="37.5" y="0.0" width="300" height="123"/>
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="209"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" name="appleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make your teammates guess the word by saying anything but that word." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Qv-FS-uAF">
-                                        <rect key="frame" x="37.5" y="143" width="300" height="101.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make your teammates guess the word by saying anything but that word." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Qv-FS-uAF">
+                                        <rect key="frame" x="37.5" y="229" width="300" height="209"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" name="appleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHU-yg-neC">
-                                        <rect key="frame" x="135.5" y="264.5" width="104" height="47"/>
-                                        <color key="backgroundColor" name="appleColor"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <color key="tintColor" name="appleColor"/>
-                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
-                                        <size key="titleShadowOffset" width="2" height="0.0"/>
-                                        <state key="normal" title="begin">
-                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="startGuessing:" destination="uu7-T8-hMl" eventType="touchUpInside" id="qgA-sM-m7e"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hKz-sl-nM7">
+                                        <rect key="frame" x="0.0" y="458" width="375" height="209"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YcG-Ia-1lz">
+                                                <rect key="frame" x="0.0" y="81" width="375" height="47"/>
+                                                <subviews>
+                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYr-cZ-mpD">
+                                                        <rect key="frame" x="135.5" y="0.0" width="104" height="47"/>
+                                                        <color key="backgroundColor" name="appleColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <color key="tintColor" name="appleColor"/>
+                                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                                        <size key="titleShadowOffset" width="2" height="0.0"/>
+                                                        <state key="normal" title="begin">
+                                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="startGuessing:" destination="uu7-T8-hMl" eventType="touchUpInside" id="jPw-0C-v5L"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="YcG-Ia-1lz" secondAttribute="trailing" id="bVx-gn-tiY"/>
+                                            <constraint firstItem="YcG-Ia-1lz" firstAttribute="centerY" secondItem="hKz-sl-nM7" secondAttribute="centerY" id="mqI-Tm-6Z4"/>
+                                            <constraint firstItem="YcG-Ia-1lz" firstAttribute="leading" secondItem="hKz-sl-nM7" secondAttribute="leading" id="vbC-eM-taT"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="8Qv-FS-uAF" firstAttribute="width" secondItem="h2I-cy-fZD" secondAttribute="width" multiplier="0.8" id="EZx-lL-9aW"/>
                                     <constraint firstItem="ySS-Ym-CB4" firstAttribute="width" secondItem="h2I-cy-fZD" secondAttribute="width" multiplier="0.8" id="qB4-OL-FkN"/>
                                 </constraints>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enL-P5-av0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="wvc-aC-gIm"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="h2I-cy-fZD" firstAttribute="centerY" secondItem="MNw-Zu-VlN" secondAttribute="centerY" id="JSP-E2-dcO"/>
                             <constraint firstItem="h2I-cy-fZD" firstAttribute="leading" secondItem="MNw-Zu-VlN" secondAttribute="leading" id="N4h-hY-egD"/>
+                            <constraint firstItem="N7K-4F-B9g" firstAttribute="bottom" secondItem="h2I-cy-fZD" secondAttribute="bottom" id="XEI-H6-CJS"/>
                             <constraint firstItem="h2I-cy-fZD" firstAttribute="centerX" secondItem="MNw-Zu-VlN" secondAttribute="centerX" id="YAg-fa-cDw"/>
                             <constraint firstAttribute="trailing" secondItem="h2I-cy-fZD" secondAttribute="trailing" id="eGE-pg-tJe"/>
+                            <constraint firstItem="h2I-cy-fZD" firstAttribute="top" secondItem="N7K-4F-B9g" secondAttribute="top" id="pkm-ua-oGU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N7K-4F-B9g"/>
                         <connections>
@@ -804,7 +814,6 @@
                     <navigationItem key="navigationItem" id="0p3-5c-cHw"/>
                     <connections>
                         <outlet property="explanationLabel" destination="8Qv-FS-uAF" id="6rf-8i-lUZ"/>
-                        <outlet property="startGuessingButton" destination="CHU-yg-neC" id="RSK-2B-HhN"/>
                         <outlet property="whosTurnLabel" destination="ySS-Ym-CB4" id="GTS-ag-LOk"/>
                         <segue destination="J6B-OD-5DE" kind="show" identifier="startGuessingSegue" id="5Y1-oY-O6Q"/>
                     </connections>
@@ -1095,7 +1104,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5Y1-oY-O6Q"/>
         <segue reference="U8h-oi-DKY"/>
     </inferredMetricsTieBreakers>
     <resources>

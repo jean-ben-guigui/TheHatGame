@@ -18,17 +18,16 @@ class WhosTurnViewController: UIViewController {
     
     var hatGame:HatGame?
     
-    @IBOutlet weak var explanationLabel: UILabel!
-    @IBOutlet weak var whosTurnLabel: UILabel!
-    @IBOutlet weak var startGuessingButton: UIButton!
+    @IBOutlet private weak var explanationLabel: UILabel!
+    @IBOutlet private weak var whosTurnLabel: UILabel!
     
-    @IBAction func startGuessing(_ sender: UIButton) {
-        performSegue(withIdentifier: "startGuessingSegue", sender: sender)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	@IBAction private func startGuessing(_ sender: Any) {
+		performSegue(withIdentifier: "startGuessingSegue", sender: sender)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navigationBarHidden = self.navigationController?.isNavigationBarHidden, !navigationBarHidden {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
         if let selfHatGame = hatGame {
             if (segue.identifier == "startGuessingSegue") {
@@ -40,9 +39,6 @@ class WhosTurnViewController: UIViewController {
     }
     
     func configure() {
-//        startGuessingButton.layer.cornerRadius = 0.125 * startGuessingButton.bounds.size.width
-//        startGuessingButton.layer.masksToBounds = true
-        startGuessingButton.isEnabled = true
         guard let hatGame = hatGame else {
             fatalError("The hatGame was not injected properly")
         }
