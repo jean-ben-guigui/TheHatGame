@@ -13,6 +13,7 @@
 		D608F0A8244DCE7C00ABA3C9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D608F0A7244DCE7C00ABA3C9 /* README.md */; };
 		D608FDBB241AAC9700745AAA /* TeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D608FDBA241AAC9700745AAA /* TeamsTests.swift */; };
 		D6090A2F243B6D2E00D20994 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6090A2E243B6D2E00D20994 /* DetailViewController.swift */; };
+		D63023572470378F00946DE0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D63023562470378F00946DE0 /* .gitignore */; };
 		D6439F51242BA53F00F5E416 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F50242BA53F00F5E416 /* CoreDataStack.swift */; };
 		D6439F54242BB4C900F5E416 /* WordSetEntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */; };
 		D6439F56242BB65F00F5E416 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6439F55242BB65E00F5E416 /* Schema.swift */; };
@@ -75,6 +76,7 @@
 		D608F0A7244DCE7C00ABA3C9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D608FDBA241AAC9700745AAA /* TeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTests.swift; sourceTree = "<group>"; };
 		D6090A2E243B6D2E00D20994 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D63023562470378F00946DE0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6439F50242BA53F00F5E416 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D6439F53242BB4C900F5E416 /* WordSetEntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetEntityProvider.swift; sourceTree = "<group>"; };
 		D6439F55242BB65E00F5E416 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		D6E704EA2412A84700A7FF44 = {
 			isa = PBXGroup;
 			children = (
+				D63023562470378F00946DE0 /* .gitignore */,
 				D66312DF246C492C00E136C4 /* privacyPolicy.txt */,
 				D6E704F52412A84700A7FF44 /* The Hat Game */,
 				D6E7050F2412A84C00A7FF44 /* The Hat GameTests */,
@@ -410,6 +413,7 @@
 				D6E705532412A8E200A7FF44 /* LaunchScreen.storyboard in Resources */,
 				D608F0A8244DCE7C00ABA3C9 /* README.md in Resources */,
 				D6E7054D2412A8E200A7FF44 /* Main.storyboard in Resources */,
+				D63023572470378F00946DE0 /* .gitignore in Resources */,
 				D6E705522412A8E200A7FF44 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

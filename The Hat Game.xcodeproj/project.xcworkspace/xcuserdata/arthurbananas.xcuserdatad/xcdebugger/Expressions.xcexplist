@@ -88,13 +88,13 @@
          contextName = "DetailViewController.updateSnapshot():DetailViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "wordSet?.words">
+            </PersistentString>
+            <PersistentString
                value = "wordSet?.words?.count">
             </PersistentString>
             <PersistentString
                value = "wordSet?.words?.array">
-            </PersistentString>
-            <PersistentString
-               value = "wordSet?.words">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -110,13 +110,13 @@
          contextName = "WordSetPickerController.controller(_:didChange:at:for:newIndexPath:):WordSetPickerController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "newWordSet">
+               value = "newWordSet.name">
             </PersistentString>
             <PersistentString
                value = "anObject">
             </PersistentString>
             <PersistentString
-               value = "newWordSet.name">
+               value = "newWordSet">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -210,6 +210,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in WordSetUITableViewDiffableDataSource.tableView(_:commit:forRowAt:):WordSetUITableViewDiffableDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "wordSetEntityProvider">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WhosTurnViewController.prepare(for:sender:):WhosTurnViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -224,10 +232,10 @@
                value = "self.isViewLoaded">
             </PersistentString>
             <PersistentString
-               value = "fetchedResultsController?.fetchedObjects?.first?.words">
+               value = "self.snapshot">
             </PersistentString>
             <PersistentString
-               value = "self.snapshot">
+               value = "fetchedResultsController?.fetchedObjects?.first?.words">
             </PersistentString>
             <PersistentString
                value = "fetchedResultsController?.fetchedObjects">

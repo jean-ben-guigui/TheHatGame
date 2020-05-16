@@ -78,7 +78,7 @@ class WordSetPickerController: UIViewController {
             return cell
         }
         
-//        diffableDataSource?.wordSetEntityProvider = wordSetEntityProvider
+        diffableDataSource?.wordSetEntityProvider = wordSetEntityProvider
         diffableDataSource?.fetchedResultsController = fetchedResultsController
         
         updateSnapshot()
