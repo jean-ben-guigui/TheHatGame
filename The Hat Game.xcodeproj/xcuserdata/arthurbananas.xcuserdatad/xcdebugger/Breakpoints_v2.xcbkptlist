@@ -1171,7 +1171,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F105424C-5A5F-4D96-A918-A1E729DD3870"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Hat Game/Controllers/WordSetPicker/WordSetUITableViewDiffableDataSource.swift"
@@ -1181,38 +1181,6 @@
             endingLineNumber = "47"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F105424C-5A5F-4D96-A918-A1E729DD3870 - ba740414d0ec3341"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "The_Hat_Game.WordSetUITableViewDiffableDataSource.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "The Hat Game"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arthurbananas/work/git/The%20Hat%20Game/The%20Hat%20Game/Controllers/WordSetPicker/WordSetUITableViewDiffableDataSource.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "866">
-               </Location>
-               <Location
-                  uuid = "F105424C-5A5F-4D96-A918-A1E729DD3870 - 7c3679303fae4f88"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in The_Hat_Game.WordSetUITableViewDiffableDataSource.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "The Hat Game"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arthurbananas/work/git/The%20Hat%20Game/The%20Hat%20Game/Controllers/WordSetPicker/WordSetUITableViewDiffableDataSource.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2303,6 +2271,22 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "startGuessing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02959FEB-EDD7-4956-B4FE-B6D5E548ED16"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Hat Game/Controllers/WordSetPicker/WordSetUITableViewDiffableDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
