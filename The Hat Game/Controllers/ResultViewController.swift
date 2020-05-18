@@ -23,7 +23,6 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var winnerTeamName: UILabel!
     @IBOutlet weak var resultTableView: UITableView!
     
-    
     @IBAction func playAgain(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: false)
     }
