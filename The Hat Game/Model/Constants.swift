@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     static let numberOfPhases = 3
-    static let minimumNumberOfWordsToPlay = 10
+    static let minimumNumberOfWordsToPlay = 24
     static let defaultRoundTime = 30
     
     enum phaseExplanation: String {
@@ -30,7 +30,7 @@ struct Constants {
         struct Message {
             static let unknow = "An unknown error has happened"
             static let cannotDisplayResults = "The game is over, but the results are unavailable, sorry about that"
-            static let tooFewWord = "You have entered less than \(minimumNumberOfWordsToPlay) words, are you sure you want to play with such few words?"
+            static let tooFewWord = "You have entered less than \(minimumNumberOfWordsToPlay) words, maybe you want to add more words."
 			static let unableToDelete = "There was an error while trying to delete the word set."
             static func wordAlreadyEntered(word: String) -> String {
                    return "The word \(word) has already been entered"

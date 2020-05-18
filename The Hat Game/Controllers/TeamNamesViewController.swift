@@ -158,11 +158,9 @@ class TeamNamesViewController: UIViewController {
 			fourthTeamName.delegate = self
         }
 		firstTeamName.becomeFirstResponder()
-        startTheGameButton.setTitleColor(UIColor.systemGray5, for: UIControl.State.disabled)
+        startTheGameButton.setTitleColor(UIColor.systemGray2, for: UIControl.State.disabled)
         setGameButtonState()
     }
-	
-	
 }
 
 extension TeamNamesViewController: UITextFieldDelegate {

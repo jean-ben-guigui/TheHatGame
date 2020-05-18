@@ -49,7 +49,6 @@ class AddWordViewController: UIViewController {
     @IBOutlet var addWordView: UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var wordNumberLabel: UILabel!
-	@IBOutlet weak var startNowButton: UIButton!
 	@IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var wordInput: UITextField!
     
@@ -59,8 +58,8 @@ class AddWordViewController: UIViewController {
     @IBAction func validateWord(_ sender: UIButton) {
         addWord()
     }
-    
-    @IBAction func wordEdited(_ sender: UITextField) {
+	
+	@IBAction func wordEdited(_ sender: UITextField) {
         if let word = sender.text  {
             wordToValidate = word
             if word != "" {
@@ -76,11 +75,12 @@ class AddWordViewController: UIViewController {
 	}
 	
 	@IBAction func startNow(_ sender: Any) {
-        if let nnHatGame = hatGame {
+		if let nnHatGame = hatGame {
             if nnHatGame.wordCount() < Constants.minimumNumberOfWordsToPlay {
-                let continueAnywayAction = UIAlertAction(title:"Continue anyway", style: .default, handler: { _ in
+                let continueAnywayAction = UIAlertAction(title:"Start playing", style: .default, handler: { _ in
                     self.performSegue(withIdentifier: "whosTurnSegue", sender: self)
                     })
+				let addMoreWordsAction = UIAlertAction(title:"Add more words", style: .cancel)
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else {
                         return
@@ -88,7 +88,7 @@ class AddWordViewController: UIViewController {
                     let presenter = AlertPresenter(
                         title: "Hey there",
                         message: Constants.Alert.Message.tooFewWord,
-                        completionAction: continueAnywayAction
+                        completionActions: [continueAnywayAction, addMoreWordsAction]
                     )
                     presenter.present(in: self)
                 }
@@ -96,7 +96,7 @@ class AddWordViewController: UIViewController {
                 self.performSegue(withIdentifier: "whosTurnSegue", sender: self)
             }
         }
-    }
+	}
     
     func setTeamNameLabel(teamName:String) {
         teamNameLabel.text = "Team " + teamName + " enters a word"
@@ -142,6 +142,7 @@ class AddWordViewController: UIViewController {
             }
         }
         wordInput.text = ""
+		doneButton.isEnabled = false
 	}
     
     func configure(){
@@ -153,16 +154,15 @@ class AddWordViewController: UIViewController {
                 return
             }
 			self.wordInput.delegate = self
-            self.doneButton.makeMeRound()
             self.doneButton.isEnabled = false
-//            self.startNowButton.makeMyAnglesRound()
+			self.doneButton.setTitleColor(UIColor.systemGray2, for: UIControl.State.disabled)
             do {
                 let firstTeam = try hatGame.getTeam(id:0)
                 self.setTeamNameLabel(teamName: firstTeam.name)
             } catch {
                 let presenter = AlertPresenter(
                     title: Constants.Alert.Title.unexpectedError.rawValue,
-                    message: "The team that is supposed to play does not exist, try to close the app and try again.",
+                    message: "The team that is supposed to enter a word does not exist, try to close the app and launch it again.",
                     completionAction: nil
                 )
                 presenter.present(in: self)
